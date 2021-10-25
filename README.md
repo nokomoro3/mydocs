@@ -16,7 +16,7 @@ git -c credential.namespace=xxx clone https://github.com/[name]/[repository].git
 - repositoryに移動し、gitのlocal configでnamespaceを設定する。
 ```
 cd [repository]
-git config credential.namespace xxx
+git config --local credential.namespace xxx
 ```
 
 - 参考
