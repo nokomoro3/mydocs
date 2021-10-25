@@ -21,3 +21,23 @@ git config credential.namespace xxx
 
 - 参考
   - https://qiita.com/shiena/items/fc7783a82d59be5ff259
+
+
+### Docker
+
+#### 特定のRUN以降のキャッシュを無効にする。
+
+- ARGを適当な場所に入れる。
+
+```yml
+ARG CACHEBUST=1
+```
+
+- build時に引数を設定する。
+```
+$ docker build -t tagname --build-arg CACHEBUST=$(date +%s) .
+```
+
+
+- 参考
+  - https://www.chazine.com/archives/4038
