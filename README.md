@@ -21,3 +21,14 @@ git config credential.namespace xxx
 
 - 参考
   - https://qiita.com/shiena/items/fc7783a82d59be5ff259
+
+## クラウド
+
+### Azure
+
+#### Azure Blob StorageとAzure Filesの違い
+
+- Filesの方が普通のファイルシステム、BlobはHTTPでのアクセスとなる。
+  - https://docs.microsoft.com/ja-jp/azure/storage/files/storage-files-faq
+
+- 普通にローカルマシンにもマウントできるようだ。
