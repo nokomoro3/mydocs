@@ -4,6 +4,7 @@
   - [curl](./CLI/curl.md)
 
 - Python
+  - [poetry](./Python/poetry.md)
   - [requests](./Python/requests.md)
 
 - Webフレームワーク
