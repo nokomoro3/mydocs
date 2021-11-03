@@ -4,11 +4,13 @@
   - [curl](./CLI/curl.md)
 
 - Python
+  - [base64](./Python/base64.md)
   - [poetry](./Python/poetry.md)
   - [requests](./Python/requests.md)
 
 - Webフレームワーク
   - [FastAPI](./Webフレームワーク/FastAPI.md)
+  - [Nginx](./Webフレームワーク/Nginx.md)
 
 - クラウド
   - [Azure](./クラウド/Azure.md)

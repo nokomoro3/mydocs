@@ -60,6 +60,11 @@ $ poetry env info
 $ poetry shell
 ```
 
+- 仮想環境でコマンド実行
+```sh
+$ poetry run {your commands}
+```
+
 - poetryでの管理を開始する。
 ```sh
 $ poetry init
