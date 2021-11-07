@@ -1,6 +1,6 @@
 # Dockerチュートリアル
 
----
+
 ## Dockerインストール方法
 
 ### Windows
@@ -36,7 +36,7 @@ $ docker run hello-world
 - 以下に従いインストールする。
   - https://docs.docker.com/engine/install/ubuntu/
 
----
+
 ## Docker基本的なコマンド
 
 - pull: イメージをダウンロードする。
@@ -102,7 +102,7 @@ $ docker image prune
 $ docker container prune
 ```
 
----
+
 ## ビルド時に特定のRUN以降のキャッシュを無効にする。
 
 - ARGを適当な場所に入れる。
@@ -119,7 +119,7 @@ $ docker build -t tagname --build-arg CACHEBUST=$(date +%s) .
 - 参考
   - https://www.chazine.com/archives/4038
 
----
+
 ## コンテナを起動したままにする方法。
 
 - 以下で起動状態を維持できる。
