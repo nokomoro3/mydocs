@@ -12,7 +12,7 @@
 
 - docker desktopで以下を設定。
 
-<img width="900" src="./fig001.drawio.svg">
+<img height="300" src="./figures/fig001.png">
 
 - WSL一覧を確認。2になっているか確認する。
 ```powershell
