@@ -1,9 +1,9 @@
-### Docker
+# Dockerチュートリアル
 
 ---
-#### Dockerインストール方法
+## Dockerインストール方法
 
-##### Windows
+### Windows
 
 - WSLをインストールする。
   - 以下のリンクの手順を１～５まで実施する。
@@ -19,7 +19,7 @@
 > docker run hello-world
 ```
 
-##### Mac
+### Mac
 
 - Docker Desktopを以下のリンクからダウンロードする。
   - https://www.docker.com/products/docker-desktop
@@ -31,13 +31,13 @@
 $ docker run hello-world
 ```
 
-##### Linux(Ubuntu)
+### Linux(Ubuntu)
 
 - 以下に従いインストールする。
   - https://docs.docker.com/engine/install/ubuntu/
 
 ---
-#### Docker基本的なコマンド
+## Docker基本的なコマンド
 
 - pull: イメージをダウンロードする。
   - TAGはバージョンみたいなもの。
@@ -103,7 +103,7 @@ $ docker container prune
 ```
 
 ---
-#### ビルド時に特定のRUN以降のキャッシュを無効にする。
+## ビルド時に特定のRUN以降のキャッシュを無効にする。
 
 - ARGを適当な場所に入れる。
 
@@ -120,7 +120,7 @@ $ docker build -t tagname --build-arg CACHEBUST=$(date +%s) .
   - https://www.chazine.com/archives/4038
 
 ---
-#### コンテナを起動したままにする方法。
+## コンテナを起動したままにする方法。
 
 - 以下で起動状態を維持できる。
 ```sh
