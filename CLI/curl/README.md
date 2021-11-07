@@ -1,6 +1,6 @@
-### curl
+# curl
 
-#### curlオプションとMIME type
+## curlオプションとMIME type
 
 - 以下のように、dオプションにすると、"application/x-www-form-urlencoded"となる。
 ```sh
@@ -16,7 +16,7 @@ $ curl -X POST -f 'upload=@test.csv' -H 'x-api-key:{APIキー}' -v https://local
   - curl の POST オプション -d と -F の違いから、改めて MIME type を学ぶ
     - https://qiita.com/att55/items/04e8080d1c441837ad42
 
-#### curlの様々なd系オプション
+## curlの様々なd系オプション
 
 - 以下が結論だが、--data-binaryが最も余計なことをしないと覚えておけば良さそう。
 

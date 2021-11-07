@@ -1,6 +1,6 @@
-### poetry
+# poetry
 
-#### poetryインストール
+## poetryインストール
 
 - powershellの場合
 ```ps
@@ -17,7 +17,7 @@ $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-po
 - 以下にインストールされる。
   - $HOME/.poetry/bin
 
-#### poetryの基本的な使い方
+## poetryの基本的な使い方
 
 - 設定の確認。
 ```sh
@@ -85,7 +85,7 @@ $ poetry add {Package Name}
 $ poetry remove
 ```
 
-#### poetry完全削除
+## poetry完全削除
 
 - インストール場所の削除
   - Windowsの場合: C:\Users\{ユーザ名}\.poetry\bin

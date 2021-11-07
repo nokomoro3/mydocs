@@ -1,6 +1,6 @@
-### requests
+# requests
 
-#### json形式でバイナリファイルを送信する方法
+## json形式でバイナリファイルを送信する方法
 
 - base64に一度エンコードし、utf-8でデコードし文字列にして送信する。
 
@@ -29,7 +29,7 @@ base64.b64decode(b64encoded.encode('utf-8'))
 # base64.b64decode(b64encoded.encode('utf-8')).decode('utf-8') # さらにdecodeすれば文字列になる
 ```
 
-### multipart/form-dataでバイナリファイルを送信する方法
+# multipart/form-dataでバイナリファイルを送信する方法
 
 - こちらの方法では、シンプルにバイナリのまま送信できる。
 

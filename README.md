@@ -1,30 +1,32 @@
 # mydocs
 
 - CLI
-  - [curl](./CLI/curl.md)
+  - [curl](./CLI/curl/README.md)
+  - [ssh](./CLI/ssh/README.md)
 
 - Python
-  - [base64](./Python/base64.md)
-  - [poetry](./Python/poetry.md)
-  - [requests](./Python/requests.md)
+  - [base64](./Python/base64/README.md)
+  - [poetry](./Python/poetry/README.md)
+  - [requests](./Python/requests/README.md)
 
 - Webフレームワーク
-  - [FastAPI](./Webフレームワーク/FastAPI.md)
-  - [Nginx](./Webフレームワーク/Nginx.md)
+  - [FastAPI](./Webフレームワーク/FastAPI/README.md)
+  - [Nginx](./Webフレームワーク/Nginx/README.md)
 
 - クラウド
-  - [Azure](./クラウド/Azure.md)
+  - [Azure](./クラウド/Azure/README.md)
 
 - データベース
-  - [MySQL](./データベース/MySQL.md)
-  - [データベース設計](./データベース/データベース設計)
+  - [MySQL](./データベース/MySQL/README.md)
+  - [データベース設計](./データベース/データベース設計/README)
 
 - ライブラリ
-  - [画像処理](./ライブラリ/画像処理.md)
+  - [画像処理](./ライブラリ/画像処理/README.md)
 
 - 開発ツール
+  - [Anaconda](./開発ツール/Anaconda/README.md)
   - Docker
     - [Dockerチュートリアル](./開発ツール/Docker/Docker.01tutorial.md)
     - [Docker on WSL2](./開発ツール/Docker/Docker.02WSL.md)
     - [Dockerノウハウ](./開発ツール/Docker/Docker.99knowhow.md)
-  - [Git](./開発ツール/Git.md)
+  - [Git](./開発ツール/Git/README.md)

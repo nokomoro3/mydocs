@@ -1,6 +1,6 @@
-### MySQL
+# MySQL
 
-#### utf8は本当のutf8ではない。
+## utf8は本当のutf8ではない。
 
 - utf8mb4を使う必要がある。設定としては、utf8mb4_general_ciでOK。
 
