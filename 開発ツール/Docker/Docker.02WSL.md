@@ -1,4 +1,4 @@
-# WSLでDockerを動かす方法
+# Docker on WSL2
 
 ## WSL2(Ubuntu 20.04 LTS)でDockerを動かす。
 
@@ -12,7 +12,7 @@
 
 - docker desktopで以下を設定。
 
-![image](./Docker.02WSL.svg.drawio)
+<img width="900" src="./fig001.drawio.svg">
 
 - WSL一覧を確認。2になっているか確認する。
 ```powershell
