@@ -68,7 +68,7 @@ $ docker ps # running中のものだけ見たい場合
 
 - exec: コンテナ内にログインする。
 ```sh
-$ docker exec -it <CONTAINER_NAME>
+$ docker exec -it <CONTAINER_NAME> bash
 ```
 
 - logs: 稼働中のコンテナのログを見る。
