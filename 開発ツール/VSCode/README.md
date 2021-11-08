@@ -28,6 +28,7 @@
   - Brancket Pair Colorizer2 ... カッコを色分けしてくれる。
   - indent-rainbow ... インデントを色分けしてくれる。
   - Rainbow CSV ... CSVの視認性向上。
+  - Trailing Space ... 空白の可視化
 
 - Git
   - Git Graph ... 変更履歴がツリーで見れる。
@@ -41,6 +42,24 @@
 - Markdown
   - Markdown PDF ... MarkdownをPDF変換する。
   - Markdown Preview Enhanced ... Markdownの表示が見やすくなる。
+  - Draw.io ... 図を書ける。*.drawio.svgで保存すれば、markdownに埋め込める。
+  - PlantUML ... UMLを記述できる。図として出力し、markdownに埋め込める。
+
+-フォーマッター
+  - Prettier ... 自動整形ツール。あまりメリットをまだ感じられていないが、嬉しいのだろうか。
 
 - リモート系
   - Remote SSH ... VSCodeからサーバーにSSH接続できる。
+  - Remote Containers
+  - Remote WSL
+
+- フロントエンド
+  - Auto Close Tag ... htmlタグを自動で閉じる。
+  - Auto Rename Tag ... htmlタグを自動でリネームできる。
+  - JavaScript (ES6) code snippets ... JavaScript用
+  - ES7 React/Redux/GraphQL/React-Native snippets ... React開発用
+  - ESlint ... linter
+  - Vetur ... Vue開発用
+
+- クラウド
+  - Azure Account / Azure App Service / Azure Resources
