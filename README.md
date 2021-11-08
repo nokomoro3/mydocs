@@ -4,6 +4,12 @@
   - [curl](./CLI/curl/README.md)
   - [ssh](./CLI/ssh/README.md)
 
+- Linux
+  - [NVIDIAドライバ周り](./Linux/NVIDIAドライバ周り/README.md)
+  - [USB LANアダプター設定](./Linux/USB LANアダプター設定/README.md)
+  - [ディスプレイ周りの確認コマンド](./Linux/ディスプレイ周りの確認コマンド/README.md)
+  - [ハードウェア情報確認](./Linux/ハードウェア情報確認/README.md)
+
 - Python
   - [assert](./Python/assert/README.md)
   - [base64](./Python/base64/README.md)
