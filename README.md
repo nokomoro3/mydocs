@@ -32,5 +32,5 @@
   - [Git](./開発ツール/Git/README.md)
   - [npm_yarn](./開発ツール/npm_yarn/README.md)
   - [React](./開発ツール/React/README.md)
-  - [VSCode](./開発ツール/VSCode/README.md))
+  - [VSCode](./開発ツール/VSCode/README.md)
   - [Vue](./開発ツール/Vue/README.md)

@@ -18,3 +18,29 @@
 
 - 設定反映
   - VSCodeのフォントを設定し、VSCodeを再起動。
+
+## プラグイン
+
+- 基本
+  - Japanese Language Pack ... 日本語化。
+
+- 視認性
+  - Brancket Pair Colorizer2 ... カッコを色分けしてくれる。
+  - indent-rainbow ... インデントを色分けしてくれる。
+  - Rainbow CSV ... CSVの視認性向上。
+
+- Git
+  - Git Graph ... 変更履歴がツリーで見れる。
+  - GitLens ... ブランチ同士の差分確認で主に使う。
+
+- Python
+  - Python ... Python開発の基本。
+  - Pylance ... 構文チェックや候補を頭良く表示する。今はPythonプラグインを入れると勝手に入る気がする。
+  - Python Docstring Generator ... Pythonのdocstringを自動生成できる。
+
+- Markdown
+  - Markdown PDF ... MarkdownをPDF変換する。
+  - Markdown Preview Enhanced ... Markdownの表示が見やすくなる。
+
+- リモート系
+  - Remote SSH ... VSCodeからサーバーにSSH接続できる。
