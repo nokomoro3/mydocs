@@ -5,7 +5,9 @@
   - [ssh](./CLI/ssh/README.md)
 
 - Python
+  - [assert](./Python/assert/README.md)
   - [base64](./Python/base64/README.md)
+  - [except](./Python/except/README.md)
   - [poetry](./Python/poetry/README.md)
   - [requests](./Python/requests/README.md)
 
