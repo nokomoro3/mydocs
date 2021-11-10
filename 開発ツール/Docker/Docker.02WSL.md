@@ -10,7 +10,7 @@
   - 以下に沿ってinstallするが、最後のapt-getはdocker-ce-cliのみでOK。
     - https://docs.docker.com/engine/install/ubuntu/
 
-- docker desktopで以下を設定。
+- docker desktopで以下のようにRESOURCESにUbuntu-20.04を追加。
 
 <img height="300" src="./figures/fig001.png">
 
