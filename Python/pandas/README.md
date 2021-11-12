@@ -9,3 +9,35 @@ columns = df.columns.tolist()
 columns = columns[-1:] + columns[:-1] # reorder example
 df = df[columns] # do reorder!!
 ```
+
+## group集計して統計量を計算する。
+
+- 既に準備されている統計計算をする場合
+
+```python
+# user_idで集計して、年齢の統計量を計算する例
+age_stats_df = rowdata_df.groupby("user_id")["age"].agg(["mean"])
+
+# 上記では、goupbyしたカラムがindexになってしまうので、嫌な場合はreset_index()する。
+age_stats_df = rowdata_df.groupby("user_id")["age"].agg(["mean"]).reset_index()
+```
+
+- 自作でpersentileなどを計算したい場合
+
+```python
+# 自作関数を作る
+def percentile(n):
+    def percentile_(x):
+        return np.percentile(x, n)
+    percentile_.__name__ = 'percentile_%s' % n
+    return percentile_
+
+age_stats_df = rowdata_df.groupby("user_id")["age"].agg([percentile(80)]).reset_index()
+```
+
+- 時系列データを集計する場合
+  - 時刻情報がある場合、その列をindexにすることで、resampleが使えて集計できる。
+  - 購入量の時系列データのイメージで以下は'M'で月ごとの結果を集計する例。
+```python
+timedomain_df.set_index("recorded_at", drop=True).sort_index().loc[:,["purchase_count"]].resample('M').agg(['sum', 'mean', "max"])
+```
