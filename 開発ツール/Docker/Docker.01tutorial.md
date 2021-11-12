@@ -16,7 +16,7 @@
 
 - PowerShellかコマンドプロンプトから、Hello WorldできればOK。
 ```powershell
-> docker run hello-world
+docker run hello-world
 ```
 
 ### Mac
@@ -25,11 +25,16 @@
   - https://www.docker.com/products/docker-desktop
 
 - ダウンロードされたdmgファイルをインストールする。
+  - dmgファイルのインストール方法はこちらを参照。
+    - http://lee-ways.com/macdmg/
 
-- ターミナルから、Hello WorldできればOK。
+- ターミナルを起動し、Hello WorldできればOK。
 ```sh
-$ docker run hello-world
+docker run hello-world
 ```
+
+- Macの人は、ターミナルのセキュリティがデフォルトでは厳しいので、<br>以下の通りにシステム環境設定で「ターミナル」アプリにフルディスクアクセスを許可する。
+  - https://qiita.com/KEINOS/items/0366f1c281b574a79cfb
 
 ### Linux(Ubuntu)
 
@@ -42,22 +47,23 @@ $ docker run hello-world
 - pull: イメージをダウンロードする。
   - TAGはバージョンみたいなもの。
 ```sh
-$ docker pull <REPOSITORY>:<TAG>
-$ docker pull ubuntu # 一例、TAGがない場合はlatestが取得される。
+# docker pull <REPOSITORY>:<TAG>
+docker pull ubuntu:latest # 一例、TAGがない場合はlatestが取得される。
 ```
 
 - images: ダウンロード済みのイメージ一覧を見る。
+  - 最初に落としたHelloWorldもある。
 ```sh
 $ docker images
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
-titanic      latest    47041f440197   12 days ago   429MB
+hello-world  latest    feb5d9fea6a5   7 weeks ago   13.3kB
 ubuntu       latest    ba6acccedd29   3 weeks ago   72.8MB
 ```
 
 - run: イメージからコンテナをつくる。
 ```sh
-$ docker run -itd --name <CONTAINER_NAME> <REPOSITORY>:<TAG> bash
-$ docker run -itd --name sample ubuntu:latest bash # 一例
+# docker run -itd --name <CONTAINER_NAME> <REPOSITORY>:<TAG> bash
+docker run -itd --name sample ubuntu:latest bash # 一例
 ```
 
 - ps: 作成済みのコンテナ一覧を見る。
@@ -68,32 +74,38 @@ $ docker ps # running中のものだけ見たい場合
 
 - exec: コンテナ内にログインする。
 ```sh
-$ docker exec -it <CONTAINER_NAME> bash
+# docker exec -it <CONTAINER_NAME> bash
+docker exec -it sample bash
 ```
 
 - logs: 稼働中のコンテナのログを見る。
 ```sh
-$ docker logs <CONTAINER_NAME>
+# docker logs <CONTAINER_NAME>
+docker logs sample
 ```
 
 - inspect: 稼働中のコンテナの設定を確認する。
 ```sh
-$ docker inspect <CONTAINER_NAME>
+# docker inspect <CONTAINER_NAME>
+docker inspect sample
 ```
 
 - stop: コンテナを止める(止めるだけで消えない)。
 ```sh
-$ docker stop <CONTAINER_NAME>
+# docker stop <CONTAINER_NAME>
+docker stop sample
 ```
 
 - rm: コンテナを消す。
 ```sh
-$ docker rm <CONTAINER_NAME>
+# docker rm <CONTAINER_NAME>
+docker rm sample
 ```
 
 - rmi: イメージを消す。
 ```sh
-$ docker rmi <REPOSITORY>:<TAG>
+# docker rmi <REPOSITORY>:<TAG>
+docker rmi ubuntu:latest
 ```
 
 - prune: 未使用のコンテナやイメージをまとめて消す。
