@@ -2,29 +2,30 @@
 
 - CLI
   - [curl](./CLI/curl/README.md)
-  - [ssh](./CLI/ssh/README.md)
+  - [ssh ](./CLI/ssh/README.md)
 
 - Linux
-  - [NVIDIAドライバ周り](./Linux/NVIDIAドライバ周り/README.md)
-  - [USB_LANアダプター設定](./Linux/USB_LANアダプター設定/README.md)
+  - [NVIDIAドライバ周り            ](./Linux/NVIDIAドライバ周り/README.md)
+  - [USB_LANアダプター設定         ](./Linux/USB_LANアダプター設定/README.md)
   - [ディスプレイ周りの確認コマンド](./Linux/ディスプレイ周りの確認コマンド/README.md)
-  - [ハードウェア情報確認](./Linux/ハードウェア情報確認/README.md)
+  - [ハードウェア情報確認          ](./Linux/ハードウェア情報確認/README.md)
 
 - ML
   - Kaggle
     - [Kaggleチュートリアル](./ML/Kaggle/Kaggle.01tutorial.md)
+    - [Kaggleコンペ一覧    ](./ML/Kaggle/Kaggle.02compe.md)
 
 - Python
-  - [assert](./Python/assert/README.md)
-  - [base64](./Python/base64/README.md)
-  - [except](./Python/except/README.md)
-  - [pandas](./Python/pandas/README.md)
-  - [poetry](./Python/poetry/README.md)
+  - [assert  ](./Python/assert/README.md)
+  - [base64  ](./Python/base64/README.md)
+  - [except  ](./Python/except/README.md)
+  - [pandas  ](./Python/pandas/README.md)
+  - [poetry  ](./Python/poetry/README.md)
   - [requests](./Python/requests/README.md)
 
 - Webフレームワーク
   - [FastAPI](./Webフレームワーク/FastAPI/README.md)
-  - [Nginx](./Webフレームワーク/Nginx/README.md)
+  - [Nginx  ](./Webフレームワーク/Nginx/README.md)
 
 - クラウド
   - [Azure](./クラウド/Azure/README.md)
@@ -40,8 +41,8 @@
   - [Anaconda](./開発ツール/Anaconda/README.md)
   - Docker
     - [Dockerチュートリアル](./開発ツール/Docker/Docker.01tutorial.md)
-    - [Docker on WSL2](./開発ツール/Docker/Docker.02WSL.md)
-    - [Dockerノウハウ](./開発ツール/Docker/Docker.99knowhow.md)
+    - [Docker on WSL2      ](./開発ツール/Docker/Docker.02WSL.md)
+    - [Dockerノウハウ      ](./開発ツール/Docker/Docker.99knowhow.md)
   - [Git](./開発ツール/Git/README.md)
   - [npm_yarn](./開発ツール/npm_yarn/README.md)
   - [React](./開発ツール/React/README.md)
