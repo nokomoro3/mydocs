@@ -1,4 +1,4 @@
-# USB LANアダプター設定
+# USB_LANアダプター設定
 
 - lsusbで接続を確認。Linuxが認識したUSB-NIC情報が確認できる。
 ```sh

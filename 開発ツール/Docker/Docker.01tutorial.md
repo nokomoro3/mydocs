@@ -110,6 +110,6 @@ docker rmi ubuntu:latest
 
 - prune: 未使用のコンテナやイメージをまとめて消す。
 ```sh
-$ docker image prune
-$ docker container prune
+docker image prune
+docker container prune
 ```
