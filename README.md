@@ -10,6 +10,10 @@
   - [ディスプレイ周りの確認コマンド](./Linux/ディスプレイ周りの確認コマンド/README.md)
   - [ハードウェア情報確認](./Linux/ハードウェア情報確認/README.md)
 
+- ML
+  - Kaggle
+    - [Kaggleチュートリアル](./ML/Kaggle/Kaggle.01tutorial.md)
+
 - Python
   - [assert](./Python/assert/README.md)
   - [base64](./Python/base64/README.md)
