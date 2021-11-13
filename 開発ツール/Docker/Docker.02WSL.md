@@ -3,8 +3,8 @@
 ## WSL2(Ubuntu 20.04 LTS)でDockerを動かす。
 
 - 注意点
-  - そもそも色々問題があるのでおすすめしない。
   - 事前準備として、Docker desktop for Windowsは必要。
+  - GPUは使えないので、そこだけ要注意。
 
 - docker CLIインストール
   - 以下に沿ってinstallするが、最後のapt-getはdocker-ce-cliのみでOK。
@@ -17,7 +17,7 @@
 - WSL一覧を確認。2になっているか確認する。
 ```powershell
 > wsl --list --verbose
-* Ubuntu-20.04           Running         1
+* Ubuntu-20.04           Running         2
   docker-desktop         Stopped         2
   docker-desktop-data    Stopped         2
 ```
