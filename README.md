@@ -22,6 +22,7 @@
   - [except  ](./Python/except/README.md)
   - [pandas  ](./Python/pandas/README.md)
   - [poetry  ](./Python/poetry/README.md)
+  - [pyenv   ](./Python/pyenv/README.md)
   - [pytest  ](./Python/pytest/README.md)
   - [requests](./Python/requests/README.md)
 
@@ -47,6 +48,7 @@
     - [Dockerノウハウ      ](./開発ツール/Docker/Docker.99knowhow.md)
   - [Git     ](./開発ツール/Git/README.md)
   - [GitHub  ](./開発ツール/GitHub/README.md)
+  - [Hasura  ](./開発ツール/Hasura/README.md)
   - [npm_yarn](./開発ツール/npm_yarn/README.md)
   - [React   ](./開発ツール/React/README.md)
   - [VSCode  ](./開発ツール/VSCode/README.md)
