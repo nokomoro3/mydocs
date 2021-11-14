@@ -6,6 +6,12 @@
 - それにより、画像と違い、バージョン管理がgitで可能となるので便利。
 - ただしGithubでは、画像にPreviewされないので画像で埋め込む必要がある。
   - PlantUMLのVSCodeプラグインで、画像を出力できる。
+  - 出力先はデフォルトはoutになるが、以下の設定で変更できる。
+  ```json
+  "plantuml.exportOutDir": "plantuml"
+  ```
+- Github Actionsで設定することも可能
+
 
 ## サンプル
 
@@ -20,7 +26,7 @@
 ```
 
 - 出力される図
-![image](/out/開発ツール/PlantUML/README/sample.png)
+![image](/plantuml/開発ツール/PlantUML/README/sample.png)
 
 ### Markdownに外部ファイルを埋め込み
 
