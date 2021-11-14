@@ -18,9 +18,11 @@
 - Python
   - [assert  ](./Python/assert/README.md)
   - [base64  ](./Python/base64/README.md)
+  - [datetime](./Python/datetime/README.md)
   - [except  ](./Python/except/README.md)
   - [pandas  ](./Python/pandas/README.md)
   - [poetry  ](./Python/poetry/README.md)
+  - [pytest  ](./Python/pytest/README.md)
   - [requests](./Python/requests/README.md)
 
 - Webフレームワーク
@@ -43,9 +45,10 @@
     - [Dockerチュートリアル](./開発ツール/Docker/Docker.01tutorial.md)
     - [Docker on WSL2      ](./開発ツール/Docker/Docker.02WSL.md)
     - [Dockerノウハウ      ](./開発ツール/Docker/Docker.99knowhow.md)
-  - [Git](./開発ツール/Git/README.md)
+  - [Git     ](./開発ツール/Git/README.md)
+  - [GitHub  ](./開発ツール/GitHub/README.md)
   - [npm_yarn](./開発ツール/npm_yarn/README.md)
-  - [React](./開発ツール/React/README.md)
-  - [VSCode](./開発ツール/VSCode/README.md)
-  - [Vue](./開発ツール/Vue/README.md)
-  - [WSL](./開発ツール/WSL/README.md)
+  - [React   ](./開発ツール/React/README.md)
+  - [VSCode  ](./開発ツール/VSCode/README.md)
+  - [Vue     ](./開発ツール/Vue/README.md)
+  - [WSL     ](./開発ツール/WSL/README.md)
