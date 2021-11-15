@@ -44,8 +44,12 @@
   - Markdown Preview Enhanced ... Markdownの表示が見やすくなる。
   - Draw.io ... 図を書ける。*.drawio.svgで保存すれば、markdownに埋め込める。
   - PlantUML ... UMLを記述できる。図として出力し、markdownに埋め込める。
+    - 出力先はデフォルトはoutになるが、以下の設定で変更できる。
+    ```json
+    "plantuml.exportOutDir": "plantuml"
+    ```
 
--フォーマッター
+- フォーマッター
   - Prettier ... 自動整形ツール。あまりメリットをまだ感じられていないが、嬉しいのだろうか。
 
 - リモート系

@@ -1,0 +1,42 @@
+# Kaggleコンペ一覧
+
+- Lux AI【2021.08.16～2021.12.06】
+  - [https://www.kaggle.com/c/lux-ai-2021](https://www.kaggle.com/c/lux-ai-2021)
+  - ゲームAIを作るコンペティション
+- chaii - Hindi and Tamil Question Answering【2021.08.11～2021.11.15】
+  - [https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering](https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering)
+  - インドの言語のNLUタスク。QuestionからAnswerを予想する。
+  - 推論コードコンペ（5h制限）
+- NFL Health & Safety - Helmet Assignment【2021.08.10～2021.11.02】
+  - [https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment](https://www.kaggle.com/c/nfl-health-and-safety-helmet-assignment)
+  - 動画からNFLの選手のヘルメットを識別して割り当てるタスク。
+  - 入力は画像のみ。推論コードコンペ（9h制限）
+- RSNA-MICCAI Brain Tumor Radiogenomic Classification【2021.07.13～2021.10.15】
+  - [https://www.kaggle.com/c/rsna-miccai-brain-tumor-radiogenomic-classification](https://www.kaggle.com/c/rsna-miccai-brain-tumor-radiogenomic-classification)
+  - MRI画像から脳腫瘍治療に重要な遺伝子バイオマーカを予想する。
+  - 推論コードコンペ（9h制限）
+- Google Landmark Recognition 2021【2021.08.10～2021.10.08】
+  - [https://www.kaggle.com/c/landmark-recognition-2021](https://www.kaggle.com/c/landmark-recognition-2021)
+  - 画像認識コンペ。ランドマークを認識するが、81K個の多クラス分類。
+  - 推論コードコンペ（9h制限）
+- Google Landmark Retrieval 2021【2021.08.10～2021.10.08】
+  - [https://www.kaggle.com/c/landmark-retrieval-2021](https://www.kaggle.com/c/landmark-retrieval-2021)
+  - 画像検索コンペ。ランドマーク画像の検索。
+  - 推論コードコンペ（9h制限）
+- LearnPlatform COVID-19 Impact on Digital Learning【2021.08.02～2021.09.30】
+  - [https://www.kaggle.com/c/learnplatform-covid19-impact-on-digital-learning](https://www.kaggle.com/c/learnplatform-covid19-impact-on-digital-learning)
+  - 機械学習じゃなさそう？
+- G2Net Gravitational Wave Detection【2021.06.xx～2021.09.29】
+  - [https://www.kaggle.com/c/g2net-gravitational-wave-detection](https://www.kaggle.com/c/g2net-gravitational-wave-detection/)
+  - ブラックホール発生時の重力波を予想するコンペ（疑似データ）
+- Optiver Realized Volatility Prediction【2021.06.28～2021.09.27】
+  - [https://www.kaggle.com/c/optiver-realized-volatility-prediction](https://www.kaggle.com/c/optiver-realized-volatility-prediction)
+  - 銘柄の短期的なボラティリティ(10分間)を予測する。
+  - 推論コードコンペ（9h制限）
+- MLB Player Digital Engagement Forecasting【2021.06.10～2021.08.31】
+  - [https://www.kaggle.com/c/mlb-player-digital-engagement-forecasting](https://www.kaggle.com/c/mlb-player-digital-engagement-forecasting)
+  - テーブルデータ。
+  - 推論コードコンペ（9h制限）
+- SETI Breakthrough Listen - E.T. Signal Search【2021.05.10～2021.08.18】
+  - [https://www.kaggle.com/c/seti-breakthrough-listen/leaderboard](https://www.kaggle.com/c/seti-breakthrough-listen/leaderboard)
+  - 宇宙人探索コンペ。データは模擬データで異常信号を見つける。
