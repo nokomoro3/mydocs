@@ -1,6 +1,9 @@
 # pytest
 
+## 基本的な使い方
 
+- pytest ヘビー🐍ユーザーへの第一歩
+  - https://www.m3tech.blog/entry/pytest-summary
 ## pytest-watch
 
 - ファイル変更を検知し、自動で再テストしてくれる。
