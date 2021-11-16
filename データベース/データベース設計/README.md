@@ -11,3 +11,10 @@
 
 - 参考
   - https://qiita.com/seiya1121/items/fb074d727c6f40a55f22
+
+## ユーザー更新に競合がある場合、どのように扱うか
+
+- ユーザビリティを考えれば、先勝ちが基本
+  - https://www.codegrid.net/articles/2014-web-app-patterns-1/
+
+- 先勝ちを実現するには、最新の更新日時を保持しておく必要がある。
