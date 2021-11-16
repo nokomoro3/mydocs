@@ -53,6 +53,25 @@ print(dt)
 # OUT: 2021-11-14 14:45:00+09:00
 ```
 
+- timezoneの変更
+```python
+print(dt.astimezone(timezone.utc))
+# OUT: 2021-11-14 05:45:00+00:00
+```
+
+- timezoneの強制変更
+```python
+from datetime import datetime, timezone
+print(dt.replace(tzinfo=timezone.utc))
+# OUT: 2021-11-14 14:45:00+00:00
+```
+
+- timezoneの削除
+```python
+print(dt.replace(tzinfo=None))
+# OUT: 2021-11-14 14:45:00
+```
+
 - 参考
   - Python で日付のフォーマットを変換する方法
     - https://leben.mobi/blog/python_date_format/python/
