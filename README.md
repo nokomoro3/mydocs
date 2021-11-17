@@ -64,3 +64,24 @@
     ```shell
     $ openssl s_client -connect localhost:443 -showcerts
     ```
+
+- pythonで再帰処理
+
+```python
+def exec_lower_recurisive(text_input, text_output_recursive=[]):
+    for element in text_input:
+        if isinstance(element, list):
+            text_output_sub = []
+            exec_lower_recurisive(element, text_output_sub)
+            text_output_recursive.append(text_output_sub)
+        else:
+            output = element.lower()
+            text_output_recursive.append(output)
+
+text_input = ["AAA", "BBB", "CCC", ["DDD", "EEE"] ]
+text_output_recursive = []
+exec_lower_recurisive(text_input, text_output_recursive)
+
+print(text_output_recursive)
+# OUT: ['aaa', 'bbb', 'ccc', ['ddd', 'eee']]
+```
