@@ -65,3 +65,19 @@ $ docker inspect -f "{{.Name}} {{.HostConfig.RestartPolicy.Name}}" $(docker ps -
 
 - 参考
   - https://www.pressmantech.com/tech/6522
+
+## composeでビルドする際に、image名を指定する
+
+- imageというパラメータを使えばよい。階層は、buildと同じ。
+```yml
+version: '2.3'
+services:
+  sample_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      image: sample:latest
+```
+
+- 参考
+  - https://amaya382.hatenablog.jp/entry/2017/04/03/034002

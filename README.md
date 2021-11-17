@@ -54,3 +54,13 @@
   - [VSCode  ](./開発ツール/VSCode/README.md)
   - [Vue     ](./開発ツール/Vue/README.md)
   - [WSL     ](./開発ツール/WSL/README.md)
+
+
+## sandbox
+
+- セキュリティ
+  - ssl
+    - 暗号化の設定を調べる。
+    ```shell
+    $ openssl s_client -connect localhost:443 -showcerts
+    ```
