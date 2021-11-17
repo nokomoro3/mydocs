@@ -52,3 +52,21 @@ def read_root(is_auth: bool = Depends(authenticate_basic)):
 
 - 参考
   - https://lonesec.com/2020/01/12/user-register-with-fastapi_auth
+
+## ファイルダウンロードAPIを作る
+
+```python
+from fastapi import FastAPI
+from fastapi.responses import FileResponse
+
+app = FastAPI()
+
+@app.get("/")
+async def main():
+    file_path = "file_path"
+    filename = "filename"
+    return FileResponse(path=file_path, filename=filename)
+```
+
+- 参考
+  - https://fastapi.tiangolo.com/advanced/custom-response/?h=fileresponse#fileresponse
