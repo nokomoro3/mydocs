@@ -89,3 +89,7 @@ print(text_output_recursive)
 - sqlalchemyのrelationshipの設定
   - https://qiita.com/1234224576/items/ba66838b32b99cce51d2
   - https://poyo.hatenablog.jp/entry/2017/01/08/212227
+
+- javascript
+  - JavaScriptで指定したN回分ループする
+    - https://qiita.com/taneba/items/04c99e236bc87dab59e0
