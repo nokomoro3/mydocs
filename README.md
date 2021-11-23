@@ -86,6 +86,9 @@ print(text_output_recursive)
 # OUT: ['aaa', 'bbb', 'ccc', ['ddd', 'eee']]
 ```
 
+- pythonでhtmlの特殊文字をエスケープする
+  - https://docs.python.org/ja/3/library/html.html
+
 - sqlalchemyのrelationshipの設定
   - https://qiita.com/1234224576/items/ba66838b32b99cce51d2
   - https://poyo.hatenablog.jp/entry/2017/01/08/212227
