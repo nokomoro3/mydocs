@@ -93,3 +93,9 @@ print(text_output_recursive)
 - javascript
   - JavaScriptで指定したN回分ループする
     - https://qiita.com/taneba/items/04c99e236bc87dab59e0
+
+- msgconvert
+  - msgをemlに変換するツール。
+  ```sh
+  sudo apt install libemail-outlook-message-perl libemail-sender-perl
+  ```
