@@ -86,6 +86,22 @@ print(text_output_recursive)
 # OUT: ['aaa', 'bbb', 'ccc', ['ddd', 'eee']]
 ```
 
+- jupyter(markdown)
+  - markdownの表を全体左に寄せる。
+    - 冒頭に以下のhtmlを書く。
+    ```
+    %%html
+    <style>
+    table {float:left}
+    </style>
+    ```
+
+- MySQL
+  - 外部キー制約
+    - https://qiita.com/petitviolet/items/e03c67794c4e335b6706
+    - https://qiita.com/suin/items/21fe6c5a78c1505b19cb
+    - https://hacknote.jp/archives/19470/
+
 - pythonでhtmlの特殊文字をエスケープする
   - https://docs.python.org/ja/3/library/html.html
 
