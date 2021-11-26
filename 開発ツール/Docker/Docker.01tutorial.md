@@ -78,6 +78,11 @@ $ docker ps # running中のものだけ見たい場合
 docker exec -it sample bash
 ```
 
+- コンテナからログアウトする。
+```sh
+exit
+```
+
 - logs: 稼働中のコンテナのログを見る。
 ```sh
 # docker logs <CONTAINER_NAME>
