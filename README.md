@@ -86,6 +86,9 @@ print(text_output_recursive)
 # OUT: ['aaa', 'bbb', 'ccc', ['ddd', 'eee']]
 ```
 
+- pythonのsetの使い方
+  - https://uxmilk.jp/14834
+
 - jupyter(markdown)
   - markdownの表を全体左に寄せる。
     - 冒頭に以下のhtmlを書く。
