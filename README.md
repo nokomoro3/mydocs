@@ -89,7 +89,7 @@ print(text_output_recursive)
 - pythonのsetの使い方
   - https://uxmilk.jp/14834
 
-- jupyter(markdown)
+- jupyter
   - markdownの表を全体左に寄せる。
     - 冒頭に以下のhtmlを書く。
     ```
@@ -98,6 +98,8 @@ print(text_output_recursive)
     table {float:left}
     </style>
     ```
+  - コンソールコマンドに変数を渡す方法
+    - https://qiita.com/piruty/items/9c4f87cc2240e1028b31
 
 - MySQL
   - 外部キー制約
@@ -121,3 +123,9 @@ print(text_output_recursive)
   ```sh
   sudo apt install libemail-outlook-message-perl libemail-sender-perl
   ```
+  
+- MeCabへの単語追加
+  - https://taku910.github.io/mecab/dic.html
+  - https://www.koi.mashykom.com/nlp.html
+  - https://qiita.com/hiro0217/items/cfcf801023c0b5e8b1c6
+  - 
