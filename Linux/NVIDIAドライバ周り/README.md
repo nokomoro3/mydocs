@@ -10,7 +10,7 @@ $ sudo apt-get --purge remove cuda-*
 
 - 無理に最新を入れると、古いdistributionで動かなかったため、推奨ドライバを以下で確認する。
 ```sh
-$ ubutu-drivers devices
+$ ubuntu-drivers devices
 ```
 
 - ドライバのインストール
