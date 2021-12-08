@@ -72,8 +72,24 @@ print(dt.replace(tzinfo=None))
 # OUT: 2021-11-14 14:45:00
 ```
 
+- 時間差分
+```python
+from dateutil.relativedelta import relativedelta
+from datetime import datetime
+
+now = datetime.now()
+one_month_ago = now - relativedelta(months=1)
+print(now)
+# OUT: 2021-12-08 00:04:41.047085
+print(one_month_ago)
+#$ OUT: 2021-11-08 00:04:41.047085
+
+```
+
 - 参考
   - Python で日付のフォーマットを変換する方法
     - https://leben.mobi/blog/python_date_format/python/
   - 日付の表記に関するノート
     - https://www.kanzaki.com/docs/html/dtf.html#jp-eur
+  - Pythonで翌日や翌月みたいな日付の計算をする
+    - https://qiita.com/dkugi/items/8c32cc481b365c277ec2
