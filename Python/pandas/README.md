@@ -41,3 +41,23 @@ age_stats_df = rowdata_df.groupby("user_id")["age"].agg([percentile(80)]).reset_
 ```python
 timedomain_df.set_index("recorded_at", drop=True).sort_index().loc[:,["purchase_count"]].resample('M').agg(['sum', 'mean', "max"])
 ```
+
+## 行を挿入する。
+
+- seriesをappendする。
+
+```python
+import pandas as pd
+
+df = pd.DataFrame([], columns=['A', 'B', 'C'])
+row_data = pd.Series(['0', '1', '2'], index=df.columns)
+
+df = df.append(row_data, ignore_index=True)
+df = df.append(row_data, ignore_index=True)
+df
+```
+
+- dictをappendする。
+```python
+df.append({'A': 0, 'B': 1, 'C': 2}, ignore_index=True))
+```
