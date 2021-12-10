@@ -16,6 +16,7 @@
     - [Kaggleコンペ一覧    ](./ML/Kaggle/Kaggle.02compe.md)
 
 - Python
+  - [syntax  ](./Python/syntax/README.md)
   - [assert  ](./Python/assert/README.md)
   - [base64  ](./Python/base64/README.md)
   - [datetime](./Python/datetime/README.md)
