@@ -66,7 +66,6 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   root: './src',
-  plugins: [react()],
 });
 ```
 
@@ -98,10 +97,6 @@ $ mv ./index.html ./src/
 - vite.config.tsのbuild.emptyOutDirをtrueにすることで、ビルド前にクリアできる。
 
 ```vite.config.ts
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-// https://vitejs.dev/config/
 export default defineConfig({
   root: './src',
   build: {
@@ -109,7 +104,6 @@ export default defineConfig({
     outDir: '../public',
     emptyOutDir: true,
   },
-  plugins: [react()],
 });
 ```
 
