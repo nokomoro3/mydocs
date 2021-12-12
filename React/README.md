@@ -43,6 +43,17 @@ $ yarn
 $ yarn dev
 ```
 
+### yarn devでブラウザを起動する。
+
+- vite.config.tsでserver.open=trueとする。
+
+```vite.config.ts
+export default defineConfig({
+  server: {
+    open: true,
+  },
+})
+```
 
 ### index.htmlをsrc配下に移動する。
 
@@ -112,6 +123,36 @@ $ yarn build
 $ yarn preview
 ```
 
+### 絶対パスでimportできるようにする。
+
+- vite.config.tsのresolve.aliasを設定する。
+- pathがない場合は、`yarn add @types/node -D`で追加する。
+```vite.config.ts
+import * as path from "path"
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      "src": resolve(__dirname, "src"),
+    },
+  },
+})
+```
+
+- 次にtsconfig.jsonのcompilerOptions.baseUrlを設定する。
+```tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl":"./",
+  },
+}
+```
+
+- エディタ(VSCode)を再起動する。
+
 ### 参考
-- https://zenn.dev/sprout2000/articles/98145cf2a807b1
+- Vite で最速 React & TypeScript
+  - https://zenn.dev/sprout2000/articles/98145cf2a807b1
+- Vite+React+Typescriptでimportのパスを必要最低限にする
+  - https://qiita.com/okoshi/items/614211ae0f52cd2174ab
 
