@@ -118,6 +118,8 @@ print(text_output_recursive)
 - javascript
   - JavaScriptで指定したN回分ループする
     - https://qiita.com/taneba/items/04c99e236bc87dab59e0
+  - BOMやBlobを理解してJavaScriptでCSVを出力する
+    - https://qiita.com/megadreams14/items/b4521308d5be65f0c544
 
 - msgconvert
   - msgをemlに変換するツール。
