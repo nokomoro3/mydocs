@@ -7,6 +7,7 @@
 - Linux
   - [NVIDIAドライバ周り            ](./Linux/NVIDIAドライバ周り/README.md)
   - [USB_LANアダプター設定         ](./Linux/USB_LANアダプター設定/README.md)
+  - [ネットワーク                  ](./Linux/ネットワーク/README.md)
   - [ディスプレイ周りの確認コマンド](./Linux/ディスプレイ周りの確認コマンド/README.md)
   - [ハードウェア情報確認          ](./Linux/ハードウェア情報確認/README.md)
 
@@ -16,16 +17,17 @@
     - [Kaggleコンペ一覧    ](./ML/Kaggle/Kaggle.02compe.md)
 
 - Python
-  - [syntax  ](./Python/syntax/README.md)
   - [assert  ](./Python/assert/README.md)
   - [base64  ](./Python/base64/README.md)
   - [datetime](./Python/datetime/README.md)
   - [except  ](./Python/except/README.md)
   - [pandas  ](./Python/pandas/README.md)
   - [poetry  ](./Python/poetry/README.md)
+  - [Pydantic](./Python/Pydantic/README.md)
   - [pyenv   ](./Python/pyenv/README.md)
   - [pytest  ](./Python/pytest/README.md)
   - [requests](./Python/requests/README.md)
+  - [syntax  ](./Python/syntax/README.md)
 
 - Webフレームワーク
   - [FastAPI](./Webフレームワーク/FastAPI/README.md)
@@ -33,6 +35,11 @@
 
 - クラウド
   - [Azure](./クラウド/Azure/README.md)
+
+- フロントエンド
+  - [JavaScript](./フロントエンド/JavaScript/README.md)
+  - [React     ](./フロントエンド/React/README.md)
+  - [Vue       ](./フロントエンド/Vue/README.md))
 
 - データベース
   - [MySQL](./データベース/MySQL/README.md)
@@ -51,9 +58,8 @@
   - [GitHub  ](./開発ツール/GitHub/README.md)
   - [Hasura  ](./開発ツール/Hasura/README.md)
   - [npm_yarn](./開発ツール/npm_yarn/README.md)
-  - [React   ](./開発ツール/React/README.md)
+  - [PlantUML](./開発ツール/PlantUML/README.md)
   - [VSCode  ](./開発ツール/VSCode/README.md)
-  - [Vue     ](./開発ツール/Vue/README.md)
   - [WSL     ](./開発ツール/WSL/README.md)
 
 
@@ -132,4 +138,8 @@ print(text_output_recursive)
   - https://www.koi.mashykom.com/nlp.html
   - https://qiita.com/hiro0217/items/cfcf801023c0b5e8b1c6
 
-aaaaa
+- なぜエンジニアが作る画面はダサいのか…?「理由」と「対策」を徹底解説
+  - https://qiita.com/mskmiki/items/544149987475719e417b
+
+- React hooksを基礎から理解する
+  - https://qiita.com/seira/items/0e6a2d835f1afb50544d

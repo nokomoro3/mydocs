@@ -4,6 +4,11 @@
 
 - pytest ヘビー🐍ユーザーへの第一歩
   - https://www.m3tech.blog/entry/pytest-summary
+
+## fixtureが便利
+
+- 参考
+  - https://qiita.com/_akiyama_/items/9ead227227d669b0564e
 ## pytest-watch
 
 - ファイル変更を検知し、自動で再テストしてくれる。

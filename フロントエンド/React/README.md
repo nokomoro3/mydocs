@@ -2,6 +2,11 @@
 
 ## settings
 
+### VSCodeプラグイン
+
+- React開発効率を3倍にするVS Code拡張機能&環境設定
+  - https://qiita.com/newt0/items/b7810fb38c339ec5e4a7
+
 ### create-react-app
 
 - Reactのテンプレートを作成する。
@@ -155,3 +160,10 @@ export default defineConfig({
 
 ### 参考
 - https://sbfl.net/blog/2019/11/12/react-hooks-introduction/
+
+## ライブラリ
+
+### Grid Layout
+
+- React-Grid-LayoutでサクッとDrag & Dropできるコンポーネントを作る
+  - https://qiita.com/duplicate1984/items/321805cf99ef7a9e4924

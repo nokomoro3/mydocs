@@ -86,6 +86,9 @@ print(one_month_ago)
 
 ```
 
+- ISO8601への変換
+  - https://note.nkmk.me/python-datetime-isoformat-fromisoformat/
+
 - 参考
   - Python で日付のフォーマットを変換する方法
     - https://leben.mobi/blog/python_date_format/python/
