@@ -1,8 +1,13 @@
 # datetime
 
-- 現在
+- modules
 ```python
 from datetime import datetime
+from dateutil import tz
+```
+
+- 現在
+```python
 now = datetime.now()
 print(now)
 # OUT: 2021-11-14 05:27:16.873830
@@ -10,15 +15,14 @@ print(now)
 
 - timezoneを変更
 ```python
-now = now.astimezone(timezone('Asia/Tokyo'))
+now = now.astimezone(tz.gettz('Asia/Tokyo'))
 print(now)
 # OUT: 2021-11-14 14:27:16.873830+09:00
 ```
 
 - 現在(timezone付き)
 ```python
-from pytz import timezone
-now = datetime.now(timezone('Asia/Tokyo'))
+now = datetime.now(tz.gettz('Asia/Tokyo'))
 print(now)
 # OUT: 2021-11-14 14:28:16.824288+09:00
 ```
@@ -55,14 +59,14 @@ print(dt)
 
 - timezoneの変更
 ```python
-print(dt.astimezone(timezone.utc))
+print(dt.astimezone(tz.gettz("UTC")))
 # OUT: 2021-11-14 05:45:00+00:00
 ```
 
 - timezoneの強制変更
 ```python
 from datetime import datetime, timezone
-print(dt.replace(tzinfo=timezone.utc))
+print(dt.replace(tzinfo=tz.gettz("UTC")))
 # OUT: 2021-11-14 14:45:00+00:00
 ```
 
