@@ -177,3 +177,34 @@ export default defineConfig({
 ### react-tween
 
 - https://qiita.com/nabepon/items/c005a7d4491fd04b453e
+
+### react-router
+
+- v5の入門
+  - https://qiita.com/h-yoshikawa44/items/aa78b6c7cd1ef43549bf
+
+- v5をv6に置き換え
+  - https://dev.classmethod.jp/articles/react-router-5to6/
+
+- 自作方法
+  - https://zenn.dev/stin/articles/how-to-develop-react-router
+
+### SWR(stale-while-revalidate)
+
+- データフェッチのための React Hooks ライブラリ。
+
+- 参考
+  - https://zenn.dev/uttk/articles/b3bcbedbc1fd00
+
+### Next.js
+
+- 公式チュートリアルでNext.jsに入門してみた
+  - https://dev.classmethod.jp/articles/introduction-to-nextjs/
+
+### Recoil(GlobalState管理)
+
+- Next.js + TypeScript + Recoil + Herp社ESLint Config でReactチュートリアルを作る。
+  - https://zenn.dev/purenium/articles/nextjs-recoil-tic-tac-toe
+
+- 公式マニュアル
+  - https://recoiljs.org/docs/api-reference/core/useRecoilStateLoadable
