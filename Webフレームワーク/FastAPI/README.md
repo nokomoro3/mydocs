@@ -70,3 +70,7 @@ async def main():
 
 - 参考
   - https://fastapi.tiangolo.com/advanced/custom-response/?h=fileresponse#fileresponse
+
+## ロガーの設定
+
+- https://gitter.im/tiangolo/fastapi?at=5ee330e3013105125a2e128d
