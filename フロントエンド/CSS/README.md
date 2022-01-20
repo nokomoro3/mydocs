@@ -8,6 +8,12 @@
 
 - https://techblog.recochoku.jp/1206
 
+### 枠線
+
+```css
+border-radius: 10px 10px 0 0;
+```
+
 ## Tailwind
 
 - [Text Align](https://tailwindcss.com/docs/text-align)
