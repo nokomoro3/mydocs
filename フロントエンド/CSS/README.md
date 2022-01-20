@@ -14,6 +14,14 @@
 border-radius: 10px 10px 0 0;
 ```
 
+### 枠線エフェクト
+
+- https://youtukuru.com/box-shadow
+
+### tableでheadを固定する
+
+- https://so-zou.jp/web-app/tech/css/sample/fixed-header.htm
+
 ## Tailwind
 
 - [Text Align](https://tailwindcss.com/docs/text-align)
