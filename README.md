@@ -1,68 +1,66 @@
 # mydocs
 
-- CLI
-  - [curl](./CLI/curl/README.md)
-  - [ssh ](./CLI/ssh/README.md)
+- 001_frontend
+  - [CSS       ](./001_frontend/CSS.md)
+  - [HTML      ](./001_frontend/html.md)
+  - [JavaScript](./001_frontend/javascript.md)
+  - [React     ](./001_frontend/React.md)
+  - [Vue       ](./001_frontend/Vue.md)
 
-- Linux
-  - [NVIDIAドライバ周り            ](./Linux/NVIDIAドライバ周り/README.md)
-  - [USB_LANアダプター設定         ](./Linux/USB_LANアダプター設定/README.md)
-  - [ネットワーク                  ](./Linux/ネットワーク/README.md)
-  - [ディスプレイ周りの確認コマンド](./Linux/ディスプレイ周りの確認コマンド/README.md)
-  - [ハードウェア情報確認          ](./Linux/ハードウェア情報確認/README.md)
+- 002_python
+  - [assert  ](./Python/assert.md)
+  - [base64  ](./Python/base64.md)
+  - [datetime](./Python/datetime.md)
+  - [except  ](./Python/except.md)
+  - [fastapi ](./Python/fastapi.md)
+  - [pandas  ](./Python/pandas.md)
+  - [poetry  ](./Python/poetry.md)
+  - [Pydantic](./Python/pydantic.md)
+  - [pyenv   ](./Python/pyenv.md)
+  - [pytest  ](./Python/pytest.md)
+  - [requests](./Python/requests.md)
+  - [syntax  ](./Python/syntax.md)
+  
+- 003_linux
+  - [curl                 ](./003_linux/curl.md)
+  - [ディスプレイ設定     ](./003_linux/display_config.md)
+  - [ハードウェア情報確認 ](./003_linux/hardware_specs.md)
+  - [ネットワーク設定     ](./003_linux/network_config.md)
+  - [nginx                ](./003_linux/nginx.md)
+  - [NVIDIAドライバ設定   ](./003_linux/nvidia_driver.md)
+  - [ssh                  ](./003_linux/ssh.md)
+  - [USB_LANアダプター設定](./003_linux/usb_lan_adapter.md)
 
-- ML
-  - Kaggle
-    - [Kaggleチュートリアル](./ML/Kaggle/Kaggle.01tutorial.md)
-    - [Kaggleコンペ一覧    ](./ML/Kaggle/Kaggle.02compe.md)
+- 004_cloud
+  - [Azure](./004_cloud/azure.md)
 
-- Python
-  - [assert  ](./Python/assert/README.md)
-  - [base64  ](./Python/base64/README.md)
-  - [datetime](./Python/datetime/README.md)
-  - [except  ](./Python/except/README.md)
-  - [pandas  ](./Python/pandas/README.md)
-  - [poetry  ](./Python/poetry/README.md)
-  - [Pydantic](./Python/Pydantic/README.md)
-  - [pyenv   ](./Python/pyenv/README.md)
-  - [pytest  ](./Python/pytest/README.md)
-  - [requests](./Python/requests/README.md)
-  - [syntax  ](./Python/syntax/README.md)
+- 005_db
+  - [データベース設計](./005_db/db_design.md)
+  - [MySQL           ](./005_db/mysql.md)
 
-- Webフレームワーク
-  - [FastAPI](./Webフレームワーク/FastAPI/README.md)
-  - [Nginx  ](./Webフレームワーク/Nginx/README.md)
-
-- クラウド
-  - [Azure](./クラウド/Azure/README.md)
-
-- フロントエンド
-  - [CSS       ](./フロントエンド/CSS/README.md)
-  - [JavaScript](./フロントエンド/JavaScript/README.md)
-  - [React     ](./フロントエンド/React/README.md)
-  - [Vue       ](./フロントエンド/Vue/README.md))
-
-- データベース
-  - [MySQL](./データベース/MySQL/README.md)
-  - [データベース設計](./データベース/データベース設計/README)
-
-- ライブラリ
-  - [画像処理](./ライブラリ/画像処理/README.md)
-
-- 開発ツール
-  - [Anaconda](./開発ツール/Anaconda/README.md)
+- 006_devtools
+  - [Anaconda](./006_devtools/Anaconda.md)
   - Docker
-    - [Dockerチュートリアル](./開発ツール/Docker/Docker.01tutorial.md)
-    - [Docker on WSL2      ](./開発ツール/Docker/Docker.02WSL.md)
-    - [Dockerノウハウ      ](./開発ツール/Docker/Docker.99knowhow.md)
-  - [Git     ](./開発ツール/Git/README.md)
-  - [GitHub  ](./開発ツール/GitHub/README.md)
-  - [Hasura  ](./開発ツール/Hasura/README.md)
-  - [npm_yarn](./開発ツール/npm_yarn/README.md)
-  - [PlantUML](./開発ツール/PlantUML/README.md)
-  - [VSCode  ](./開発ツール/VSCode/README.md)
-  - [WSL     ](./開発ツール/WSL/README.md)
+    - [Dockerチュートリアル](./006_devtools/docker_001_tutorial.md)
+    - [Docker on WSL2      ](./006_devtools/docker_002_wsl.md)
+    - [Dockerノウハウ      ](./006_devtools/docker_003_knowhow.md)
+  - [Git     ](./006_devtools/git.md)
+  - [GitHub  ](./006_devtools/github.md)
+  - [npm_yarn](./006_devtools/npm_yarn.md)
+  - [PlantUML](./006_devtools/plantuml.md)
+  - [VSCode  ](./006_devtools/vscode.md)
+  - [WSL     ](./006_devtools/wsl.md)
 
+- 007_service
+  - [Hasura  ](./007_service/hasura.md)
+
+- 100_ML
+  - Kaggle
+    - [Kaggleチュートリアル](./100_ML/kaggle_001_tutorial.md)
+    - [Kaggleコンペ一覧    ](./100_ML/kaggle_002_competition.md)
+
+- 101_image
+  - [画像処理](./101_image/README.md)
 
 ## sandbox
 

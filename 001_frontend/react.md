@@ -208,3 +208,9 @@ export default defineConfig({
 
 - 公式マニュアル
   - https://recoiljs.org/docs/api-reference/core/useRecoilStateLoadable
+
+
+### react-query
+
+- データフェッチのための React Hooks ライブラリ。
+  - https://react-query.tanstack.com/guides/queries

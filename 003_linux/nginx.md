@@ -1,4 +1,4 @@
-# FastAPI
+# Nginx
 
 ## BASIC認証設定
 
