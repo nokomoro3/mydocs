@@ -1,25 +1,28 @@
 # mydocs
 
 - 001_frontend
-  - [CSS       ](./001_frontend/CSS.md)
+  - [CSS       ](./001_frontend/css.md)
   - [HTML      ](./001_frontend/html.md)
   - [JavaScript](./001_frontend/javascript.md)
-  - [React     ](./001_frontend/React.md)
-  - [Vue       ](./001_frontend/Vue.md)
+  - [React     ](./001_frontend/react.md)
+  - [TypeScript](./001_frontend/typescript.md)
+  - [Vue       ](./001_frontend/vue.md)
 
 - 002_python
-  - [assert  ](./Python/assert.md)
-  - [base64  ](./Python/base64.md)
-  - [datetime](./Python/datetime.md)
-  - [except  ](./Python/except.md)
-  - [fastapi ](./Python/fastapi.md)
-  - [pandas  ](./Python/pandas.md)
-  - [poetry  ](./Python/poetry.md)
-  - [Pydantic](./Python/pydantic.md)
-  - [pyenv   ](./Python/pyenv.md)
-  - [pytest  ](./Python/pytest.md)
-  - [requests](./Python/requests.md)
-  - [syntax  ](./Python/syntax.md)
+  - [assert  ](./002_python/assert.md)
+  - [base64  ](./002_python/base64.md)
+  - [celery  ](./002_python/celery.md)
+  - [datetime](./002_python/datetime.md)
+  - [except  ](./002_python/except.md)
+  - [fastapi ](./002_python/fastapi.md)
+  - [logging ](./002_python/logging.md)
+  - [pandas  ](./002_python/pandas.md)
+  - [poetry  ](./002_python/poetry.md)
+  - [Pydantic](./002_python/pydantic.md)
+  - [pyenv   ](./002_python/pyenv.md)
+  - [pytest  ](./002_python/pytest.md)
+  - [requests](./002_python/requests.md)
+  - [syntax  ](./002_python/syntax.md)
   
 - 003_linux
   - [curl                 ](./003_linux/curl.md)
