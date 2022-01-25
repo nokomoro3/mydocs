@@ -57,6 +57,9 @@
 - 007_service
   - [Hasura  ](./007_service/hasura.md)
 
+- 008_test
+  - [E2Eツール](./008_test/e2e.md)
+
 - 100_ML
   - Kaggle
     - [Kaggleチュートリアル](./100_ML/kaggle_001_tutorial.md)
