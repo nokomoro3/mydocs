@@ -22,6 +22,12 @@ border-radius: 10px 10px 0 0;
 
 - https://so-zou.jp/web-app/tech/css/sample/fixed-header.htm
 
+### 上下中央ぞろえ
+
+- https://ics.media/entry/17522/
+
+- これでもダメなら、たぶん親要素の範囲が間違っている可能性が高い。(よくある)
+
 ## Tailwind
 
 - [Text Align](https://tailwindcss.com/docs/text-align)

@@ -9,20 +9,23 @@
   - [Vue       ](./001_frontend/vue.md)
 
 - 002_python
-  - [assert  ](./002_python/assert.md)
-  - [base64  ](./002_python/base64.md)
-  - [celery  ](./002_python/celery.md)
-  - [datetime](./002_python/datetime.md)
-  - [except  ](./002_python/except.md)
-  - [fastapi ](./002_python/fastapi.md)
-  - [logging ](./002_python/logging.md)
-  - [pandas  ](./002_python/pandas.md)
-  - [poetry  ](./002_python/poetry.md)
-  - [Pydantic](./002_python/pydantic.md)
-  - [pyenv   ](./002_python/pyenv.md)
-  - [pytest  ](./002_python/pytest.md)
-  - [requests](./002_python/requests.md)
-  - [syntax  ](./002_python/syntax.md)
+  - [assert    ](./002_python/assert.md)
+  - [base64    ](./002_python/base64.md)
+  - [celery    ](./002_python/celery.md)
+  - [datetime  ](./002_python/datetime.md)
+  - [except    ](./002_python/except.md)
+  - [fastapi   ](./002_python/fastapi.md)
+  - [logging   ](./002_python/logging.md)
+  - [NumPy     ](./002_python/numpy.md)
+  - [pandas    ](./002_python/pandas.md)
+  - [poetry    ](./002_python/poetry.md)
+  - [Pydantic  ](./002_python/pydantic.md)
+  - [pyenv     ](./002_python/pyenv.md)
+  - [pytest    ](./002_python/pytest.md)
+  - [requests  ](./002_python/requests.md)
+  - [seaborn   ](./002_python/seaborn.md)
+  - [sqlalchemy](./002_python/sqlalchemy.md)
+  - [syntax    ](./002_python/syntax.md)
   
 - 003_linux
   - [curl                 ](./003_linux/curl.md)
@@ -41,7 +44,7 @@
   - [データベース設計](./005_db/db_design.md)
   - [MySQL           ](./005_db/mysql.md)
 
-- 006_devtools
+- [006_devtools](006_devtools/README.md)
   - [Anaconda](./006_devtools/Anaconda.md)
   - Docker
     - [Dockerチュートリアル](./006_devtools/docker_001_tutorial.md)
@@ -64,6 +67,8 @@
   - Kaggle
     - [Kaggleチュートリアル](./100_ML/kaggle_001_tutorial.md)
     - [Kaggleコンペ一覧    ](./100_ML/kaggle_002_competition.md)
+  - 設計
+    - [機械学習システム デザインパターン(メルカリ)](./100_ML/ml_system_design.md)
 
 - 101_image
   - [画像処理](./101_image/README.md)
@@ -148,3 +153,7 @@ print(text_output_recursive)
 
 - React hooksを基礎から理解する
   - https://qiita.com/seira/items/0e6a2d835f1afb50544d
+
+- 個人開発
+  - 30個以上の個人開発を失敗。そこから自分のサービスで生きていけるようになるまでの話。｜入江 慎吾 🚀 MENTA代表｜note
+    - https://note.com/iritec/n/n17c741c5f02d

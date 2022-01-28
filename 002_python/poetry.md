@@ -17,12 +17,22 @@ $ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-po
 - 以下にインストールされる。
   - $HOME/.poetry/bin
 
-## poetryの基本的な使い方
+## poetryの設定
 
 - 設定の確認。
 ```sh
 $ poetry config --list # global
 $ poetry config --local --list # local
+```
+
+- 値を設定したいときは以下のようにする。
+```sh
+$ poetry config {設定名} true
+```
+
+- 値をデフォルトにしたい場合は、--unsetする。
+```sh
+$ poetry config {設定名} --unset
 ```
 
 - デフォルトの設定は以下の通り。
@@ -35,15 +45,11 @@ virtualenvs.in-project = null
 virtualenvs.path = "{cache-dir}\\virtualenvs"  # C:\Users\{ユーザ名}\AppData\Local\pypoetry\Cache\virtualenvs
 ```
 
-- 値を設定したいときは以下のようにする。
-```sh
-$ poetry config virtualenvs.in-project true
-```
+- `virtualenvs.in-project`は、仮想環境のインストール場所を設定する。
+- プロジェクトと同じ場所に`.venv`として配置したいのであれば、`true`にする必要がある。
+- デフォルトの`null`の場合、`C:\Users\{ユーザ名}\AppData\Local\pypoetry\Cache\virtualenvs`に配置される。
 
-- 値をデフォルトにしたい場合は、--unsetする。
-```sh
-$ poetry config virtualenvs.in-project --unset
-```
+## poetryの基本的な使い方
 
 - 仮想環境一覧の確認
 ```sh
@@ -85,6 +91,18 @@ $ poetry add {Package Name}
 $ poetry remove
 ```
 
+## poetry自体のアップデート
+
+- こういうのもある。
+```
+> poetry self update
+```
+
+- なんかうまくいかないときは、普通にインストール時のコマンドを試す価値あり。
+```
+> (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python -
+```
+
 ## poetry完全削除
 
 - インストール場所の削除
@@ -97,3 +115,23 @@ $ poetry remove
     - C:\Users\{ユーザ名}\AppData\Roaming\pypoetry
     - C:\Users\{ユーザ名}\AppData\Roaming\Python
   - Linux/WSL/macOSの場合: ??
+
+## トラブルシューティング
+
+### キャッシュからのパッケージ読み込みエラー
+
+- 以下ののようなエラー。
+```
+C:\Users\{ユーザ名}\AppData\Local\pypoetry\Cache\artifacts\ ...(略)... does not exist
+```
+
+- キャッシュが読み込めないエラーがあるっぽい。
+  - https://blog.panicblanket.com/archives/6329
+
+- githubのissueはcloseしている。
+  - https://github.com/python-poetry/poetry/issues/4163
+
+- 結論としてよくわからないパッケージ見つからないエラーがでた場合、以下のキャッシュを消すことは試す価値がある。
+```
+C:\Users\{ユーザ名}\AppData\Local\pypoetry\Cache\artifacts
+```
