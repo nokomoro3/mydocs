@@ -64,6 +64,9 @@
   - [E2Eツール](./008_test/e2e.md)
 
 - 100_ML
+  - [評価指標](./100_ML/evaluation.md)
+  - フレームワーク
+    - [PyTorch](./100_ML/framework_001_pytorch.md)
   - Kaggle
     - [Kaggleチュートリアル](./100_ML/kaggle_001_tutorial.md)
     - [Kaggleコンペ一覧    ](./100_ML/kaggle_002_competition.md)

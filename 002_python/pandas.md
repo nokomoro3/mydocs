@@ -61,3 +61,9 @@ df = df.append(row_data, ignore_index=True)
 df = df.append({'A': 0, 'B': 1, 'C': 2}, ignore_index=True))
 df = df.append({'A': 0, 'B': 1, 'C': 2}, ignore_index=True))
 ```
+
+## 列毎の欠損数を求める。
+
+```py
+df.isnull().sum()
+```
