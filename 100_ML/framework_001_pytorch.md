@@ -35,3 +35,16 @@ TypeError: default_collate: batch must contain tensors, numpy arrays, numbers, d
 
 - numpy配列を戻している場合でも、dtypeがobjectの場合、上記のエラーがでた。
 - astypeでnp.float64などにキャストが必要
+
+## 基本演算
+
+## squeeze
+
+- たとえば、(A×1×B×C×1×D)を(A×B×C×D)に変換できる。
+
+- 参考
+  - https://pytorch.org/docs/stable/generated/torch.squeeze.html
+
+## CUDAモードの確認
+
+- https://qiita.com/Haaamaaaaa/items/20c0dc16c2affab37fa5

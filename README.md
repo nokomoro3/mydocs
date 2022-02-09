@@ -39,6 +39,8 @@
 
 - 004_cloud
   - [Azure](./004_cloud/azure.md)
+  - [AWS  ](./004_cloud/aws.md)
+    - [SAA資格](./004_cloud/aws_saa.md)
 
 - 005_db
   - [データベース設計](./005_db/db_design.md)
@@ -66,10 +68,12 @@
 - 100_ML
   - [評価指標](./100_ML/evaluation.md)
   - フレームワーク
-    - [PyTorch](./100_ML/framework_001_pytorch.md)
+    - [PyTorch          ](./100_ML/framework_001_pytorch.md)
+    - [PyTorchメモリ対策](./100_ML/framework_002_pytorch_memory_opt.md)
   - Kaggle
     - [Kaggleチュートリアル](./100_ML/kaggle_001_tutorial.md)
     - [Kaggleコンペ一覧    ](./100_ML/kaggle_002_competition.md)
+    - [Kaggleコンペ一覧    ](./100_ML/kaggle_003_code_compe_time_series.md)
   - 設計
     - [機械学習システム デザインパターン(メルカリ)](./100_ML/ml_system_design.md)
 
