@@ -35,6 +35,35 @@ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 ```
 
+## インストール(WSL)
+
+- pyenvの取得
+```shell
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+cd ~/.pyenv && src/configure && make -C src # optional
+```
+
+- 以下を入力
+```shell
+# the sed invocation inserts the lines at the start of the file
+# after any initial comment lines
+sed -Ei -e '/^([^#]|$)/ {a \
+export PYENV_ROOT="$HOME/.pyenv"
+a \
+export PATH="$PYENV_ROOT/bin:$PATH"
+a \
+' -e ':a' -e '$!{n;ba};}' ~/.profile
+echo 'eval "$(pyenv init --path)"' >>~/.profile
+
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+```
+- ここで一旦terminalを再起動。
+
+- 依存パッケージをインストール。
+```shell
+sudo apt install -y pip libbz2-dev libssl-dev libreadline-dev
+```
+
 ## 使用方法
 
 - インストール可能なバージョン一覧の確認
