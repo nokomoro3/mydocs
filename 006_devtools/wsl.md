@@ -1,5 +1,11 @@
 # WSL
 
+## aptが遅い場合
+
+```
+$ sudo sed -i.org -e "s/\/\/archive\.ubuntu\.com/\/\/jp\.archive\.ubuntu\.com/g" /etc/apt/sources.list
+```
+
 ## 良く使うコマンド
 
 - 今のWSL一覧を確認
