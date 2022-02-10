@@ -61,7 +61,7 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
 - 依存パッケージをインストール。
 ```shell
-sudo apt install -y pip libbz2-dev libssl-dev libreadline-dev
+sudo apt install -y pip libbz2-dev libssl-dev libreadline-dev libsqlite3-dev
 ```
 
 ## 使用方法
