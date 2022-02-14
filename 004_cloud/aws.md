@@ -64,3 +64,11 @@
   - https://dev.classmethod.jp/articles/aws-certified-info/
 - 新卒一年目にAWS認定12冠する具体的な方法 ~2020年度に新卒エンジニアとして過ごした一年を振り返ってみた~
   - https://dev.classmethod.jp/articles/got-all-aws-certification-in-new-grads-year/
+
+
+## ノウハウ
+- [小ネタ] Python(Boto 3)で5GB以上のS3オブジェクトをコピーするときはcopyメソッドを使おう
+  - https://dev.classmethod.jp/articles/python-boto3-s3-meta-client-copy/
+
+- S3イベントをトリガーにECS on Fargateでタスクを実行する
+  - https://dev.classmethod.jp/articles/s3event-trigger-ecstask-on-fargate-bia-lambda/
