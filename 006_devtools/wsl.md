@@ -1,5 +1,9 @@
 # WSL
 
+## install
+
+- https://docs.microsoft.com/ja-jp/windows/wsl/install-manual#step-3---enable-virtual-machine-feature
+
 ## aptが遅い場合
 
 ```
