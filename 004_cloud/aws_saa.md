@@ -67,7 +67,31 @@
 
 - バージニア北部でしかできない操作がある。(us-east-1)
   - クォータの増加など。
+
 - AWSのアカウントにもランクがある。
   - Basic, Developer, Business, Enterpriseなど。
+
 - AWS CloudTrail
   - アクティビティログを取得できる。
+  - S3に保存される。
+  - 無料だがS3使用料金はかかる。
+  - CloudWatchとの連携も可能だが、料金がかかる。
+  - 管理イベントのみは無償だが、データイベント、Insightsイベントは有償。
+  - ちなみに証跡を保存する設定をしなくても、90日間は閲覧することができる。
+  - ログは、Athenaでも解析することができる。
+  - データレイクの機能もあるようだ。
+  - ログ記録の停止をすれば、これ以上の課金はされなくなる。
+
+- CloudWatch
+  - CPU使用率などのメトリクスを使用して監視することができる。
+  - リソースを何か立ち上げると、メトリクスの収集は行われている。
+  - メトリクスをダッシュボードに設定する必要がある。
+  - 請求アラームは、リージョンによっては設定できないため、us-east-1に移動する。
+
+- KMS: Key Management Service
+
+- CIDRについて
+  - https://wa3.i-3-i.info/word11989.html
+
+- AZとリージョンの違い
+  - https://aws.amazon.com/jp/about-aws/global-infrastructure/regions_az/

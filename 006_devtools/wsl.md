@@ -1,5 +1,15 @@
 # WSL
 
+## install
+
+- https://docs.microsoft.com/ja-jp/windows/wsl/install-manual#step-3---enable-virtual-machine-feature
+
+## aptが遅い場合
+
+```
+$ sudo sed -i.org -e "s/\/\/archive\.ubuntu\.com/\/\/jp\.archive\.ubuntu\.com/g" /etc/apt/sources.list
+```
+
 ## 良く使うコマンド
 
 - 今のWSL一覧を確認

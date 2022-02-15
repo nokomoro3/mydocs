@@ -164,3 +164,7 @@ print(text_output_recursive)
 - 個人開発
   - 30個以上の個人開発を失敗。そこから自分のサービスで生きていけるようになるまでの話。｜入江 慎吾 🚀 MENTA代表｜note
     - https://note.com/iritec/n/n17c741c5f02d
+
+- GitBook
+  - 公式ドキュメントで採用されている文書公開用のサーバー環境。
+  - https://gomachan46.gitbooks.io/how-to-use-gitbook/content/index.html
