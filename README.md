@@ -168,3 +168,25 @@ print(text_output_recursive)
 - GitBook
   - 公式ドキュメントで採用されている文書公開用のサーバー環境。
   - https://gomachan46.gitbooks.io/how-to-use-gitbook/content/index.html
+
+- 3D Mesh
+  - https://plotly.com/python/3d-mesh/
+
+- PyMC3
+  - https://docs.pymc.io/en/v3/
+  - 確率モデルの生成、モデル化などを実施できるPythonライブラリっぽい。
+
+- デスマーチが起きる理由 - ３つの指標
+  - https://gist.github.com/voluntas/9c1d9d51e86a853fed6889f743a12145
+
+- 深層学習講義
+  - https://atcold.github.io/pytorch-Deep-Learning/ja/
+
+- SQLAlchemyでテーブルを作るときにハマったメモ
+  - https://qiita.com/niwaringo/items/9277ec895c3ff94e5ade
+
+- 君の継承の使い方は間違っている
+  - https://qiita.com/tonluqclml/items/c0110098722763caa556
+
+- NumPy221本ノックの本書いた
+  - https://zenn.dev/koshian2/articles/786253ece74408

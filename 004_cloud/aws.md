@@ -65,6 +65,9 @@
 - 新卒一年目にAWS認定12冠する具体的な方法 ~2020年度に新卒エンジニアとして過ごした一年を振り返ってみた~
   - https://dev.classmethod.jp/articles/got-all-aws-certification-in-new-grads-year/
 
+- AWS ソリューションアーキテクト アソシエイト試験 対策動画
+  - https://www.youtube.com/watch?v=fsz6G45A4H4
+
 
 ## ノウハウ
 - [小ネタ] Python(Boto 3)で5GB以上のS3オブジェクトをコピーするときはcopyメソッドを使おう
@@ -72,3 +75,9 @@
 
 - S3イベントをトリガーにECS on Fargateでタスクを実行する
   - https://dev.classmethod.jp/articles/s3event-trigger-ecstask-on-fargate-bia-lambda/
+
+- IAM ロールの PassRole と AssumeRole をもう二度と忘れないために絵を描いてみた
+  - https://dev.classmethod.jp/articles/iam-role-passrole-assumerole/
+
+- AWS CDK v2 化マイグレーション目録 〜バージョンアップのウォッチから裏付け検証まで〜
+  - https://engineering.dena.com/blog/2022/02/aws-cdk-v2/
