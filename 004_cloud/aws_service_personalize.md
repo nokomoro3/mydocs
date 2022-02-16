@@ -92,6 +92,11 @@
   - トレーニング
   - レコメンデーションの数
 
+- 課金は、domain optimized recommenders、user segmentation、Custom solutionかで異なった体系となります。
+
+- https://aws.amazon.com/personalize/pricing/?nc1=h_ls
+
+
 ## VIDEO_ON_DEMANDのスキーマ
 
 - interactions dataset
@@ -158,12 +163,64 @@
   - GENREについては、複数のGENREや階層のGENREを付与できる。
     - https://docs.aws.amazon.com/personalize/latest/dg/VIDEO-ON-DEMAND-items-dataset.html#VIDEO-ON-DEMAND-items-categorical-data
 
-## VIDEO_ONDEMANDのuse cases
+## VIDEO_ONDEMANDのuse cases(recommender)
 
 - https://docs.aws.amazon.com/personalize/latest/dg/VIDEO_ON_DEMAND-use-cases.html
 
-- 4つのuse casesがあり、それぞれで必要なデータが変わる。
+- 4つのuse cases(recommender)があり、それぞれで必要なデータが変わる。
+
+- Most popular
+  - Watchイベントタイプに基づいて、各アイテムのWatch総数に基づいて、popularityを計算して提示する。
+  - GetRecommendations APIで結果を取得し、userIdがパラメータとして必要。
+  - trainingには、Watch Eventのみが使用される。
+- Because you watched X
+  - データセットの共起に基づいて、あるアイテムを見た場合のおすすめの類似したアイテムを取得する。
+  - GetRecommendations APIで結果を取得し、userId、itemIdがパラメータとして必要。
+  - userIdにより、視聴済みのデータはフィルタリングされる。
+  - trainingには、Watch Eventのみが使用される。
+- More like X
+  - 指定した動画と類似したアイテムを取得する。
+  - GetRecommendations APIで結果を取得し、userId、itemIdがパラメータとして必要。
+  - userIdにより、視聴済みのデータはフィルタリングされる。
+  - trainingには、Watch, Click Eventが使用される。(Clickイベントは必須ではない)
+- Top picks for you
+  - ユーザーに推薦したいアイテムを取得する。
+  - GetRecommendations APIで結果を取得し、userIdがパラメータとして必要。
+  - userIdにより、視聴済みのデータはフィルタリングされる。
+  - trainingには、Watch, Click Eventが使用される。(Clickイベントは必須ではない)
+
+- recommenderにはconfigurationがあり、共通の設定項目と個別の設定がある。
+  - 共通
+    - Minimum recommendation requests per second
+      - 秒間あたりに処理するリクエストを決定する。
+      - ここを調整することでコストに直接的には影響しないが、recommendationが増えるとコストが増えるので注意。
+
+  - Top picks for youのみ
+    - Emphasis on exploring less relevent items
+      - 関連性の低いアイテムに重点的に探索する。1に近いほど探索を広げ、0だと探索しない。デフォルトは0.3。
+    - Exploration item age cut off
+      - 探索するinteractionの期間を指定する。デフォルトは30days。
+
+
+## VIDEO_ONDEMANDのsolutions
+
+- Custom dataset groupと同様、solutionを作成できる。加えて、training時のオプションをいろいろと指定可能。
+
+- event_typeやevent_valueでフィルタした結果を学習することができる。
+
+- 別の目的関数とする列を指定することで、レコメンド以外のソリューション提供が可能。例としては収益の最大化など。実施にはitem datasetが必要。
+  - これは割とアツい気がする。
+  - これは Custom dataset group でも（前から）あったみたい。
+
+- recipesは、Custom dataset group と同じようだ。
+  - https://docs.aws.amazon.com/ja_jp/personalize/latest/dg/working-with-predefined-recipes.html
 
 ## 各種サービスのquotas
 
 - https://docs.aws.amazon.com/personalize/latest/dg/limits.html#limits-table
+
+## 検証が必要なアップデート
+
+- https://aws.amazon.com/blogs/machine-learning/amazon-personalize-announces-recommenders-optimized-for-retail-and-media-entertainment/
+
+- https://aws.amazon.com/blogs/machine-learning/improve-the-return-on-your-marketing-investments-with-intelligent-user-segmentation-in-amazon-personalize/
