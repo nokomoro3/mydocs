@@ -194,3 +194,13 @@ print(text_output_recursive)
 
 - NumPy221本ノックの本書いた
   - https://zenn.dev/koshian2/articles/786253ece74408
+
+- data meshとは何か
+  - https://martinfowler.com/articles/data-mesh-principles.html
+
+- 音声合成業界に激震! もはや人間の喋り声、入力文字読み上げソフトVOICEPEAKはビジネス用途でも自由に利用可能
+  - https://www.dtmstation.com/archives/55090.html
+
+- データセット
+  - Amazon Review Data (2018)
+    - https://nijianmo.github.io/amazon/index.html

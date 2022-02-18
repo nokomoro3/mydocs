@@ -215,12 +215,189 @@
 - recipesは、Custom dataset group と同じようだ。
   - https://docs.aws.amazon.com/ja_jp/personalize/latest/dg/working-with-predefined-recipes.html
 
+- recipe type: USER_PERSONALIZATION
+  - recipe: Popularity-Count
+    - interactionデータから、最も人気のアイテムをレコメンドする。
+    - このレシピは、すべてのユーザーに対して同じ popular items を returnする。
+    - このレシピはMetricsの比較のベースラインとなります。
+
+  - recipe: HRNN(legacy)
+    - このレシピは、User-Personalizationレシピに改善および統合されているため、そちらの使用を推奨します。
+    - HRNNとはHierachical RNNの略です。
+    - 学習のHyper parameterとしては以下が準備されています。
+      - hidden_dimension(HPO tunable: Yes)
+        - 隠れノード数です。より複雑なモデル化が可能になります。
+      - bptt: back propagation through time(HPO tunable: Yes)
+        - どれだけ過去の情報を使って推論をするか設定できます。
+      - recency_mask(HPO tunable: Yes)
+        - 直近の傾向をモデルに反映するか否かを設定できます。
+        - Trueの場合、直近の傾向を重視して学習します。
+      - min_user_history_length_percentile, max_user_history_length_percentile(HPO tunable: No)
+        - 履歴の短い・長いユーザーを学習データから削除するパラメータです。
+        - 短い・長いの判断は相対的なパーセントで指定します。
+
+  - recipe: HRNN-Metadata(legacy)
+    - HRNN レシピに、metadataから推測される特徴を考慮したものです。
+    - metadataは、Interactions, Users, Itemsそれぞれに含まれるデータです。
+    - metadataを使うことでより正確なレコメンドを学習できる可能性があります。
+    - ただし学習にかかる時間は大きくなります。
+    - 学習のHyper parameterは、HRNNレシピと同一です。
+
+  - recipe: HRNN-Coldstart(legacy)
+    - 新しいアイテムやインタラクションを頻繁に追加し、それらをレコメンデーション結果にすぐ反映したい場合のレシピ。
+    - metadataレシピに類似していますが、より新しいアイテムのレコメンデーションに強い。
+    - 下記のいずれかを満たすitemをcold itemとして扱う。
+      - interaction数が一定数(cold_start_max_interactions )以下のitem
+      - interactionの継続時間が一定期間以内のitem
+        - より具体的には、cold_start_relative_from から cold_start_max_duration(日数、ただしfloat指定可) の範囲で指定する。
+    - 履歴がある程度たまった後では、意味がないニュース配信などは、このコールドスタート問題がより深刻である。
+    - 学習のHyper parameterは、HRNNレシピに加えて以下が設定できます。詳細は上述の通り。
+      - cold_start_max_interactions(HPO tunable: No)
+      - cold_start_max_duration(HPO tunable: No)
+      - cold_start_relative_from(HPO tunable: No)
+
+  - recipe: User-Personalization
+    - Legacy Recipeが統合され、最適なソリューションを学習できます。
+    - バックグラウンドで２時間毎に最新のモデルに自動更新をします。
+    - 自動更新は完全なフル再学習ではないため、以前として手動で毎週学習が必要です。(その際、TrainingModeをFULLにします)
+    - ２時間毎の頻度では少ない場合、手動でTrainingMode=UPDATEにして学習します。
+    - 一度手動で学習した場合、自動更新はされなくなるため注意が必要です。
+    - Note: この自動アップデートは費用がかかりません。
+    - Legacyの変更点として、IMPRESSIONデータが使用できます。
+    - 学習のHyperparameterとしては以下があります。一部、Legacyレシピと同じものがあります。
+      - hidden_dimension(HPO tunable: Yes)
+      - bptt: back propagation through time(HPO tunable: Yes)
+      - recency_mask(HPO tunable: Yes)
+      - min_user_history_length_percentile, max_user_history_length_percentile(HPO tunable: No)
+      - exploration_weight(HPO tunable: No)
+        - 関連性の低いアイテムに重点的に探索する。1に近いほど探索を広げ、0だと探索しない。デフォルトは0.3。
+        - Recommendationにも同様のものがある。
+      - exploration_item_age_cut_off(HPO tunable: No)
+        - 探索するinteractionの期間を指定する。デフォルトは30days。
+        - Recommendationにも同様のものがある。
+- recipe type: PERSONALIZED_RANKING
+  - recipe: Personalized-Ranking
+    - ITEM_IDのリストをリクエストすると、ユーザーに応じたランキング順を取得できる。
+    - 存在しないITEM_IDも処理可能だが、取得結果の最後尾に配置される。
+    - 学習のパラメータは、HRNN(legacy)と同一である。
+
+- recipe type: RELATED_ITEMS
+  - recipe: Similar-Items
+    - interactionと、itemの非構造化データを含むメタデータを使ってアイテムの類似度を計算します。
+    - 異なるユーザーが既に見た、似た説明のあるアイテムを推奨することができます。
+    - itemのメタデータがない場合に、似たアイテムをレコメンドしたい場合は、SIMS recipeを使用してください。
+    - 学習のHyperparameterとしては以下があります。
+      - item_id_hidden_dimension(HPO tunable: Yes)
+        - interactionから計算するモデルの隠れ層のノード数。より複雑なモデル化が可能になります。
+      - item_metadata_hidden_dimension(HPO tunable: Yes)
+        - itemのmetadataから計算するモデルの隠れ層のノード数。より複雑なモデル化が可能になります。
+      
+  - recipe: SIMS
+    - interactionデータを使ってアイテムの類似度を計算します。
+    - 学習のHyperparameterとしては以下があります。
+      - popularity_discount_factor(HPO tunable: Yes)
+        - 人気度合いとitem間のinteractionの相関性どちらを優先するかのパラメータ。
+        - 1.0であれば、相関性を無視し、0.0であれば人気度合いを無視する。
+        - 通常0.5の設定が推奨である。
+      - min_cointeraction_count(HPO tunable: Yes)
+        - 類似性を計算するために必要な、最小のco-interaction数。
+        - 3であれば、相関を計算する対象のそれぞれにinteractionしたユーザーが3人以上必要、という意味となります。
+      - min_user_history_length_percentile, max_user_history_length_percentile(HPO tunable: No)
+        - HRNN(legacy) recipeと同じパラメータです。
+        - 履歴の短い・長いユーザーを学習データから削除するパラメータです。
+        - 短い・長いの判断は相対的なパーセントで指定します。
+      - min_item_interaction_count_percentile, max_item_interaction_count_percentile(HPO tunable: No)
+        - interaction数の少ない、多いitemを学習データから削除するパラメータです。
+        - 少ない・多いの判断は相対的なパーセントで指定します。
+- recipe type: USER_SEGMENTATION
+  - recipe: Item-Affinity
+    - ユーザーセグメンテーションは、バッチジョブでのみ処理できます。
+    - 必要なデータは、interactionsのみであり、itemsとusersはオプションです。
+    - interactionのitem_idに基づいて、ユーザーをセグメントに分けます。
+    - 学習のHyperparameterとしては以下があり、HPOには対応していません。
+      - hidden_dimension
+        - interactionから計算するモデルの隠れ層のノード数。より複雑なモデル化が可能になります。
+  - recipe: Item-Attribute-Affinity
+    - ユーザーセグメンテーションは、バッチジョブでのみ処理できます。
+    - 必要なデータは、interactionsとitemsとなります。
+    - アイテムの属性に基づいて、ユーザーをセグメントに分けます。
+    - 学習のHyperparameterとしては以下があり、HPOには対応していません。
+      - hidden_dimension
+        - interactionから計算するモデルの隠れ層のノード数。より複雑なモデル化が可能になります。
+
+## AutoML
+
+- AutoMLは、APIのみでの提供となっている。
+  - https://docs.aws.amazon.com/personalize/latest/dg/legacy-user-personalization-recipes.html
+
+## SDKの使い方
+
+- training
+  - https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html#training-user-personalization-recipe
+
+- inference
+  - https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html#user-personalization-get-recommendations-recording-impressions
+
+## Metricsの使い方
+
+- https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html
+
+## Recording Events
+
+- https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html
+
 ## 各種サービスのquotas
 
 - https://docs.aws.amazon.com/personalize/latest/dg/limits.html#limits-table
 
-## 検証が必要なアップデート
+## 公式のアップデート
 
-- https://aws.amazon.com/blogs/machine-learning/amazon-personalize-announces-recommenders-optimized-for-retail-and-media-entertainment/
+- [2020.08.17] USER_PERSONALIZATIONのリリース
+  - https://aws.amazon.com/jp/blogs/machine-learning/amazon-personalize-can-now-create-up-to-50-better-recommendations-for-fast-changing-catalogs-of-new-products-and-fresh-content/
 
-- https://aws.amazon.com/blogs/machine-learning/improve-the-return-on-your-marketing-investments-with-intelligent-user-segmentation-in-amazon-personalize/
+- [2021.11.29] Domain Dataset Groupのリリース
+  - https://aws.amazon.com/blogs/machine-learning/amazon-personalize-announces-recommenders-optimized-for-retail-and-media-entertainment/
+
+- [2021.11.29] User Segmentationのリリース
+  - https://aws.amazon.com/blogs/machine-learning/improve-the-return-on-your-marketing-investments-with-intelligent-user-segmentation-in-amazon-personalize/
+
+## 過去の参考記事
+
+- [2019.07.07] Amazon Personalizeを使ってみた
+  - https://dev.classmethod.jp/articles/yoshim-amazon-personalize-tutorial/
+  - 用語の説明が詳しく、その後やってみたの記事となっている。
+- [2019.12.07] Amazon Personalize でコールドアイテムに対応したレシピでレコメンドしてみた – 機械学習 on AWS Advent Calendar 2019
+  - https://dev.classmethod.jp/articles/2019advent-calendar-ml-on-aws-1207
+  - HRNN-coldstart recipeを試している。
+- [2020.02.26]
+  - https://dev.classmethod.jp/articles/personalize-untrained-user/
+  - 未学習ユーザーに対する各レシピの挙動を調査している。(HRNN, HRNN-metadata, Popularity Count)
+  - SDKからの実行例が多く記載されている。
+- [2020.03.04] PersonalizeのAutoML機能を使ったレシピの自動選択を試してみた
+  - https://dev.classmethod.jp/articles/personalize-automl/
+  - AutoMLを試してみた記事。AutoMLは現在、APIからしか利用できなくなっている気がする。
+- [2020.03.23] Amazon Personalizeでハイパーパラメータのチューニング結果を取得できるようになりました!
+  - https://dev.classmethod.jp/articles/personalize-hpo-result/
+  - HPO, AutoMLの結果が取得できるようになったという記事。
+- [2020.06.10] Amazon Personalizeに選択したEventTypeのアイテムをレコメンドから除外するフィルターが追加されました
+  - https://dev.classmethod.jp/articles/amazon-personalize-update-recommendation-filter/
+  - EVENT_TYPEを使ったフィルタリングのトライアル。
+  - 学習データに存在しないEVENT_TYPEがフィルタリングされない結果となっている。
+- [2020.08.28] Amazon Personalizeの推論フィルターでアイテムやユーザーのメタデータを条件としてフィルタできるようになりました
+  - https://dev.classmethod.jp/articles/amazon-personalize-update-enhancing-recommendation-filter/
+  - itemsのmetadataを使ったフィルタリング
+- [2020.08.31] Amazon Personalizeに新たなレシピ「USER_PERSONALIZATION」が追加されました
+  - https://dev.classmethod.jp/articles/amazon-personalize-update-new-recipe-user-personalization/
+  - HRNN, HRNN-metadata, HRNN-coldstartを統合・改善したレシピ、USER_PERSONALIZATIONのトライアル。
+  - IMPRESSION、CREATION_TIMESTAMPの説明、HRNNとの比較実験や、trainingMode=UPDATEの説明などが含まれる。
+- [2020.10.31] Amazon Personalizeの推論フィルターを使って年齢制限のある商品やコンテンツをユーザーの年齢に応じてフィルターする
+  - https://dev.classmethod.jp/articles/amazon-personalize-recommendation-filter-age-limit/
+  - より具体的なフィルター実例
+
+## 基礎原理
+
+- 協調フィルタリング
+  - https://qiita.com/hik0107/items/96c483afd6fb2f077985
+
+- バンディットアルゴリズムを用いた推薦システムの構成について
+  - https://techblog.zozo.com/entry/zozoresearch-bandit-overviews
