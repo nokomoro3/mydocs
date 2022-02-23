@@ -6,7 +6,6 @@
   - [JavaScript](./001_frontend/javascript.md)
   - [React     ](./001_frontend/react.md)
   - [TypeScript](./001_frontend/typescript.md)
-  - []
   - [Vue       ](./001_frontend/vue.md)
 
 - 002_python

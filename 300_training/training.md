@@ -47,6 +47,9 @@
 
 ## excercise
 
+- データサイエンス100本ノック前処理編
+  - https://github.com/The-Japan-DataScientist-Society/100knocks-preprocess
+
 - NumPy221本ノックの本書いた
   - https://zenn.dev/koshian2/articles/786253ece74408
 
