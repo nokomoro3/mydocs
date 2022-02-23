@@ -58,3 +58,6 @@
 
 - 全員がOAuth2.0を理解しているチームの作り方
   - https://dev.classmethod.jp/articles/devio2021-learning-oauth/
+
+- 競馬予想で始める機械学習〜完全版〜
+  - https://zenn.dev/dijzpeb/books/848d4d8e47001193f3fb
