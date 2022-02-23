@@ -1,0 +1,57 @@
+# training
+
+## lecture
+
+- ニューヨーク大学データの深層学習講義
+  - https://atcold.github.io/pytorch-Deep-Learning/ja/
+
+- ハーバード大学のコンピュータサイエンスとプログラミング技術コース
+  - https://cs50.jp/
+
+- 東京工業大学の機械学習講義ノート
+  - https://chokkan.github.io/mlnote/
+
+- 京都大学 プログラミング演習 Python 2021 (PDF形式の教科書)
+  - 本編
+    - https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/265459/1/Version2021_10_08_01.pdf
+  - コラム編
+    - https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/265459/2/Version2021_10_08_02.pdf
+
+- 東京大学 Pythonプログラミング入門
+  - https://sites.google.com/view/ut-python/%E3%83%9B%E3%83%BC%E3%83%A0?authuser=0
+
+- 数理・データサイエンス教育強化拠点コンソーシアム
+  - http://www.mi.u-tokyo.ac.jp/consortium/e-learning.html
+
+## 解析ハンズオン
+
+- u++さんによるアクセスログ解析
+  - https://speakerdeck.com/upura/tutorial-on-access-log-analysis-by-python
+
+- SIGNATE: BERTで医療論文を分類する
+  - https://zenn.dev/kuboko/articles/signate-srwspsg-pytorch
+
+## article
+
+- 統計・機械学習の理論を学ぶ手順
+  - https://qiita.com/kueda_cs/items/28008db6491c71ac5659
+
+- 統計フローチャート
+  - https://www.hello-statisticians.com/explain-terms-cat/flow_chart_stat1.html
+
+## Udemy
+
+- 米国データサイエンティストが教える統計学超入門講座【Pythonで実践】
+  - https://www.udemy.com/course/python-stats/?referralCode=87191168D7F6D6843F13
+
+
+## excercise
+
+- NumPy221本ノックの本書いた
+  - https://zenn.dev/koshian2/articles/786253ece74408
+
+- GraphQL スターターパック | Prisma + NestJS + Next.JS製 個人ブログサイトをCloud Runで運用しよう
+  - https://zenn.dev/waddy/books/graphql-nestjs-nextjs-bootcamp
+
+- 全員がOAuth2.0を理解しているチームの作り方
+  - https://dev.classmethod.jp/articles/devio2021-learning-oauth/

@@ -67,3 +67,17 @@ df = df.append({'A': 0, 'B': 1, 'C': 2}, ignore_index=True))
 ```py
 df.isnull().sum()
 ```
+
+## applyの使用法まとめ
+
+- 以下ノートブック参照
+  - [pandas_apply_examples.ipynb](./notebooks/pandas_apply_examples.ipynb)
+
+
+## query記法を使った条件抽出
+
+- カラム名に空白のある場合はバッククォートを使う。
+
+```python
+df_receipt.query('`sales ymd` == 20181103')
+```

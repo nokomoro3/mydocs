@@ -29,3 +29,7 @@ class SampleModel(Base):
 
 - 参考
   - https://stackoverflow.com/questions/29711102/sqlalchemy-mysql-millisecond-or-microsecond-precision
+
+## 外部キー制約の種類について
+
+- https://qiita.com/suin/items/21fe6c5a78c1505b19cb

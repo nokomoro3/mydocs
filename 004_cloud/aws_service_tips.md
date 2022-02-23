@@ -14,3 +14,20 @@
 
 - S3のアクセスコントロールまとめ
   - https://qiita.com/ryo0301/items/791c0a666feeea0a704c
+
+- Session Managarを使って踏み台なしでRDS接続する方法
+  - https://dev.classmethod.jp/articles/db-client-through-ssm/
+
+- MagnumをつかってFastAPIを手軽にLambda+APIGateway化する
+  - https://zenn.dev/mini_hiori/articles/mangum-serverless
+
+- SageMaker + HuggingFase
+  - https://huggingface.co/docs/sagemaker/main
+
+## AWS再入門シリーズ
+
+- いつかやりたい。以下で検索
+
+```
+AWS再入門 site:dev.classmethod.jp
+```

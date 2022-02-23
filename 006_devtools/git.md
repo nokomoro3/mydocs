@@ -80,3 +80,8 @@ git config --local credential.namespace xxx
 
 - 参考
   - https://qiita.com/shiena/items/fc7783a82d59be5ff259
+
+## Gitの内部構造
+
+- たぶんもう怖くないGit Git内部の仕組み
+  - https://qiita.com/marchin_1989/items/2ec01553e907f3a9e6bb

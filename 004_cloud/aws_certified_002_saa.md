@@ -275,3 +275,6 @@
 
 - セッションポリシーというものもあるらしい。
   - https://docs.aws.amazon.com/ja_jp/transfer/latest/userguide/session-policy.html
+
+- IAMポリシーとSCPの違い
+  - https://aws.amazon.com/jp/premiumsupport/knowledge-center/iam-policy-service-control-policy/
