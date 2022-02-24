@@ -172,6 +172,10 @@ Lraspp
   - この場合は以下のように入力側に 1x1 のConvを導入することにより、チャネルを合わせる必要がある。
     - このConvにももちろん、BatchNormalizationが後続する。
 
+- 実装例
+  - pytorch公式
+    - https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py
+
 ## MobileNet @2017.04
 
 - 原論文
@@ -293,3 +297,62 @@ Lraspp
 
 
 
+## 参考
+
+- [2019.10.30] 2019年最強の画像認識モデルEfficientNet解説
+  - https://qiita.com/omiita/items/83643f78baabfa210ab1
+
+- [2020.09.09] MobileNet(v1,v2,v3)を簡単に解説してみた
+  - https://qiita.com/omiita/items/77dadd5a7b16a104df83
+
+- [2021.04.17] EfficientNet B0〜B7で画像分類器を転移学習してみる
+  - https://zenn.dev/kleamp1e/articles/202104-efficientnet
+
+- [2021.07.30] EfficientNet: 複合スケールによる効率的な画像分類器
+  - https://kikaben.com/efficientnet/
+
+- Neural Network Console
+  - https://www.youtube.com/channel/UCRTV5p4JsXV3YTdYpTJECRA
+
+- 6つのモデルでのSwish関数の実験
+  - https://ichi.pro/6-tsu-no-moderu-de-no-swish-kansu-no-jikken-265570078399001
+
+- [2019.10.14] 【深層学習】CNNを用いた画像分類手法まとめ（VGG, ResNet, Inceptionなど）
+  - https://ys0510.hatenablog.com/entry/cnn_backbone
+
+- ResNetおよびDenseNetの解説
+  - https://deepsquare.jp/2020/04/resnet-densenet/
+
+- ResNetからResNextまで
+  - https://cvml-expertguide.net/terms/dl/cnn-backbone/resnet/
+
+- 古めな記事だが、ResNetの詳細が記載
+  - https://deepage.net/deep_learning/2016/11/30/resnet.html
+
+- 各種モデルサイズの比較表がある。
+  - https://keras.io/ja/applications/
+
+- YOLOのv1～v5まで
+  - https://qiita.com/tfukumori/items/519d84bf3feb8d246924
+
+- YOLO9000
+  - https://qiita.com/miyamotok0105/items/1aa653512dd4657401db
+
+- [2021.05.03] 画像認識の大革命。AI界で話題爆発中の「Vision Transformer」を解説！
+  - https://qiita.com/omiita/items/0049ade809c4817670d7
+
+- [2020.03.07] 画像認識の最新SoTAモデル「Noisy Student」を徹底解説！
+  - https://ai-scholar.tech/articles/treatise/noisy-student-ai-379
+
+- [2021.04.13] 2021年最強になるか！？最新の画像認識モデルEfficientNetV2を解説
+  - https://qiita.com/omiita/items/1d96eae2b15e49235110
+
+-
+- SSD
+  - https://blog.negativemind.com/2019/02/26/general-object-recognition-single-shot-multibox-detector/
+
+- Semantic Segmentation
+  - https://www.youtube.com/watch?v=Eu7EKQ--Rvk&list=RDCMUCRTV5p4JsXV3YTdYpTJECRA&index=21
+
+- Alammar氏によるTransformerのvisual解説
+  - http://jalammar.github.io/illustrated-retrieval-transformer/
