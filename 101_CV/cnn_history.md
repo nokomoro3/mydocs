@@ -3,63 +3,51 @@
 
 ## Classification
 
-- ★LeNet @1989 (https://direct.mit.edu/neco/article-abstract/1/4/541/5515/Backpropagation-Applied-to-Handwritten-Zip-Code?redirectedFrom=fulltext)
-- ★AlexNet @2012.09 (https://dl.acm.org/doi/pdf/10.1145/3065386)
-- ★VGGNet @2014.09 (https://arxiv.org/pdf/1409.1556.pdf)
-- ▲Inception @2014.09 (https://arxiv.org/pdf/1409.4842.pdf)
-- ■ResNet @2015.12 (https://arxiv.org/pdf/1512.03385.pdf)
-- Inception-v4 @2016.02 (1602.07261)
-- SqueezeNet @2016.02 (1602.07360)
-- DenseNet @2016.08 (1608.06993)
-- Xception @2016.10 (1610.02357)
-- ResNeXt @2016.11 (1611.05431v2)
-  - ResNetにGrouped Convolutionをすることで並列処理を実行する手法。
-- 済: MobileNet @2017.04
-- ShuffleNet @2017.07 (1707.01083)
-- 済: MobileNetV2@2018.01
-- Big-Little Network @2018.07 (1807.03848)
-  - ResNetの解像度をblock内で複数の解像度を扱って効率的に処理する手法。
-  - 最初の段階で低解像度のパス、高解像度のパスをアルファというバランスで分離する。
-  - その後はクロスさせながらスタックするイメージ。
-- Octave Convolution @2019.04 (1904.05049)
-  - 複数の解像度の入力を混ぜて構成するblockをつかって処理する方法。
-- 済: EffcientNet@2019.05
-- MixNet @2019.07 (1907.09595)
-  - Mix Convolutionを導入。
-  - channel方向に複数分割し、それぞれで異なるksizeのConvを行ってconcatする手法
-- Vision Transformer@2020.09
-
+- LeNet @1989 (https://direct.mit.edu/neco/article-abstract/1/4/541/5515/Backpropagation-Applied-to-Handwritten-Zip-Code?redirectedFrom=fulltext)
+- AlexNet @2012.09 (https://dl.acm.org/doi/pdf/10.1145/3065386)
+- VGGNet @2014.09 (https://arxiv.org/pdf/1409.1556.pdf)
+- Inception @2014.09 (https://arxiv.org/pdf/1409.4842.pdf)
+- ResNet @2015.12 (https://arxiv.org/pdf/1512.03385.pdf)
+- 【W.I.P.】Inception-v4 @2016.02 (https://arxiv.org/pdf/1602.07261.pdf)
+- 【W.I.P.】SqueezeNet @2016.02 (https://arxiv.org/pdf/1602.07360.pdf)
+- 【W.I.P.】DenseNet @2016.08 (https://arxiv.org/pdf/1608.06993.pdf)
+- 【W.I.P.】Xception @2016.10 (https://arxiv.org/pdf/1610.02357.pdf)
+- 【W.I.P.】ResNeXt @2016.11 (https://arxiv.org/pdf/1611.05431v2.pdf)
+- MobileNet @2017.04 (https://arxiv.org/abs/1704.04861)
+- 【W.I.P.】ShuffleNet @2017.07 (https://arxiv.org/pdf/1707.01083.pdf)
+- MobileNetV2@2018.01 (https://arxiv.org/pdf/1801.04381.pdf)
+- 【W.I.P.】Big-Little Network @2018.07 (https://arxiv.org/pdf/1807.03848.pdf)
+- 【W.I.P.】Octave Convolution @2019.04 (https://arxiv.org/pdf/1904.05049.pdf)
+- EfficientNet@2019.05 (https://arxiv.org/pdf/1905.11946.pdf)
+- 【W.I.P.】MixNet @2019.07 (https://arxiv.org/pdf/1907.09595.pdf)
+- 【W.I.P.】Vision Transformer@2020.09 (https://openreview.net/forum?id=YicbFdNTTy)
 
 ## Semantic segmentation
 
-- U-Net @2015.05 (1505.04597)
-- SSD @2015.12 (1512.02325)
-- Stacked Hourglass Networks @2016.03 (1603.06937)
-- FPN: Feature Pyramid Networks @2016.12 (1612.03144)
-- M2Det @2018.11 (1811.04533)
-- HRNet: High-Resolution Net @2019.02 (1902.09212)
-- @2019.04 (1904.04514)
+- 【W.I.P.】U-Net @2015.05 (https://arxiv.org/pdf/1505.04597.pdf)
+- 【W.I.P.】SSD @2015.12 (https://arxiv.org/pdf/1512.02325.pdf)
+- 【W.I.P.】Stacked Hourglass Networks @2016.03 (https://arxiv.org/pdf/1603.06937.pdf)
+- 【W.I.P.】FPN: Feature Pyramid Networks @2016.12 (https://arxiv.org/pdf/1612.03144.pdf)
+- 【W.I.P.】M2Det @2018.11 (https://arxiv.org/pdf/1811.04533.pdf)
+- 【W.I.P.】Deep High-Resolution Representation Learning for Human Pose Estimation @2019.02 (https://arxiv.org/pdf/1902.09212.pdf)
+- 【W.I.P.】High-Resolution Representations for Labeling Pixels and Regions @2019.04 (https://arxiv.org/pdf/1904.04514.pdf)
+- 【W.I.P.】YOLO
+- 【W.I.P.】DeepLab
+- 【W.I.P.】FCN
+- 【W.I.P.】Lraspp
 
 ## Instance segmentation
 
-GoogLeNet
-SENet
+## 未分類
 
-MobileNetV3
-Noisy Student
-ConvNet
-
-
-Mnasnet
-RegNet
-
-ShuffleNetV2
-
-YOLO
-DeepLab
-FCN
-Lraspp
-
+- 【W.I.P.】GoogLeNet
+- 【W.I.P.】SENet
+- 【W.I.P.】MobileNetV3
+- 【W.I.P.】Noisy Student
+- 【W.I.P.】ConvNet
+- 【W.I.P.】Mnasnet
+- 【W.I.P.】RegNet
+- 【W.I.P.】ShuffleNetV2
 
 ## LeNet @1989
 
@@ -82,7 +70,7 @@ Lraspp
   - https://dl.acm.org/doi/pdf/10.1145/3065386
 
 - 概要
-  - 旧画像認識がDeep Learningモデルに移行するきっかけとなったモデル。
+  - 画像認識がDeep Learningモデルに移行するきっかけとなったモデル。
   - 5層のCNNと3層のLinearから構成される。
   - 名前はfirst authorのAlex Krizhevskyからとられている。
   - なお、Alex KrizhevskyはCIFAR-10やCIFAR-100を作成した人物でもある。
@@ -172,9 +160,24 @@ Lraspp
   - この場合は以下のように入力側に 1x1 のConvを導入することにより、チャネルを合わせる必要がある。
     - このConvにももちろん、BatchNormalizationが後続する。
 
+  ![](./img/cnn_history_resnet_shortcut_connection_convolution.png)
+  (出典: 中村が作成)
+
 - 実装例
   - pytorch公式
     - https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py
+
+## ResNeXt @2016.11
+
+- 原論文
+  - https://arxiv.org/pdf/1611.05431v2.pdf
+
+- 概要
+  - ResNetにGrouped Convolutionをすることで並列処理を実行する手法。
+
+- アーキテクチャ図
+
+  ![](./img/cnn_history_resnext_architecture.png)
 
 ## MobileNet @2017.04
 
@@ -250,6 +253,24 @@ Lraspp
     - https://github.com/pytorch/vision/blob/main/torchvision/models/mobilenetv2.py
     - 最終層がLinearになっているので、厳密には論文と異なる。
 
+## Big-Little Network @2018.07
+
+- 原論文
+  - https://arxiv.org/pdf/1807.03848.pdf
+
+- 概要
+  - ResNetの解像度をblock内で複数の解像度を扱って効率的に処理する手法。
+  - 最初の段階で低解像度のパス、高解像度のパスをアルファというバランスで分離する。
+  - その後はクロスさせながらスタックするイメージ。
+
+## Octave Convolution @2019.04
+
+- 原論文
+  - https://arxiv.org/pdf/1904.05049.pdf
+
+- 概要
+  - 複数の解像度の入力を混ぜて構成するblockをつかって処理する方法。
+
 ## EfficientNet @2019.05
 
 - 原論文
@@ -288,6 +309,15 @@ Lraspp
 
   - 実装してみた
     - https://tzmi.hatenablog.com/entry/2020/02/06/183314
+
+## MixNet @2019.07
+
+- 原論文
+  - https://arxiv.org/pdf/1907.09595.pdf
+
+- 概要
+  - Mix Convolutionを導入。
+  - channel方向に複数分割し、それぞれで異なるksizeのConvを行ってconcatする手法
 
 ## Vision Transformer @2020.09
 
