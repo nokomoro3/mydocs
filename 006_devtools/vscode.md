@@ -48,6 +48,9 @@
     ```json
     "plantuml.exportOutDir": "plantuml"
     ```
+  - Paste Image ... クリップボードからmarkdownに画像を張り付けられる。
+    - 以下に使い方と推奨設定があるのでご参考。
+      - https://zenn.dev/ktechb/articles/968ff79f8f9c46a26ee5
 
 - フォーマッター
   - Prettier ... 自動整形ツール。あまりメリットをまだ感じられていないが、嬉しいのだろうか。
@@ -132,3 +135,5 @@
 	},
 }
 ```
+
+## 
