@@ -1,53 +1,33 @@
-
-# CNNの歴史をひも解く
-
-## Classification
+# Classification(Backbone)
 
 - LeNet @1989 (https://direct.mit.edu/neco/article-abstract/1/4/541/5515/Backpropagation-Applied-to-Handwritten-Zip-Code?redirectedFrom=fulltext)
 - AlexNet @2012.09 (https://dl.acm.org/doi/pdf/10.1145/3065386)
 - VGGNet @2014.09 (https://arxiv.org/pdf/1409.1556.pdf)
-- Inception @2014.09 (https://arxiv.org/pdf/1409.4842.pdf)
+- 【W.I.P.】GoogLeNet (Inception v1) @2014.09 (https://arxiv.org/pdf/14gg09.4842.pdf)
 - ResNet @2015.12 (https://arxiv.org/pdf/1512.03385.pdf)
-- 【W.I.P.】Inception-v4 @2016.02 (https://arxiv.org/pdf/1602.07261.pdf)
-- 【W.I.P.】SqueezeNet @2016.02 (https://arxiv.org/pdf/1602.07360.pdf)
-- 【W.I.P.】DenseNet @2016.08 (https://arxiv.org/pdf/1608.06993.pdf)
-- 【W.I.P.】Xception @2016.10 (https://arxiv.org/pdf/1610.02357.pdf)
-- 【W.I.P.】ResNeXt @2016.11 (https://arxiv.org/pdf/1611.05431v2.pdf)
-- MobileNet @2017.04 (https://arxiv.org/abs/1704.04861)
-- 【W.I.P.】ShuffleNet @2017.07 (https://arxiv.org/pdf/1707.01083.pdf)
+- 【W.I.P.】 Inception-v4 @2016.02 (https://arxiv.org/pdf/1602.07261.pdf)
+- 【W.I.P.】 SqueezeNet @2016.02 (https://arxiv.org/pdf/1602.07360.pdf)
+- 【W.I.P.】 DenseNet @2016.08 (https://arxiv.org/pdf/1608.06993.pdf)
+- 【W.I.P.】 Xception @2016.10 (https://arxiv.org/pdf/1610.02357.pdf)
+- 【W.I.P.】 ResNeXt @2016.11 (https://arxiv.org/pdf/1611.05431v2.pdf)
+- MobileNet @2017.04 (https://arxiv.org/pdf/1704.04861)
+- 【W.I.P.】 ShuffleNet @2017.07 (https://arxiv.org/pdf/1707.01083.pdf)
+- 【W.I.P.】 SENet @2017.09 (https://arxiv.org/pdf/1709.01507.pdf)
 - MobileNetV2@2018.01 (https://arxiv.org/pdf/1801.04381.pdf)
-- 【W.I.P.】Big-Little Network @2018.07 (https://arxiv.org/pdf/1807.03848.pdf)
-- 【W.I.P.】Octave Convolution @2019.04 (https://arxiv.org/pdf/1904.05049.pdf)
+- 【W.I.P.】 Big-Little Network @2018.07 (https://arxiv.org/pdf/1807.03848.pdf)
+- 【W.I.P.】 ShuffleNetV2 @2018.07 (https://arxiv.org/pdf/1807.11164.pdf)
+- 【W.I.P.】 Mnasnet @2018.07 (https://arxiv.org/pdf/1807.11626.pdf)
+- 【W.I.P.】 Octave Convolution @2019.04 (https://arxiv.org/pdf/1904.05049.pdf)
+- 【W.I.P.】 MobileNetV3 @2019.05 (https://arxiv.org/pdf/1905.02244.pdf)
 - EfficientNet@2019.05 (https://arxiv.org/pdf/1905.11946.pdf)
-- 【W.I.P.】MixNet @2019.07 (https://arxiv.org/pdf/1907.09595.pdf)
-- 【W.I.P.】Vision Transformer@2020.09 (https://openreview.net/forum?id=YicbFdNTTy)
-
-## Semantic segmentation
-
-- 【W.I.P.】U-Net @2015.05 (https://arxiv.org/pdf/1505.04597.pdf)
-- 【W.I.P.】SSD @2015.12 (https://arxiv.org/pdf/1512.02325.pdf)
-- 【W.I.P.】Stacked Hourglass Networks @2016.03 (https://arxiv.org/pdf/1603.06937.pdf)
-- 【W.I.P.】FPN: Feature Pyramid Networks @2016.12 (https://arxiv.org/pdf/1612.03144.pdf)
-- 【W.I.P.】M2Det @2018.11 (https://arxiv.org/pdf/1811.04533.pdf)
-- 【W.I.P.】Deep High-Resolution Representation Learning for Human Pose Estimation @2019.02 (https://arxiv.org/pdf/1902.09212.pdf)
-- 【W.I.P.】High-Resolution Representations for Labeling Pixels and Regions @2019.04 (https://arxiv.org/pdf/1904.04514.pdf)
-- 【W.I.P.】YOLO
-- 【W.I.P.】DeepLab
-- 【W.I.P.】FCN
-- 【W.I.P.】Lraspp
-
-## Instance segmentation
-
-## 未分類
-
-- 【W.I.P.】GoogLeNet
-- 【W.I.P.】SENet
-- 【W.I.P.】MobileNetV3
-- 【W.I.P.】Noisy Student
-- 【W.I.P.】ConvNet
-- 【W.I.P.】Mnasnet
-- 【W.I.P.】RegNet
-- 【W.I.P.】ShuffleNetV2
+- 【W.I.P.】 MixNet @2019.07 (https://arxiv.org/pdf/1907.09595.pdf)
+- 【W.I.P.】 Noisy Student @2019.11 (https://arxiv.org/pdf/1911.04252.pdf)
+- 【W.I.P.】 RegNet @2020.03 (https://arxiv.org/pdf/2003.13678.pdf)
+- 【W.I.P.】 Vision Transformer @2020.09 (https://openreview.net/forum?id=YicbFdNTTy)
+- 【W.I.P.】 DeiT @2020.12 (https://arxiv.org/pdf/2012.12877)
+- 【W.I.P.】 EfficientNetV2 2021.04 (https://arxiv.org/pdf/2104.00298.pdf)
+- 【W.I.P.】 Vision Transformer @2021.06 (https://arxiv.org/pdf/2106.10270.pdf)
+- 【W.I.P.】 ConvNeXt @2022.01 (https://arxiv.org/pdf/2201.03545.pdf)
 
 ## LeNet @1989
 
@@ -61,7 +41,7 @@
 
 - アーキテクチャ図
 
-  ![](./img/cnn_history_le_net.png)
+  ![](./img/cv_history_002_classification_le_net.png)
   (出典: https://ja.wikipedia.org/wiki/AlexNet#/media/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Comparison_image_neural_networks.svg)
 
 ## AlexNet @2012.09
@@ -83,7 +63,7 @@
 
 - アーキテクチャ図
 
-  ![](./img/cnn_history_alex_net.png)
+  ![](./img/cv_history_002_classification_alex_net.png)
   (出典: https://ja.wikipedia.org/wiki/AlexNet#/media/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Comparison_image_neural_networks.svg)
 
 - 実装例
@@ -115,7 +95,7 @@
 - アーキテクチャ図
   - DがVGG16, EがVGG19となる。
 
-  ![](./img/cnn_history_vgg_architecture.png)
+  ![](./img/cv_history_002_classification_vgg_architecture.png)
   (出典: 原論文より)
 
 - 実装例
@@ -135,14 +115,14 @@
     - BatchNormalizationも実装されており、Convの直後に必ず実施する。(加算前には実施しない)
     - 加算後に活性化関数を適用することにも要注意。
 
-  ![](./img/cnn_history_resnet_residual_learning.png)
+  ![](./img/cv_history_002_classification_resnet_residual_learning.png)
   (出典: 原論文より)
 
   
   - 次にこのweight layer側の構成が考えられ、その中で現在採用されているのがbottleneckアーキテクチャである。
     - 下図右側がbottleneck。ちなみに左側は plain アーキテクチャと論文内で呼ばれる。
 
-  ![](./img/cnn_history_resnet_bottleneck.png)
+  ![](./img/cv_history_002_classification_resnet_bottleneck.png)
   (出典: 原論文より)
 
   - これらにより従来と比べて、50～152層など大規模化したネットワークの学習が可能となった。
@@ -152,7 +132,7 @@
 - アーキテクチャ図
   - 50-layerがいわゆるResNet50そこから右に、ResNet101、ResNet152が記載されている。
 
-  ![](./img/cnn_history_resnet_architecture.png)
+  ![](./img/cv_history_002_classification_resnet_architecture.png)
   (出典: 原論文より)
 
   - 原論文で図示されていないが、各ブロックの切れ目では、加算するときのチャンネル数が合わない。
@@ -160,7 +140,7 @@
   - この場合は以下のように入力側に 1x1 のConvを導入することにより、チャネルを合わせる必要がある。
     - このConvにももちろん、BatchNormalizationが後続する。
 
-  ![](./img/cnn_history_resnet_shortcut_connection_convolution.png)
+  ![](./img/cv_history_002_classification_resnet_shortcut_connection_convolution.png)
   (出典: 中村が作成)
 
 - 実装例
@@ -177,13 +157,13 @@
 
 - アーキテクチャ図
 
-  ![](./img/cnn_history_resnext_architecture.png)
+  ![](./img/cv_history_002_classification_resnext_architecture.png)
 
 ## MobileNet @2017.04
 
 - 原論文
   - MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications(Google Inc.)
-  - https://arxiv.org/abs/1704.04861
+  - https://arxiv.org/pdf/1704.04861
 
 - 概要
   - Mobileアプリケーション向けに効率的なNetworkを研究したアーキテクチャ。
@@ -194,19 +174,19 @@
        - ksize x ksize x InputChannelSize + InputChannelSize x OutputChannelSize
   - 層数は、CNNが14個相当(モジュールとしては、dwとpwなので28個ある)、Linear層が1個である。
 
-  ![](./img/cnn_history_mobile_net_v1_dw_and_pw.png)
+  ![](./img/cv_history_002_classification_mobile_net_v1_dw_and_pw.png)
   (出典: 中村が作成)
 
 - アーキテクチャ図
   - 以下のブロックをスタックすることで実現する。
   - CNN以外には、BatchNormalizationとReLUが使われている。
 
-  ![](./img/cnn_history_mobile_net_v1_architecture_sub_block.png)
+  ![](./img/cv_history_002_classification_mobile_net_v1_architecture_sub_block.png)
   (出典: 原論文より)
 
   - 上記のブロックを最終的なスタックは以下のようになっている。
 
-  ![](./img/cnn_history_mobile_net_v1_architecture_overall.png)
+  ![](./img/cv_history_002_classification_mobile_net_v1_architecture_overall.png)
   (出典: 原論文より)
 
 - 実装例
@@ -223,11 +203,11 @@
   - MobileNetV1のさらなる効率化のために、pwのチャンネル数を削減する工夫が施されている。
   - 具体的には、ResNetに登場したResidual blockを応用し、Inverted residual blockを実装した。
 
-    ![](./img/cnn_history_mobile_net_v2_inverted_residual_block.png)
+    ![](./img/cv_history_002_classification_mobile_net_v2_inverted_residual_block.png)
     (出典: 原論文より。注釈等は中村が追加。)
 
   - (a)より(b)の方が計算量が多いように見えるが、これは考え方の話である。
-    - (a)が実装されたResNetは、もっと大規模なモデルの話なので。
+    - (a)が実装されたResNetは、中間のConvはpwではなく普通のConvである。
   - 実際は、V1の計算量を削減するためにpwのチャンネル数を減らしたいが、単純に減らすと、表現力が失われるため、一旦内部で拡張してdwを実施した後に圧縮する。
     - 表現力が失われる仕組みは、多様体仮説に基づいており、詳細は以下を参考。
       - https://deepsquare.jp/2020/06/mobilenet-v2/
@@ -242,7 +222,7 @@
 - アーキテクチャ図
   - V1とV2の比較は以下の通り。
 
-  ![](./img/cnn_history_mobile_net_v2_architecture_compare_v1.png)
+  ![](./img/cv_history_002_classification_mobile_net_v2_architecture_compare_v1.png)
   (出典: 原論文より。注釈等は中村が追加。)
 
   - 最終的な構造が違うため比較が難しいが、V1が14x14の画像の時にchannel数が512なのに対し、V2は14x14の画像の時に、channel数が96もしくは160で収まっている。
@@ -298,7 +278,7 @@
   - MBConv6は、MobileNetV2のInverted residual blockの拡張6のみのもの(つまりMobileNetV2とほぼ同じ)。
   - 規模もほぼMobileNetV2と同等。
 
-![](./img/cnn_history_efficient_net_architecture_b0.png)
+![](./img/cv_history_002_classification_efficient_net_architecture_b0.png)
 (出典: 原論文より。注釈等は中村が追加。)
 
 - 実装例
@@ -323,9 +303,6 @@
 
 - 原論文
   - https://openreview.net/forum?id=YicbFdNTTy
-
-
-
 
 ## 参考
 
@@ -362,12 +339,6 @@
 - 各種モデルサイズの比較表がある。
   - https://keras.io/ja/applications/
 
-- YOLOのv1～v5まで
-  - https://qiita.com/tfukumori/items/519d84bf3feb8d246924
-
-- YOLO9000
-  - https://qiita.com/miyamotok0105/items/1aa653512dd4657401db
-
 - [2021.05.03] 画像認識の大革命。AI界で話題爆発中の「Vision Transformer」を解説！
   - https://qiita.com/omiita/items/0049ade809c4817670d7
 
@@ -377,12 +348,5 @@
 - [2021.04.13] 2021年最強になるか！？最新の画像認識モデルEfficientNetV2を解説
   - https://qiita.com/omiita/items/1d96eae2b15e49235110
 
--
-- SSD
-  - https://blog.negativemind.com/2019/02/26/general-object-recognition-single-shot-multibox-detector/
-
-- Semantic Segmentation
-  - https://www.youtube.com/watch?v=Eu7EKQ--Rvk&list=RDCMUCRTV5p4JsXV3YTdYpTJECRA&index=21
-
-- Alammar氏によるTransformerのvisual解説
-  - http://jalammar.github.io/illustrated-retrieval-transformer/
+- [2022.01.13] Transformer(ViT)系より良いConvだけのネットワーク出たよ（画像認識向け）
+  - https://qiita.com/TeamN/items/edee1b3803a1d77fc252
