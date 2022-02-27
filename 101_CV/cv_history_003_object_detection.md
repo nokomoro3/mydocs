@@ -36,10 +36,14 @@
 - YOLO @2015.06 (https://arxiv.org/pdf/1506.02640.pdf)
 - SSD @2015.12 (https://arxiv.org/pdf/1512.02325.pdf)
 - RetinaNet @2016.08 (https://arxiv.org/pdf/1708.02002.pdf)
+- YOLOv2(YOLO900) @2016.12 (https://arxiv.org/pdf/1612.08242.pdf)
+- YOLOv3 @2018.04 (https://arxiv.org/pdf/1804.02767.pdf)
 - CenterNet @2019.04 (https://arxiv.org/pdf/1904.07850.pdf)
+- YOLOv4 @2020.04 (https://arxiv.org/pdf/2004.10934.pdf)
 - DETR @2020.05 (https://arxiv.org/pdf/2005.12872.pdf)
   - https://club.informatix.co.jp/?p=1265
   - https://qiita.com/DeepTama/items/937e13f6beda79be17d8
+- YOLOv5 @2020.06
 
 ## HOG + SVM @2005
 
@@ -157,6 +161,9 @@
     - 回帰モデルに使う損失関数もR-CNNのときから変わっている。
       - L2損失からL1損失となり、外れ値に強いロス関数となっている。
     - lambdaは1として実験されている。
+
+  ![](./img/cv_history_003_object_detection_fast_r_cnn_loss_func.png)
+
   - 高速化の工夫として、mini-batchの作成方法にも階層的サンプリングという工夫をしている。
     - R-CNNやSPPは、ROIレベルでサンプリングを実施した。つまりbatch size=128の場合、128個の入力画像を使う。
     - Fast R-CNNは、まず入力画像をN個サンプリングし、N個の画像からbatch size/N個のROIをサンプリングすることで、mini-batchを作る。
@@ -174,6 +181,9 @@
 
 - 概要
   - region proposalをCNNで実現し、全体で初めてEnd-to-Endの物体検出を実現。
+
+  ![](./img/cv_history_003_object_detection_faster_r_cnn_architecture.png)
+
   - region proposal用のCNNはRPN(Region Proposal Networks)と呼び以下のような形式となる。
     - 入力は入力画像でベースとなるCNNで特徴量を抽出する。
       - ベースモデルはZFNet(AlexNetの改良版)、VGGなどを使う。
@@ -191,10 +201,53 @@
       - アスペクト比1:1の場合に3つのサイズ 128x128, 256x256, 512x512(画素単位は元画像レベル)
       - 上記に対して、pixel数を一定としたままで、アスペクト比を1:2, 2:1でそれぞれ作成
     - anchor boxが元画像からはみ出す場合は削除される。
-    - RPN学習時は、ground truthとのIoUに応じて、IoUが0.3以下を負例、0.7以上を正例として学習します(間は中途半端として学習しない)。
-  
+    - RPN学習時は、ground truthとのIoUに応じて、以下のラベリングを使う。
+      - ground truthとのIoUが0.3以下のanchor boxを負例
+      - ground truthとのIoUが0.7以上、またはground truthとのIoUが最大のanchor boxを正例
+        - そのため2つのanchor boxが正例となる場合がある。
+      - どちらでもないanchor boxは学習に貢献しないデータとなる。
+    - RPNの損失関数は、以下のようにanchor boxのclassifierとregressionの線形和となる。
 
+    ![](./img/cv_history_003_object_detection_faster_r_cnn_loss_function_for_FPN.png)
 
+    - 推論時は変わらずnon-maximum suppressionで削減する。
+    - 学習の際は、以下のステップで行う。
+      - ImageNetなどでpre-training済みのCNNを用いて、FPNを学習する。
+        - この際、ZFNetはすべてを、VGGはconv3以降を更新対象とするなど工夫する。
+      - FPNの結果を使って、Fast R-CNNの方を更新する。この際、FPNとは重みを共有しない。
+      - FPNを再学習する。この際、Fast R-CNNと構成が共有の部分は、Fast R-CNNの重みを使い、FPN特有の層飲みを学習する。
+      - 最後にFast R-CNNを、共有された重みを固定したままその他のパラメータを学習する。
+    - 上記を繰り返すこともできるが、わずかにしか改善しなかった。
+
+## YOLO @2015.06
+
+- 原論文
+  - https://arxiv.org/pdf/1506.02640.pdf
+
+- 概要
+  - Faster R-CNNまではlocalizationとclassificationするモデルが別々であった。
+  - それを一つのモデルで推定可能とした。
+  - 以下がそのフローである。
+    - 画像全体をSxSのグリッドで分割(論文では、S=7)。
+    - グリッド毎にB個(論文では、B=2)のbounding boxがあるとして、その中心座標x,yとw,hと信頼度を以下で求める。
+      - x,yはグリッド境界を基準とした位置
+      - w,hは画像全体に対する相対値
+      - 信頼度は、ground truthとの差
+    - 物体のクラス数C個分(論文では、C=20)の確率値もこのグリッド単位で求める。
+    - 信頼度と各確率値の掛け算でbounding box毎の各クラスの信頼度が得られる。
+  - これらを同じCNNモデル出力のchannelとして以下のように表現する。
+
+  ![](./img/cv_history_003_object_detection_yolo_v1_output_channel.png)
+
+  - これを出力するCNNモデルには以下のようなものが使用される。
+
+  ![](./img/cv_history_003_object_detection_yolo_v1_cnn_architecture.png)
+
+  - 出力channelには複数の指標が混ざっているため、ロス関数は以下のような工夫がされている。
+
+  ![](./img/cv_history_003_object_detection_yolo_v1_loss_func.png)
+
+  - 最終的には、信頼度を元にNMSで重複を削除する。
 
 ## 参考
 
@@ -219,6 +272,7 @@
 
 - YOLOシリーズ徹底解説
   - https://deepsquare.jp/2020/09/yolo/
+  - YOLOv1からv3まで。解説が分かりやすい。
 
 - ディープラーニングによる一般物体検出アルゴリズムまとめ | NegativeMindException
   - https://blog.negativemind.com/portfolio/deep-learning-generic-object-detection-algorithm/
