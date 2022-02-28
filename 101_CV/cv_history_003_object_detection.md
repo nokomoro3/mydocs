@@ -274,15 +274,6 @@
 
 - Faster R-CNNはこれが一番分かりやすい。
   - https://medium.com/lsc-psd/faster-r-cnn%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Brpn%E3%81%AE%E4%B8%96%E7%95%8C%E4%B8%80%E5%88%86%E3%81%8B%E3%82%8A%E3%82%84%E3%81%99%E3%81%84%E8%A7%A3%E8%AA%AC-dfc0c293cb69
-  
-- YOLOのv1～v5まで
-  - https://qiita.com/tfukumori/items/519d84bf3feb8d246924
-
-- YOLO9000
-  - https://qiita.com/miyamotok0105/items/1aa653512dd4657401db
-
-- SSD
-  - https://blog.negativemind.com/2019/02/26/general-object-recognition-single-shot-multibox-detector/
 
 - YOLOシリーズ徹底解説
   - https://deepsquare.jp/2020/09/yolo/
@@ -290,3 +281,10 @@
 
 - ディープラーニングによる一般物体検出アルゴリズムまとめ | NegativeMindException
   - https://blog.negativemind.com/portfolio/deep-learning-generic-object-detection-algorithm/
+
+- YOLOのv1～v5まで
+  - https://qiita.com/tfukumori/items/519d84bf3feb8d246924
+
+- YOLO9000
+  - https://qiita.com/miyamotok0105/items/1aa653512dd4657401db
+
