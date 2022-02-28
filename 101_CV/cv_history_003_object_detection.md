@@ -249,6 +249,12 @@
 
   - 最終的には、信頼度を元にNMSで重複を削除する。
 
+- 実装
+  - 著者実装はDarkNet(Cライブラリ)となる。
+    - https://pjreddie.com/darknet/yolo/
+  - 理解のための非公式のpytorch実装はこちらを参照。
+    - https://github.com/motokimura/yolo_v1_pytorch/blob/master/darknet.py
+
 ## 参考
 
 - 概要がわかる
@@ -257,6 +263,14 @@
 - 物体検出についての歴史まとめ
   - https://qiita.com/mshinoda88/items/9770ee671ea27f2c81a9
   - https://qiita.com/mshinoda88/items/c7e0967923e3ed47fee5
+
+- 物体検出モデルの進展
+  - 物体検出モデルの進展 Part1 R-CNNからFaster R-CNNまで
+    - https://qiita.com/TaigaHasegawa/items/b05110a2571a5289cbab
+  - 物体検出モデルの進展 Part2 YOLOからR-FCNまで
+    - https://qiita.com/TaigaHasegawa/items/a3cb98fb27cc7a9307b4
+  - 物体検出モデルの進展 Part3 FPNとRetinaNet
+    - https://qiita.com/TaigaHasegawa/items/653abc81ac4ee1f0d7b8
 
 - Faster R-CNNはこれが一番分かりやすい。
   - https://medium.com/lsc-psd/faster-r-cnn%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Brpn%E3%81%AE%E4%B8%96%E7%95%8C%E4%B8%80%E5%88%86%E3%81%8B%E3%82%8A%E3%82%84%E3%81%99%E3%81%84%E8%A7%A3%E8%AA%AC-dfc0c293cb69
