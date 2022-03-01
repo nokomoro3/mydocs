@@ -248,12 +248,20 @@
   ![](./img/cv_history_003_object_detection_yolo_v1_loss_func.png)
 
   - 最終的には、信頼度を元にNMSで重複を削除する。
+  - 1つのグリッドに対して2つのboundingboxと1つのクラスしか予測できないため、小さい物体などが複数ある場合には検出できない。
+  - また速度優先であるため、Faster R-CNNより識別性能が劣る。
 
 - 実装
   - 著者実装はDarkNet(Cライブラリ)となる。
     - https://pjreddie.com/darknet/yolo/
   - 理解のための非公式のpytorch実装はこちらを参照。
     - https://github.com/motokimura/yolo_v1_pytorch/blob/master/darknet.py
+
+## SSD @2015.12
+
+- 原論文
+  - https://arxiv.org/pdf/1512.02325.pdf
+
 
 ## 参考
 
@@ -274,6 +282,14 @@
 
 - Faster R-CNNはこれが一番分かりやすい。
   - https://medium.com/lsc-psd/faster-r-cnn%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Brpn%E3%81%AE%E4%B8%96%E7%95%8C%E4%B8%80%E5%88%86%E3%81%8B%E3%82%8A%E3%82%84%E3%81%99%E3%81%84%E8%A7%A3%E8%AA%AC-dfc0c293cb69
+
+- SSDの解説は@xu1718191411さんのQiita記事がもっとも丁寧
+  - 物体検出SSD詳しく紹介
+    - https://qiita.com/xu1718191411/items/6ffdd2a65329b5b11704
+    - https://qiita.com/xu1718191411/items/997190c6183114fcb343
+    - https://qiita.com/xu1718191411/items/442e58f24e6608b6173c
+    - https://qiita.com/xu1718191411/items/56002e07fe7618aef1d6
+    - https://qiita.com/xu1718191411/items/cac5dd4e6d60038aaffb
 
 - YOLOシリーズ徹底解説
   - https://deepsquare.jp/2020/09/yolo/
