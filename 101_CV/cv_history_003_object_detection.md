@@ -262,6 +262,30 @@
 - 原論文
   - https://arxiv.org/pdf/1512.02325.pdf
 
+- 概要
+  - YOLOと異なり、ベースのCNNの出力層ではなく、様々な解像度の特徴量マップを使用する。
+    - VGG16の場合、conv4_3を使用。この特徴量マップは元画像が300x300の場合、38x38となる。
+    - その後、VGG16のconv5_3まで処理し、Convを2層重ねて、これも特徴量マップとして使う。
+    - あとはその後に2層重ねて、特徴量マップを抽出して、これを繰り返し、合計６層からの特徴量マップを使う。
+    - この追加する層をextra layerと呼んでいる。
+
+  ![](./img/cv_history_003_object_detection_ssd_architecture.png)
+
+  - 特徴量マップの層毎にdefault boxというbounding boxの候補を考える。
+  - default boxの数は層毎に以下のように違うので注意が必要。
+    - VGG16の場合、以下で合計8732個のdefault boxとなる。
+      - (38,38,512)  ... 4個, 38x38x4で5776個のdefault box
+      - (19,19,1024) ... 6個, 19x19x6で2166個のdefault box
+      - (10,10,512)  ... 6個, 10x10x6で 600個のdefault box
+      - (5,5,256)    ... 6個,  5x 5x4で 150個のdefault box
+      - (3,3,256)    ... 4個,  3x 3x4で  36個のdefault box
+      - (1,1,256)    ... 4個,  1x 1x4で   4個のdefault box
+
+  - 各default boxについて正解bounding boxまでのoffsetと、クラス数分の信頼度を計算する。
+
+- 実装例
+  - pytorch公式
+    - https://github.com/pytorch/vision/blob/main/torchvision/models/detection/ssd.py
 
 ## 参考
 
