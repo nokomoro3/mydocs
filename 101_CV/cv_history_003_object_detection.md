@@ -35,8 +35,7 @@
      <th>発表年</th>
      <th>概要(3～5行)</th>
      <th>BB</th>
-     <th>論文</th>
-     <th>実装例</th>
+     <th>論文<br>実装例</th>
      <th>詳細</th>
     </tr>
   </thead>
@@ -51,8 +50,7 @@
         <li>重複した検出はNMSで抑制する</li>
       </td>
       <td></td>
-      <td><a href="http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf">リンク</a></td>
-      <td>なし</td>
+      <td><a href="http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf">論文</a></td>
       <td><a href="#hog_and_svm">詳細</a></td>
     </tr>
     <tr>
@@ -65,8 +63,7 @@
         <li>特徴量は後続の1クラスSVMとbounding boxの回帰モデルに入力する</li>
       </td>
       <td></td>
-      <td><a href="https://arxiv.org/abs/1311.2524">リンク</a></td>
-      <td></td>
+      <td><a href="https://arxiv.org/abs/1311.2524">論文</a></td>
       <td><a href="#r_cnn">詳細</a></td>
     </tr>
     <tr>
@@ -80,8 +77,7 @@
         <li>その後は、R-CNNと同様</li>
       </td>
       <td></td>
-      <td><a href="https://arxiv.org/abs/1406.4729">リンク</a></td>
-      <td></td>
+      <td><a href="https://arxiv.org/abs/1406.4729">論文</a></td>
       <td><a href="#spp_net">詳細</a></td>
     </tr>
     <tr>
@@ -92,8 +88,7 @@
         <li>またSPP-netのSPPの代わりとしてRoI Poolingを使用して固定長に変換</li>
       </td>
       <td></td>
-      <td><a href="https://arxiv.org/abs/1504.08083">リンク</a></td>
-      <td></td>
+      <td><a href="https://arxiv.org/abs/1504.08083">論文</a></td>
       <td><a href="#fast_r_cnn">詳細</a></td>
     </tr>
     <tr>
@@ -107,8 +102,7 @@
         <li>FPNとFast-R CNNは別々に学習する必要がある</li>
       </td>
       <td></td>
-      <td><a href="https://arxiv.org/abs/1506.01497">リンク</a></td>
-      <td></td>
+      <td><a href="https://arxiv.org/abs/1506.01497">論文</a></td>
       <td><a href="#faster_r_cnn">詳細</a></td>
     </tr>
     <tr>
@@ -122,8 +116,7 @@
         <li>1グリッドに対しB個しか検出できないず、速度優先のため性能はFaster R-CNNに劣る</li>
       </td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1506.02640.pdf">リンク</a></td>
-      <td></td>
+      <td><a href="https://arxiv.org/pdf/1506.02640.pdf">論文</a></td>
       <td><a href="#yolo">詳細</a></td>
     </tr>
     <tr>
@@ -131,8 +124,7 @@
       <td>2015.12</td>
       <td></td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1512.02325.pdf">リンク</a></td>
-      <td></td>
+      <td><a href="https://arxiv.org/pdf/1512.02325.pdf">論文</a></td>
       <td><a href="#ssd">詳細</a></td>
     </tr>
   </tbody>
