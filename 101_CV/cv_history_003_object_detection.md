@@ -116,35 +116,158 @@
         <li>1グリッドに対しB個しか検出できないず、速度優先のため性能はFaster R-CNNに劣る</li>
       </td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1506.02640.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1506.02640">論文</a></td>
       <td><a href="#yolo">詳細</a></td>
     </tr>
     <tr>
       <td>SSD</td>
       <td>2015.12</td>
+      <td>
+        <li>出力層だけでなく様々な解像度での特徴量マップを使用することで</li>
+        <li>backboneとなるCNNの途中層や追加層で様々な解像度を実現</li>
+      </td>
       <td></td>
-      <td></td>
-      <td><a href="https://arxiv.org/pdf/1512.02325.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1512.02325">論文</a></td>
       <td><a href="#ssd">詳細</a></td>
+    </tr>
+    <tr>
+      <td>R-FCN</td>
+      <td>2016.05</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1605.06409">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>FPN</td>
+      <td>2016.12</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1612.03144">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>YOLOv2(YOLO0900)</td>
+      <td>2016.12</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1612.08242">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>RetinaNet</td>
+      <td>2017.08</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1708.02002">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Mask R-CNN</td>
+      <td>2017.03</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1703.06870">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>RefineDet</td>
+      <td>2017.11</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1711.06897">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>PANet</td>
+      <td>2018.03</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1803.01534v4">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>YOLOv3</td>
+      <td>2018.04</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1804.02767">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>M2Det</td>
+      <td>2018.11</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1811.04533">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CenterNet</td>
+      <td>2019.04</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1904.07850">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>EfficientDet</td>
+      <td>2019.11</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/1911.09070">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>YOLOv4</td>
+      <td>2020.04</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/2004.10934">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>DETR</td>
+      <td>2020.05</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/2005.12872">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>YOLOv5</td>
+      <td>2020.06</td>
+      <td></td>
+      <td></td>
+      <td>未公開</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>YOLOF</td>
+      <td>2021.03</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/2103.09460">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>YOLOX</td>
+      <td>2021.07</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/2107.08430">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>YOLOP</td>
+      <td>2021.08</td>
+      <td></td>
+      <td></td>
+      <td><a href="https://arxiv.org/abs/2108.11250">論文</a></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
-
-
-- R-FCN
-- FPN
-- RetinaNet @2016.08 (https://arxiv.org/pdf/1708.02002.pdf)
-- YOLOv2(YOLO900) @2016.12 (https://arxiv.org/pdf/1612.08242.pdf)
-- YOLOv3 @2018.04 (https://arxiv.org/pdf/1804.02767.pdf)
-- CenterNet @2019.04 (https://arxiv.org/pdf/1904.07850.pdf)
-- YOLOv4 @2020.04 (https://arxiv.org/pdf/2004.10934.pdf)
-- DETR @2020.05 (https://arxiv.org/pdf/2005.12872.pdf)
-  - https://club.informatix.co.jp/?p=1265
-  - https://qiita.com/DeepTama/items/937e13f6beda79be17d8
-- YOLOv5 @2020.06
-- PANet
-- EfficientDet
-- YOLOF @2021.03
 
 
 <a id="hog_and_svm"></a>
@@ -473,3 +596,7 @@
 
 - 2021年時点での情報がいろいろ書いてある。
   - https://www.slideshare.net/ren4yu/you-only-look-onelevel-feature
+
+- DETR
+  - https://club.informatix.co.jp/?p=1265
+  - https://qiita.com/DeepTama/items/937e13f6beda79be17d8
