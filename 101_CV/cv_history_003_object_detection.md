@@ -34,7 +34,7 @@
      <th>名前</th>
      <th>発表年</th>
      <th>概要(3～5行)</th>
-     <th>バックボーン</th>
+     <th>ベースCNN</th>
      <th>論文<br>実装例</th>
      <th>詳細</th>
     </tr>
@@ -49,7 +49,7 @@
         <li>それをSVMで多クラス分類する</li>
         <li>重複した検出はNMSで抑制する</li>
       </td>
-      <td></td>
+      <td>CNN未使用</td>
       <td><a href="http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf">論文</a></td>
       <td><a href="#hog_and_svm">詳細</a></td>
     </tr>
@@ -59,10 +59,13 @@
       <td>
         <li>CNNを物体検知に適用した先駆け</li>
         <li>領域候補を古典的な手法(selective search)で領域候補を抽出</li>
-        <li>領域候補をリサイズしてCNN(AlexNetなど)に入力して特徴量を計算</li>
+        <li>領域候補をリサイズしてCNNに入力して特徴量を計算</li>
         <li>特徴量は後続の1クラスSVMとbounding boxの回帰モデルに入力する</li>
       </td>
-      <td></td>
+      <td>
+        AlexNet
+        VGG16
+      </td>
       <td><a href="https://arxiv.org/abs/1311.2524">論文</a></td>
       <td><a href="#r_cnn">詳細</a></td>
     </tr>
@@ -128,7 +131,9 @@
         <li>上記のため、出力層だけでなく様々な解像度の特徴量マップを使用</li>
         <li>特徴量マップの解像度に応じてbounding boxがかわるように設計</li>
       </td>
-      <td></td>
+      <td>
+        VGG16
+      </td>
       <td><a href="https://arxiv.org/abs/1512.02325">論文</a></td>
       <td><a href="#ssd">詳細</a></td>
     </tr>
