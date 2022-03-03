@@ -79,7 +79,11 @@
         <li>この特徴量マップをSPPで処理し、固定長の特徴量に変換</li>
         <li>その後は、R-CNNと同様</li>
       </td>
-      <td></td>
+      <td>
+        ZFNet
+        AlexNet
+        OverFeat
+      </td>
       <td><a href="https://arxiv.org/abs/1406.4729">論文</a></td>
       <td><a href="#spp_net">詳細</a></td>
     </tr>
@@ -90,7 +94,9 @@
         <li>Multi task lossによりクラス分類とbouding boxの位置推定を同時学習</li>
         <li>またSPP-netのSPPの代わりとしてRoI Poolingを使用して固定長に変換</li>
       </td>
-      <td></td>
+      <td>
+        VGG16
+      </td>
       <td><a href="https://arxiv.org/abs/1504.08083">論文</a></td>
       <td><a href="#fast_r_cnn">詳細</a></td>
     </tr>
@@ -104,7 +110,10 @@
         <li>anchor box毎に出力特徴量マップの各点で領域の有無とbounding boxの位置を推定</li>
         <li>FPNとFast-R CNNは別々に学習する必要がある</li>
       </td>
-      <td></td>
+      <td>
+        VGG16
+        ResNet101
+      </td>
       <td><a href="https://arxiv.org/abs/1506.01497">論文</a></td>
       <td><a href="#faster_r_cnn">詳細</a></td>
     </tr>
@@ -118,7 +127,9 @@
         <li>上記を出力チャンネル数がS x S x ( B x 5 + C )のConvで実現</li>
         <li>1グリッドに対しB個しか検出できないず、速度優先のため性能はFaster R-CNNに劣る</li>
       </td>
-      <td></td>
+      <td>
+        独自実装
+      </td>
       <td><a href="https://arxiv.org/abs/1506.02640">論文</a></td>
       <td><a href="#yolo">詳細</a></td>
     </tr>
