@@ -123,8 +123,10 @@
       <td>SSD</td>
       <td>2015.12</td>
       <td>
-        <li>出力層だけでなく様々な解像度での特徴量マップを使用することで</li>
-        <li>backboneとなるCNNの途中層や追加層で様々な解像度を実現</li>
+        <li>YOLOと同じく領域推定とクラス分類を同時学習を実現した</li>
+        <li>より多くの物体を様々なbounding boxで検出できるようになった</li>
+        <li>上記のため、出力層だけでなく様々な解像度の特徴量マップを使用</li>
+        <li>特徴量マップの解像度に応じてbounding boxがかわるように設計</li>
       </td>
       <td></td>
       <td><a href="https://arxiv.org/abs/1512.02325">論文</a></td>
@@ -133,10 +135,16 @@
     <tr>
       <td>R-FCN</td>
       <td>2016.05</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>Faster R-CNNをすべて畳み込み層にすることで高速化
+        <li>RoI切り出し前にすべてposition sensitive mapに変換</li>
+        <li>position sensitive map後にRoI切り出しすることで、後段のLinear層を削除</li>
+      </td>
+      <td>
+        ResNet101
+      </td>
       <td><a href="https://arxiv.org/abs/1605.06409">論文</a></td>
-      <td></td>
+      <td><a href="#r_fcn">詳細</a></td>
     </tr>
     <tr>
       <td>FPN</td>
@@ -552,6 +560,41 @@
 - 実装例
   - pytorch公式
     - https://github.com/pytorch/vision/blob/main/torchvision/models/detection/ssd.py
+
+<a id="r_fcn"></a>
+
+## R-FCN
+
+- 概要
+  - Faster R-CNNと同様、RPN(Region proposal network)と識別(classification)を組み合わせた2ステージのアプローチ。
+  - classification側のRoI Pooling後の全結合層を廃止し、CNN backbone後の畳み込みに、k x k x (C+1)チャンネルの畳み込みを実施。
+    - この出力をposition sensitive score mapsと読んでいる。
+  - mapsにおけるRoIをk x kのグリッドに分割し、各グリッドに割り当てたチャンネルでaverage poolingを実施する。
+  - これにより、k x kサイズで(C+1)チャンネルの出力を得る。
+  - これを各クラスで合計し、softmax処理することで識別クラスを得る。
+  
+  ![](./img/cv_history_003_object_detection_r_fcn_architecture.png)
+  
+  - これにより、RoI以後にはpooling処理しかないため、学習すべき層や処理が重たいものがなくなり高速に処理が可能となる。
+
+  - bounding box側
+    - 同様に、k x k x 4のチャンネルを、position sensitive score mapsとして使います。
+
+  - ロス関数
+    - Faster R-CNNと同様、classifierロスとregressorのロスの線形和を使います。
+
+  - OHEM: Online hard sample mining
+    - 損失が最も大きい上位のRoIのみを用いてトレーニングします。
+
+  - training step
+    - Faster R-CNNと同様、RPN -> FCN -> RPN -> FCNの学習の4stepで行います。
+
+  - NMS
+    - IoU 0.3を重複とみなして削除します。
+
+- 参考
+  - https://ichi.pro/rebyu-r-fcn-pojithibusenshithibusukoamappu-obujyekuto-kenshutsu-160310250517596
+  - https://qiita.com/TaigaHasegawa/items/a3cb98fb27cc7a9307b4#r-fcn
 
 ## 参考
 
