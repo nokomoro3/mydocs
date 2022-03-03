@@ -63,7 +63,7 @@
         <li>特徴量は後続の1クラスSVMとbounding boxの回帰モデルに入力する</li>
       </td>
       <td>
-        AlexNet
+        AlexNet<br>
         VGG16
       </td>
       <td><a href="https://arxiv.org/abs/1311.2524">論文</a></td>
@@ -80,8 +80,8 @@
         <li>その後は、R-CNNと同様</li>
       </td>
       <td>
-        ZFNet
-        AlexNet
+        ZFNet<br>
+        AlexNet<br>
         OverFeat
       </td>
       <td><a href="https://arxiv.org/abs/1406.4729">論文</a></td>
@@ -111,8 +111,8 @@
         <li>FPNとFast-R CNNは別々に学習する必要がある</li>
       </td>
       <td>
-        VGG16
-        ResNet101
+        VGG16<br>
+        ResNet101<br>
       </td>
       <td><a href="https://arxiv.org/abs/1506.01497">論文</a></td>
       <td><a href="#faster_r_cnn">詳細</a></td>
