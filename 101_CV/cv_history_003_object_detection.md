@@ -679,7 +679,11 @@
     - これをclassifierとbounding box回帰にそれぞれ入力する。
     - RPNと同様、pyramidの各階層で同じパラメータを共有したlinear層を接続する。
 
-
+- 参考
+  - 非公式実装例
+    - https://github.com/jwyang/fpn.pytorch
+  - 解説
+    - https://qiita.com/TaigaHasegawa/items/653abc81ac4ee1f0d7b8
 
 ## 参考
 
