@@ -34,6 +34,10 @@
 
     ![](./img/cv_history_003_object_detection_faster_r_cnn_loss_function_for_RPN.png)
 
+    - bounding boxのregressionは下式の推定となる。
+
+    ![](./img/faster_r_cnn_bounding_box_regression.png)
+
     - 推論時は変わらずnon-maximum suppressionで削減する。
     - 学習の際は、以下のステップで行う。
       - ImageNetなどでpre-training済みのCNNを用いて、RPNを学習する。

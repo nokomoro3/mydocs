@@ -178,7 +178,7 @@
       <td><a href="./cv_history_003_object_detection/fpn.md">詳細</a></td>
     </tr>
     <tr>
-      <td>YOLOv2(YOLO0900)</td>
+      <td>YOLOv2(YOLO9000)</td>
       <td>2016.12</td>
       <td></td>
       <td></td>
