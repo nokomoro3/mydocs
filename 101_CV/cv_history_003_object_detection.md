@@ -181,9 +181,9 @@
       <td>YOLOv2(YOLO9000)</td>
       <td>2016.12</td>
       <td></td>
-      <td></td>
+      <td>独自実装(Darknet19)</td>
       <td><a href="https://arxiv.org/abs/1612.08242">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/yolo_v2.md">詳細</a></td>
     </tr>
     <tr>
       <td>RetinaNet</td>
