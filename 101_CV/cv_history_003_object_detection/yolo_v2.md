@@ -29,3 +29,7 @@
 - https://qiita.com/miyamotok0105/items/1aa653512dd4657401db
 
 - https://github.com/AlexeyAB/darknet
+
+- https://pjreddie.com/darknet/yolov2/
+
+- https://pystyle.info/pytorch-yolov3/
