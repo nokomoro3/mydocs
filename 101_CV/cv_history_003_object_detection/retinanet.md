@@ -1,9 +1,9 @@
-## RetinaNet
+# RetinaNet
 
 - 題名: Focal Loss for Dense Object Detection
 - 論文: [https://arxiv.org/abs/1708.02002](https://arxiv.org/abs/1708.02002)
 
-### 問題提起
+## 問題提起
 
 - 2stageモデル(Faster R-CNNなど)は推論速度やモデルの複雑さが課題
 - 1stageモデル(YOLO, SSDなど)は精度がまだまだ
@@ -16,7 +16,7 @@
 
 - これを解決するために、一般的なCE(Cross Entropy)誤差とは異なる損失関数を提案。これがFocal Loss。
 
-### Focal Loss
+## Focal Loss
 
 - CEをサンプルの難易度によって動的に変化させる損失関数。
 
@@ -67,7 +67,7 @@
 
   - 実際にfocal lossを用いる場合は、pを計算するためのsigmoid演算をloss関数に組み合わせることで数値的に安定性を高めている。
 
-### アーキテクチャ
+## アーキテクチャ
 
 - 以下のように１つのバックボーンに対して、２つのサブネットワークを接続する。
 
@@ -79,7 +79,7 @@
 
 - サブネットのKはクラス数、Aは後述するアンカーボックスの数である。
 
-### アンカーボックス
+## アンカーボックス
 
 - FPNと同様、32x32～512x512の範囲のanchor boxをP3～P7に割り当てる。
   - P3 ... 32x32
@@ -99,14 +99,14 @@
 
 - anchorがどちらにも割り当てられない場合、0.4～0.5に存在する場合は、学習データから無視する。
 
-### class subnet
+## class subnet
 
 - subnetのパラメータは、すべてのpyramidのレベルで共有される(FPNの論文と同様)。
 
 - subnetの構成は、conv3x3, 256-channelの畳み込みを4回、conv3x3, KA-channelの畳み込みを1回実施する。
 - 途中のconv3x3はReLUの活性化を用い、最後のconv3x3はsigmoidを用いる(前述の通りFocal lossの安定性のため)。
 
-### box subnet
+## box subnet
 
 - ほぼclass subnetと同様の構成で、最終の畳み込みが4A-channelとなる。
 
@@ -115,7 +115,7 @@
 - boxパラメータは、R-CNNのstandard box parameterizationを用いる。
   - 最近の研究とは異なり、より少ないパラメーターを使った class-agnostic bounding box regressorを使用する、とのこと。
 
-### focal lossの正規化
+## focal lossの正規化
 
 - 既に紹介したfocal lossの総和が誤差関数となる。
 
@@ -123,12 +123,12 @@
 
 - またαとγは同時に調整がひつようであり、γ=2の場合はα=0.25が最適である。
 
-### NMS
+## NMS
 
 - inference時に、IoU=0.5以上の検出は信頼度が高い方にマージされる。
 
 
-### Initialize
+## Initialize
 
 - backboneとなるResNet50,101はImageNet1kで学習される。
 
@@ -139,7 +139,7 @@
 - subnetの最後のconvは、 bias=-log((1-π)/π)で初期化し、π=0.01を用いる。これは不均衡問題における初期学習を安定化させる効果がある。
   - 希少クラスの事前分布を低く設定することで、安定的になる効果がある。
 
-### 参考
+## 参考
 
 - スライド解説
   - https://www.slideshare.net/DeepLearningJP2016/dlfocal-loss-for-dense-object-detection
