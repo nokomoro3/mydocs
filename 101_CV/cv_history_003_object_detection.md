@@ -194,7 +194,7 @@
       </td>
       <td>ResNet50<br>ResNet101</td>
       <td><a href="https://arxiv.org/abs/1708.02002">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/retina.md">詳細</a></td>
+      <td><a href="./cv_history_003_object_detection/retinanet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Mask R-CNN</td>
