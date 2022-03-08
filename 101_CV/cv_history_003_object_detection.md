@@ -188,10 +188,13 @@
     <tr>
       <td>RetinaNet</td>
       <td>2017.08</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>Focal lossを用いて1stageモデルの不均衡学習に対応</li>
+        <li>ベースの構造は、FPNのピラミッド構造を用いている</li>
+      </td>
+      <td>ResNet50<br>ResNet101</td>
       <td><a href="https://arxiv.org/abs/1708.02002">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/retina.md">詳細</a></td>
     </tr>
     <tr>
       <td>Mask R-CNN</td>

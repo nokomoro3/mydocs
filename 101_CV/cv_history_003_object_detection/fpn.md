@@ -38,7 +38,7 @@
         - bounding box推定用の4k-dのconv1x1畳み込み
       - ここでkはanchor boxの個数である。
     - anchor boxは、各階層で固定のpixelをもつanchor boxを以下のようにする。
-      - それぞれ {P2, P3, P4, P5, P6} に {322 , 642 , 1282 , 2562 , 5122} pixcelのbbを割り当てる。
+      - それぞれ {P2, P3, P4, P5, P6} に {322 , 642 , 1282 , 2562 , 5122} pixelのbbを割り当てる。
       - アスペクト比は {1:2, 1:1, 2:1} を使う。
     - 正例は以下のルールで決める。
       - 与えられたground truthに対して最も高いIoUを持つanchor box

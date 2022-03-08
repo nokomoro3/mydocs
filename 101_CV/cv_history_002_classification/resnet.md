@@ -26,6 +26,7 @@
 
 - アーキテクチャ図
   - 50-layerがいわゆるResNet50そこから右に、ResNet101、ResNet152が記載されている。
+  - conv3_1, 4_1, 5_1はstride=2で実行され、そこでdownsampleが機能する。(poolingでdownsampleしない)
 
   ![](./img/cv_history_002_classification_resnet_architecture.png)
   (出典: 原論文より)
