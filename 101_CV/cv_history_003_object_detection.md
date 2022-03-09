@@ -202,8 +202,13 @@
       <td>
         <li>instance segmentation用のheadを追加したマルチタスクなモデル</li>
         <li>RoI Poolingを補完を考慮したRoI Alignに変更</li>
+        <li>FPNの特徴量マップも使用されている。</li>
       </td>
-      <td></td>
+      <td>
+        ResNet50
+        ResNet101
+        ResNeXt
+      </td>
       <td><a href="https://arxiv.org/abs/1703.06870">論文</a></td>
       <td><a href="./cv_history_003_object_detection/mask_r_cnn.md">詳細</a></td>
     </tr>
