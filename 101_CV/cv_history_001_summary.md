@@ -39,6 +39,9 @@
 
 ## Segmentation
 
+- 歴史が記載された図
+  - https://twitter.com/ZFPhalanx/status/1266391941589024768?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1266391941589024768%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fblog.negativemind.com%2Fportfolio%2Fdeep-learning-semantic-segmentation-algorithm%2F
+
 - 【W.I.P.】U-Net @2015.05 (https://arxiv.org/pdf/1505.04597.pdf)
   - U-Net構造といわれる階層的なskip-connectionにより高解像データを失わない工夫をしたモデル。
 - 【W.I.P.】Dilated Convolution @2015.11 (https://arxiv.org/pdf/1511.07122.pdf)

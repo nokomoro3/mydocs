@@ -199,10 +199,13 @@
     <tr>
       <td>Mask R-CNN</td>
       <td>2017.03</td>
-      <td></td>
+      <td>
+        <li>instance segmentation用のheadを追加したマルチタスクなモデル</li>
+        <li>RoI Poolingを補完を考慮したRoI Alignに変更</li>
+      </td>
       <td></td>
       <td><a href="https://arxiv.org/abs/1703.06870">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/mask_r_cnn.md">詳細</a></td>
     </tr>
     <tr>
       <td>RefineDet</td>
