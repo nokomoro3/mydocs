@@ -1,6 +1,6 @@
 # Mask R-CNN
 
-- 題名: Maxk R-CNN
+- 題名: Mask R-CNN
 - 論文: [https://arxiv.org/abs/1703.06870](https://arxiv.org/abs/1703.06870)
 
 ## ポイント
