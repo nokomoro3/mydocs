@@ -5,7 +5,7 @@
 
 ## ポイント
 
-- SSDの改良版。課題感は、RetinaNetなどと同じ。
+- SSDの改良版。課題設定は、RetinaNetなどと同じ。
 
 - ARM(Anchor Refinement Module)とODM(Object Detection Module)の２つのモジュールからなるアーキテクチャとした。
 
@@ -15,7 +15,7 @@
 
 - ARMとODMの間はtransfer connection block(TCB)で接続する。
 
-- 損失関数としては、ARMとODM(classifer + regressor)
+- 損失関数としては、ARM(classifier)とODM(classifer + regressor)の3つを考慮したものとなっている。
 
 ## 参考
 

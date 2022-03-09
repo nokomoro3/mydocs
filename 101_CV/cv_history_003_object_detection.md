@@ -218,7 +218,7 @@
       <td></td>
       <td></td>
       <td><a href="https://arxiv.org/abs/1711.06897">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/refinedet.md">詳細</a></td>
     </tr>
     <tr>
       <td>PANet</td>
@@ -226,7 +226,7 @@
       <td></td>
       <td></td>
       <td><a href="https://arxiv.org/abs/1803.01534v4">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/panet.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOv3</td>
