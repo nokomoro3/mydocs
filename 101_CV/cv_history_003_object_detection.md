@@ -112,7 +112,7 @@
       </td>
       <td>
         VGG16<br>
-        ResNet101<br>
+        ResNet101
       </td>
       <td><a href="https://arxiv.org/abs/1506.01497">論文</a></td>
       <td><a href="./cv_history_003_object_detection/faster_r_cnn.md">詳細</a></td>
@@ -171,7 +171,7 @@
         <li>2stageのどちらともピラミッド構造化している</li>
       </td>
       <td>
-        ResNet50
+        ResNet50<br>
         ResNet101
       </td>
       <td><a href="https://arxiv.org/abs/1612.03144">論文</a></td>
@@ -180,7 +180,11 @@
     <tr>
       <td>YOLOv2(YOLO9000)</td>
       <td>2016.12</td>
-      <td></td>
+      <td>
+        <li>YOLOをベースに様々な改良を実施</li>
+        <li>改良点は、高解像化、anchor boxを導入など</li>
+        <li>これをベースに9000クラスまで分類が可能なアーキテクチャ(WordTree)を構築</li>
+      </td>
       <td>独自実装(Darknet19)</td>
       <td><a href="https://arxiv.org/abs/1612.08242">論文</a></td>
       <td><a href="./cv_history_003_object_detection/yolo_v2.md">詳細</a></td>
@@ -205,8 +209,8 @@
         <li>FPNの特徴量マップも使用されている。</li>
       </td>
       <td>
-        ResNet50
-        ResNet101
+        ResNet50<br>
+        ResNet101<br>
         ResNeXt
       </td>
       <td><a href="https://arxiv.org/abs/1703.06870">論文</a></td>
@@ -215,15 +219,26 @@
     <tr>
       <td>RefineDet</td>
       <td>2017.11</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>SSDの改良版でARMとODMをTCBで接続した構成</li>
+        <li>2stageモデルと同じような構成だが1回で学習可能</li>
+        <li>損失関数としては双方を考慮したものとなっている</li>
+      </td>
+      <td>
+        VGG16<br>
+        ResNet101
+      </td>
       <td><a href="https://arxiv.org/abs/1711.06897">論文</a></td>
       <td><a href="./cv_history_003_object_detection/refinedet.md">詳細</a></td>
     </tr>
     <tr>
       <td>PANet</td>
       <td>2018.03</td>
-      <td></td>
+      <td>
+        <li>FPNに対してさらにbuttom-up構造を追加し深い特徴量マップにも高解像情報を付与</li>
+        <li>追加されたbuttom-up構造に対してRoI Alignを使用して固定長の特徴量に変換する</li>
+        <li>RPN側は従来通りと思われる。</li>
+      </td>
       <td></td>
       <td><a href="https://arxiv.org/abs/1803.01534v4">論文</a></td>
       <td><a href="./cv_history_003_object_detection/panet.md">詳細</a></td>
