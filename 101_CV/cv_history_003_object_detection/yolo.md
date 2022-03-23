@@ -36,3 +36,8 @@
   - 理解のための非公式のpytorch実装はこちらを参照。
     - https://github.com/motokimura/yolo_v1_pytorch/blob/master/darknet.py
     - 最後の2つのconv3x3畳み込みがない点、全結合がglobal average poolingとなり、Fully Convolutionになっている点が違うように見える。
+
+## 参考
+
+- 後だしだが以下は分かりやすい。
+  - https://kikaben.com/yolov1/
