@@ -44,7 +44,7 @@
   - [Azure](./004_cloud/azure.md)
   - AWS
     - [AWS認定資格                                   ](./004_cloud/aws_certified_001.md)
-    - [AWS認定資格 SAA: Solutions Architect Associate](./004_cloud/aws_certified_002_saa.md)
+    - [AWS認定資格 SAA: Solutions Architect Associate](./004_cloud/aws_certified_002_saa_000.md)
     - [AWS IAM                                       ](./004_cloud/aws_service_iam.md)
     - [AWS Personalize                               ](./004_cloud/aws_service_personalize.md)
     - [AWS Tips                                      ](./004_cloud/aws_service_tips.md)
