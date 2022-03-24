@@ -246,18 +246,31 @@
     <tr>
       <td>YOLOv3</td>
       <td>2018.04</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>ResNetのskip-connectionなどを取り込んだbackbone(DarkNet-53)</li>
+        <li>v2よりは高精度になったものの、速度は低下している</li>
+        <li>速度低下の要因はbackboneの複雑化とanchor boxを増やしたことが影響している</li>
+      </td>
+      <td>
+        独自(DarkNet-53)
+      </td>
       <td><a href="https://arxiv.org/abs/1804.02767">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/yolo_v3.md">詳細</a></td>
     </tr>
     <tr>
       <td>M2Det</td>
       <td>2018.11</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>SSDをベースに物体検知に特化した複雑なネットワークMLFPNを構築</li>
+        <li>学習の方法やanchor boxはSSDをそのまま流用</li>
+        <li>高速・高性能とうたわれているがカスタマイズや性能を調整するのが少し難しい声も多そう</li>
+      </td>
+      <td>
+        VGG16<br>
+        ResNet101
+      </td>
       <td><a href="https://arxiv.org/abs/1811.04533">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/m2det.md">詳細</a></td>
     </tr>
     <tr>
       <td>CenterNet</td>
@@ -342,17 +355,6 @@
     - https://qiita.com/TaigaHasegawa/items/a3cb98fb27cc7a9307b4
   - 物体検出モデルの進展 Part3 FPNとRetinaNet
     - https://qiita.com/TaigaHasegawa/items/653abc81ac4ee1f0d7b8
-
-- Faster R-CNNはこれが一番分かりやすい。
-  - https://medium.com/lsc-psd/faster-r-cnn%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8Brpn%E3%81%AE%E4%B8%96%E7%95%8C%E4%B8%80%E5%88%86%E3%81%8B%E3%82%8A%E3%82%84%E3%81%99%E3%81%84%E8%A7%A3%E8%AA%AC-dfc0c293cb69
-
-- SSDの解説は@xu1718191411さんのQiita記事がもっとも丁寧
-  - 物体検出SSD詳しく紹介
-    - https://qiita.com/xu1718191411/items/6ffdd2a65329b5b11704
-    - https://qiita.com/xu1718191411/items/997190c6183114fcb343
-    - https://qiita.com/xu1718191411/items/442e58f24e6608b6173c
-    - https://qiita.com/xu1718191411/items/56002e07fe7618aef1d6
-    - https://qiita.com/xu1718191411/items/cac5dd4e6d60038aaffb
 
 - YOLOシリーズ徹底解説
   - https://deepsquare.jp/2020/09/yolo/

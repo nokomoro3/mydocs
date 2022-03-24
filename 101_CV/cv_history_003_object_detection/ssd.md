@@ -55,3 +55,14 @@
 - 実装例
   - pytorch公式
     - https://github.com/pytorch/vision/blob/main/torchvision/models/detection/ssd.py
+
+
+## 参考
+
+- SSDの解説は@xu1718191411さんのQiita記事がもっとも丁寧
+  - 物体検出SSD詳しく紹介
+    - https://qiita.com/xu1718191411/items/6ffdd2a65329b5b11704
+    - https://qiita.com/xu1718191411/items/997190c6183114fcb343
+    - https://qiita.com/xu1718191411/items/442e58f24e6608b6173c
+    - https://qiita.com/xu1718191411/items/56002e07fe7618aef1d6
+    - https://qiita.com/xu1718191411/items/cac5dd4e6d60038aaffb
