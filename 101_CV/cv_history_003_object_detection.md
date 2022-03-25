@@ -258,6 +258,20 @@
       <td><a href="./cv_history_003_object_detection/yolo_v3.md">詳細</a></td>
     </tr>
     <tr>
+      <td>CornerNet</td>
+      <td>2018/08/03</td>
+      <td>
+        <li>anchor boxを使用しないアンカーレス方式。</li>
+        <li>corner poolingを導入し、bounding boxの左上・右下のコーナーを検出。</li>
+        <li>backboneやembeddingの実装で姿勢推定の影響がみられる。</li>
+      </td>
+      <td>
+        Hourglass-104
+      </td>
+      <td><a href="https://arxiv.org/abs/1808.01244">論文</a></td>
+      <td><a href="./cv_history_003_object_detection/cornernet.md">詳細</a></td>
+    </tr>
+    <tr>
       <td>M2Det</td>
       <td>2018.11</td>
       <td>
