@@ -77,6 +77,9 @@
 - 図としては記載がなく、hourglassの数は2で、max-poolingの代わりにstride=2のconvを使用するなど、いくつかの修正がある。
 - 層数としては104層のため、Hourglass-104と記載されている。
 
+- Hourglassの詳細は下記も参照
+  - https://yusuke-ujitoko.hatenablog.com/entry/2017/07/22/000523
+
 ### for detection
 
 ![](./img/cornernet_architecture_detection.png)
@@ -117,3 +120,6 @@
 
 - soft-NMSについての解説
   - https://qiita.com/mshinoda88/items/c7e0967923e3ed47fee5
+
+- HourglassNetwork
+  - https://yusuke-ujitoko.hatenablog.com/entry/2017/07/22/000523

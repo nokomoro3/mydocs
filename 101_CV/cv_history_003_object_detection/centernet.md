@@ -2,91 +2,109 @@
 
 - 題名: Objects as Points
 - 論文: [https://arxiv.org/abs/1904.07850](https://arxiv.org/abs/1904.07850)
+- 公式実装: [https://github.com/xingyizhou/CenterNet](https://github.com/xingyizhou/CenterNet)
 
 ## 概要
 
 - anchor boxを使用しないアンカーレス方式。
-  - ResNetのskip-connectionなどを取り込み
-- 特徴量マップのマルチ解像度対応
-  - 最終層をUpsamplingして、backboneの途中のデータと連結。
-  - その後、convを重ねる。
-- anchor box数Kの増加
-- ロス関数の変更(マルチラベル対応)
-  - softmaxを削除し、誤差はCrossEntropyで算出。
+- CornerNetと同様にheatmapを推定するが、中心位置のheatmapを推定する。
+- ペアらしさは不要となるためembeddingはなくなる、変わりにboxの高さと幅を推定する。
+- オフセットの計算は中心位置のオフセットを推定する。
+- heatmapのロス計算はCornerNetと同様にfocal lossが使われている。
+- 3Dの物体検知や姿勢推定にも適用可能。
 
 ## 特徴
 
-### Darknet-53
-
-- バックボーンをDarknet-19からDarknet-53に変更。
-- より複雑なアーキテクチャとなり、YOLOv2より速度面では低下した。
-- ただし、ResNetと同等精度で、高速となった。
-
-### 特徴量マップのマルチ解像度対応
-
-- FPNなどと同様の考え方で、特徴量の最終層をUpsamplingして、backboneの途中のデータと連結。
-- その後、convを重ねて最終的な出力層を構成する。
-
-### anchor box数の増加
-
-- v2ではK=5であったが、K=9としてk-means法で選択した。
-- それぞれ大きい順に、深い層(低解像度)から割り当てていく。
-
-- v2に対してv3ではbox数がかなり増加する。
-  - v2では416x416の画像に対して、13x13x5 = 845個のanchor box数であった。
-  - v3では13x13x3 + 26x26x3 + 52x52x3 = 10,647個のanchor box数となる。
-
-- これによりv2よりも処理速度の面で低下しています。
-
-### ロス関数の変更
-
-- YOLOv2までは(v1も)以下のような二乗誤差の線形和で表されていました。
-
-![](./img/yolo_v3_previous_loss_func.png)
-
-- YOLOv3では、後半の３つの確率部分を二乗誤差ではなくCross Entropyに変更しています。
-
-- 実際の学習においては、ground truthのbounding boxと最大となるanchor boxを正解として割り当てます。
-
-### マルチラベル対応
-
-- YOLOv2までは各クラスのsoftmaxを計算し、最大のクラスをbounding boxに含まれる物体とみなしていました。
-
-- しかし、softmaxを使うということはクラスが相互に排他的であるという過程に基づくため、マルチラベルに対応できません。
-
-- softmaxを使用せずに各クラスの確率値を予測することによって、マルチラベルに対応しています。
-
-- この際、ある閾値より高いオブジェクトは検出として処理します。
-
-## アーキテクチャ
-
 ### backbone
 
-- conv層数が53個ある以下のような構造
+- バックボーンは４種類。
+  - ResNet18
+  - DLA34
+  - ResNet101
+  - Hourglass104
+- 使う特徴量マップはsingle-scaleの高解像な特徴マップを用いる。
+  - どのバックボーンも元画像の1/4となるような構成。
 
-![](./img/yolo_v3_architecture_backbone.png)
+- Hourglass104以外は、deformable convolutionを組み合わせる。
+  - deformable convolutionの原論文は以下
+    - https://arxiv.org/abs/1703.06211
 
-### for detection
+- ResNetはそのままではなく、高解像化のためのupsamplingを伴っている。
+  - upsamplingは以下に基づく。
+    - https://arxiv.org/abs/1804.06208
 
-- 後半３つの解像度の特徴量マップを使用して物体検出を行う。
+- 具体的には、それぞれ以下のようなアーキテクチャとなる。
 
-![](./img/yolo_v3_architecture_overview.png)
+![](./img/centernet_backbone_architecture.png)
 
-### head
+- (a): HourglassNetwork。そのまま使用。
+- (b): ResNet+upsampling。
+  - 各upsampingの前に、3×3のdeformable convを1つ追加する。
+  - 具体的には、deformable convでチャンネル数を変更し、次にtranspose convで特徴マップをupsampling。
+    - この2つのステップは、32→16で別々に示されており、16 → 8 と 8 → 4 では、この2つのステップを一緒に破線矢印で示す。
+- (c): semantic segmentationで使われるDLA-34そのままの図。
+- (d): 修正後のDLA-34。下の層からさらにスキップ接続を追加し、upsamplingのすべてのconvをdeformable convに変更する。
 
-- 最終層のチャンネル数は、(B x (5+C))であり、COCOの場合、B=3、C=80であるため、255となる。
+### heatmap (頂点らしさ)
 
-- Bはanchor box数、Cはクラス数、5は4つの座標とオブジェクトconfidence(信頼度)となる。
+- 中心らしさを各カテゴリについて計算する。
+- 正解データはground truthの頂点となるが、1pixelではなくガウス分布で幅を持たせている。
+- ロス関数にはfocal lossを用いる。
 
-![](./img/yolo_v3_archtecture_head.png)
+![](./img/centernet_loss_func_heatmap.png)
+
+### offset
+
+- 特徴量マップは入力よりも解像度が低いためズレが発生してしまう。
+- それを補正するoffsetを学習する。
+- 特徴量マップの各画素でx方向、y方向のoffsetを推定する。
+- ロス関数は以下を用いる。
+
+![](./img/centernet_loss_func_offset.png)
+
+### object size
+
+- boxのheightとwidthを求める。
+- これは各カテゴリ毎ではなく、クラス共通の回帰予測として実行する。
+- ロス関数は以下の通りL1ロスを用いる。(offsetと同様)
+
+![](./img/centernet_loss_func_object_size.png)
+
+
+### ロス関数の結合
+
+- 3つのロス関数を線形和で結合する。
+- λ_size=0.1, λ_off=1として実験を行った。
+
+![](./img/centernet_loss_func_all.png)
+
+## トレーニング
+
+- 入力画像を512x512に固定する。
+
+## 推論時の後処理
+
+- heatmapから周辺8個の位置の近傍地と同等以上である点をすべて検出し、上位100個を抽出する。
+- heatmapの値をその場所の信頼度スコアとし、boxをoffsetとsizeにより生成する。
+- NMSなどの後処理は使用せず、heatmapに対して3x3のmax poolingを使用するのみで効率的に実装できる。
+
+- 画像サイズは元の画像を維持したまま、ResNetとDLAでは最大32ピクセル、HourglassNetでは128ピクセルでzero-paddingを実施する。
+  - 特徴量抽出の過程で完全に消えないようにするため。
+
+## 実験結果
+
+
+![](./img/centernet_fps_ap_curve.png)
+
+![](./img/centernet_experiment.png)
+
+
 
 ## 参考
 
-- 理論解説
-  - https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
+- 解説
+  - https://qiita.com/masataka46/items/cb5b05090746c7f3b826
+  - https://engineering.dena.com/blog/2019/07/cv-papers-19-keypoint-object-detection/
 
-- スクラッチ実装する場合はここを見るとよいかも
-  - https://blog.paperspace.com/how-to-implement-a-yolo-object-detector-in-pytorch/
-
-- 日本語であればこちら。著者の苦情についても書いてある。
-  - https://kikaben.com/yolov3/#post-title
+- 解説と他タスクへの転用
+  - https://metrica-tech.hatenablog.jp/entry/2019/12/07/173032
