@@ -288,11 +288,20 @@
     </tr>
     <tr>
       <td>CenterNet</td>
-      <td>2019.04</td>
-      <td></td>
-      <td></td>
+      <td>2019/04/16</td>
+      <td>
+        <li>CornerNetと同様にheatmapを推定するが、中心位置のheatmapを推定する。</li>
+        <li>高解像な特徴量を使うためbackboneにも様々な工夫がされている。</li>
+        <li>3Dの物体検知や姿勢推定にも適用可能。</li>
+      </td>
+      <td>
+        ResNet-18<br>
+        ResNet-101<br>
+        DLA-34<br>
+        Hourglass-104
+      </td>
       <td><a href="https://arxiv.org/abs/1904.07850">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/centernet.md">詳細</a></td>
     </tr>
     <tr>
       <td>EfficientDet</td>
