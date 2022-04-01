@@ -273,7 +273,7 @@
     </tr>
     <tr>
       <td>M2Det</td>
-      <td>2018.11</td>
+      <td>2018/11/12</td>
       <td>
         <li>SSDをベースに物体検知に特化した複雑なネットワークMLFPNを構築</li>
         <li>学習の方法やanchor boxはSSDをそのまま流用</li>
@@ -304,12 +304,27 @@
       <td><a href="./cv_history_003_object_detection/centernet.md">詳細</a></td>
     </tr>
     <tr>
+      <td>CenterNet</td>
+      <td>2019/04/17</td>
+      <td>
+        <li>>CenterNetは同名のものが2つあるが、こちらはCornerNetの改良版のCenterNet。</li>
+        <li>>CornetNetはbounding boxの内部を見ていないため、誤検出が多い。</li>
+        <li>>そこで中心をきちんと見るためのCenter Heatmapを提案。Corner Poolingも改良している。</li>
+      </td>
+      <td>
+        Hourglass-52
+        Hourglass-104
+      </td>
+      <td><a href="https://arxiv.org/abs/1904.08189">論文</a></td>
+      <td><a href="./cv_history_003_object_detection/centernet2.md">詳細</a></td>
+    </tr>
+    <tr>
       <td>EfficientDet</td>
-      <td>2019.11</td>
+      <td>2019/11/20</td>
       <td></td>
       <td></td>
       <td><a href="https://arxiv.org/abs/1911.09070">論文</a></td>
-      <td></td>
+      <td><a href="./cv_history_003_object_detection/efficientdet.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOv4</td>
