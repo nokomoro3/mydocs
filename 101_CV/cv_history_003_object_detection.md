@@ -321,8 +321,15 @@
     <tr>
       <td>EfficientDet</td>
       <td>2019/11/20</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>>FPN系のアーキテクチャ(PANet, NAS-FPNなど)を整理しより最適なBiFPNを提案。</li>
+        <li>>EfficientNetの考え方を取り入れ、backboneの複雑さと同期してその他の部分も複雑にする複合スケールを提案。</li>
+        <li>>1stageモデルであり、focal lossなどを用いており、提案部分以外はRetinaNetに近いと推測。</li>
+        <li>>かなり精度と速度のバランスがよく高性能に見える。</li>
+      </td>
+      <td>
+        EfficientNet
+      </td>
       <td><a href="https://arxiv.org/abs/1911.09070">論文</a></td>
       <td><a href="./cv_history_003_object_detection/efficientdet.md">詳細</a></td>
     </tr>
