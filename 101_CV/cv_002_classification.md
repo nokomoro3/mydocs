@@ -18,21 +18,21 @@
       <td>1989</td>
       <td></td>
       <td><a href="https://direct.mit.edu/neco/article-abstract/1/4/541/5515/Backpropagation-Applied-to-Handwritten-Zip-Code?redirectedFrom=fulltext">論文</a></td>
-      <td><a href="./cv_history_002_classification/lenet.md">詳細</a></td>
+      <td><a href="./cv_002_classification/lenet.md">詳細</a></td>
     </tr>
     <tr>
       <td>AlexNet</td>
       <td>2012.09</td>
       <td></td>
       <td><a href="https://dl.acm.org/doi/pdf/10.1145/3065386">論文</a></td>
-      <td><a href="./cv_history_002_classification/alexnet.md">詳細</a></td>
+      <td><a href="./cv_002_classification/alexnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>VGGNet</td>
       <td>2014.09</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1409.1556.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/vgg.md">詳細</a></td>
+      <td><a href="./cv_002_classification/vgg.md">詳細</a></td>
     </tr>
     <tr>
       <td>GoogLeNet(Inception v1)</td>
@@ -46,7 +46,7 @@
       <td>2015.12</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1512.03385.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/resnet.md">詳細</a></td>
+      <td><a href="./cv_002_classification/resnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Inception-v4</td>
@@ -81,14 +81,14 @@
       <td>2016.11</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1611.05431v2.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/resnext.md">詳細</a></td>
+      <td><a href="./cv_002_classification/resnext.md">詳細</a></td>
     </tr>
     <tr>
       <td>MobileNet</td>
       <td>2017.04</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1704.04861">論文</a></td>
-      <td><a href="./cv_history_002_classification/mobilenet.md">詳細</a></td>
+      <td><a href="./cv_002_classification/mobilenet.md">詳細</a></td>
     </tr>
     <tr>
       <td>ShuffleNet</td>
@@ -109,14 +109,14 @@
       <td>2018.01</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1801.04381.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/mobilenet_v2.md">詳細</a></td>
+      <td><a href="./cv_002_classification/mobilenet_v2.md">詳細</a></td>
     </tr>
     <tr>
       <td>Big-Little Network</td>
       <td>2018.07</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1807.03848.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/big_little.md">詳細</a></td>
+      <td><a href="./cv_002_classification/big_little.md">詳細</a></td>
     </tr>
     <tr>
       <td>ShuffleNetV2</td>
@@ -137,7 +137,7 @@
       <td>2019.04</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1904.05049.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/octave.md">詳細</a></td>
+      <td><a href="./cv_002_classification/octave.md">詳細</a></td>
     </tr>
     <tr>
       <td>MobileNetV3</td>
@@ -151,14 +151,14 @@
       <td>2019.05</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1905.11946.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/efficientnet.md">詳細</a></td>
+      <td><a href="./cv_002_classification/efficientnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>MixNet</td>
       <td>2019.07</td>
       <td></td>
       <td><a href="https://arxiv.org/pdf/1907.09595.pdf">論文</a></td>
-      <td><a href="./cv_history_002_classification/mixnet.md">詳細</a></td>
+      <td><a href="./cv_002_classification/mixnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Noisy Student</td>

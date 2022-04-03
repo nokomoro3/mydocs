@@ -27,3 +27,11 @@
 - アステリアワーク、データスパイダーはDWHだが、短い間隔でETLすることで、EAIを実現しようとして失敗してしまうことがある。
   - AWSでイベントベースにEAIを実現しようとすると、kinesisを使うことになる。
   - DWH製品は主キー制約が使えない、用途によって道具は変えないといけない。
+
+## DBT
+
+- DBTまとめ
+  - https://github.com/Hiflylabs/awesome-dbt#cicd
+
+- DBT活用
+  - https://dev.classmethod.jp/articles/hajime-ippo-dbt-20220310/

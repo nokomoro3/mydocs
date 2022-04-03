@@ -12,3 +12,6 @@
 
 - Googleが大量の機械学習用データベースを無料公開してた
   - https://qiita.com/ulwlu/items/90dd8d79b12e10606299
+
+- 機械学習に便利なデータセット30選
+  - https://www.dsk-cloud.com/blog/useful-data-set-formachine-learning#toc-0

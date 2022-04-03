@@ -64,3 +64,11 @@ print(text_output_recursive)
 
 - Python標準ライブラリのFlagがシンプルで使いやすいという話
   - https://myenigma.hatenablog.com/entry/2021/11/14/195705
+
+## pythonの静的解析
+
+- https://data.gunosy.io/entry/linter_option_on_pyproject
+
+## python早見帳
+
+- https://chokkan.github.io/python/

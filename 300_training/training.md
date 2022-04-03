@@ -23,6 +23,16 @@
 - 数理・データサイエンス教育強化拠点コンソーシアム
   - http://www.mi.u-tokyo.ac.jp/consortium/e-learning.html
 
+- AWSのML講座
+  - Machine Learning University
+  - https://www.youtube.com/channel/UC12LqyqTQYbXatYS9AA7Nuw/playlists
+
+- 数学カフェ 確率・統計・機械学習回 「速習 確率・統計」
+  - https://www.slideshare.net/matsukenbook/rev012
+
+- nnabla SonyのMLチャンネル
+  - https://www.youtube.com/channel/UCOELxR-yS2EbjBxQ0hx4yBw
+
 ## 解析ハンズオン
 
 - u++さんによるアクセスログ解析
@@ -30,6 +40,12 @@
 
 - SIGNATE: BERTで医療論文を分類する
   - https://zenn.dev/kuboko/articles/signate-srwspsg-pytorch
+
+- YOLOXので自作データの学習
+  - https://zenn.dev/opamp/articles/d3878b189ea256
+
+- MobileNetV2の転移学習
+  - https://dev.classmethod.jp/articles/introduce-to-transfer-learning-by-tensorflow-for-beginner/
 
 ## article
 
@@ -56,8 +72,17 @@
 - GraphQL スターターパック | Prisma + NestJS + Next.JS製 個人ブログサイトをCloud Runで運用しよう
   - https://zenn.dev/waddy/books/graphql-nestjs-nextjs-bootcamp
 
+- HAKODATE Developer Conference＠函館 でGraphQLの話をしてきました
+  - https://dev.classmethod.jp/articles/hakodate-developer-conference-graphql/
+
 - 全員がOAuth2.0を理解しているチームの作り方
   - https://dev.classmethod.jp/articles/devio2021-learning-oauth/
 
 - 競馬予想で始める機械学習〜完全版〜
   - https://zenn.dev/dijzpeb/books/848d4d8e47001193f3fb
+
+- 100本ノックシリーズのnotebook
+  - https://twitter.com/developer_quant/status/1505461889996066817
+
+- レコメンドの演習問題
+  - https://recsyslab.github.io/recsys-python/

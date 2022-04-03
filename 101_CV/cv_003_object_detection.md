@@ -51,7 +51,7 @@
       </td>
       <td>CNN未使用</td>
       <td><a href="http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/hog_svm.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/hog_svm.md">詳細</a></td>
     </tr>
     <tr>
       <td>R-CNN</td>
@@ -67,7 +67,7 @@
         VGG16
       </td>
       <td><a href="https://arxiv.org/abs/1311.2524">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/r_cnn.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/r_cnn.md">詳細</a></td>
     </tr>
     <tr>
       <td>SPP-net</td>
@@ -85,7 +85,7 @@
         OverFeat
       </td>
       <td><a href="https://arxiv.org/abs/1406.4729">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/spp_net.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/spp_net.md">詳細</a></td>
     </tr>
     <tr>
       <td>Fast R-CNN</td>
@@ -98,7 +98,7 @@
         VGG16
       </td>
       <td><a href="https://arxiv.org/abs/1504.08083">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/fast_r_cnn.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/fast_r_cnn.md">詳細</a></td>
     </tr>
     <tr>
       <td>Faster R-CNN</td>
@@ -115,7 +115,7 @@
         ResNet101
       </td>
       <td><a href="https://arxiv.org/abs/1506.01497">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/faster_r_cnn.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/faster_r_cnn.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLO</td>
@@ -131,7 +131,7 @@
         独自実装
       </td>
       <td><a href="https://arxiv.org/abs/1506.02640">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/yolo.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/yolo.md">詳細</a></td>
     </tr>
     <tr>
       <td>SSD</td>
@@ -146,7 +146,7 @@
         VGG16
       </td>
       <td><a href="https://arxiv.org/abs/1512.02325">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/ssd.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/ssd.md">詳細</a></td>
     </tr>
     <tr>
       <td>R-FCN</td>
@@ -160,7 +160,7 @@
         ResNet101
       </td>
       <td><a href="https://arxiv.org/abs/1605.06409">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/r_fcn.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/r_fcn.md">詳細</a></td>
     </tr>
     <tr>
       <td>FPN</td>
@@ -175,7 +175,7 @@
         ResNet101
       </td>
       <td><a href="https://arxiv.org/abs/1612.03144">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/fpn.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/fpn.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOv2(YOLO9000)</td>
@@ -187,7 +187,7 @@
       </td>
       <td>独自実装(Darknet19)</td>
       <td><a href="https://arxiv.org/abs/1612.08242">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/yolo_v2.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/yolo_v2.md">詳細</a></td>
     </tr>
     <tr>
       <td>RetinaNet</td>
@@ -198,7 +198,7 @@
       </td>
       <td>ResNet50<br>ResNet101</td>
       <td><a href="https://arxiv.org/abs/1708.02002">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/retinanet.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/retinanet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Mask R-CNN</td>
@@ -214,7 +214,7 @@
         ResNeXt
       </td>
       <td><a href="https://arxiv.org/abs/1703.06870">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/mask_r_cnn.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/mask_r_cnn.md">詳細</a></td>
     </tr>
     <tr>
       <td>RefineDet</td>
@@ -229,7 +229,7 @@
         ResNet101
       </td>
       <td><a href="https://arxiv.org/abs/1711.06897">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/refinedet.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/refinedet.md">詳細</a></td>
     </tr>
     <tr>
       <td>PANet</td>
@@ -241,7 +241,7 @@
       </td>
       <td></td>
       <td><a href="https://arxiv.org/abs/1803.01534v4">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/panet.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/panet.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOv3</td>
@@ -255,7 +255,7 @@
         独自(DarkNet-53)
       </td>
       <td><a href="https://arxiv.org/abs/1804.02767">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/yolo_v3.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/yolo_v3.md">詳細</a></td>
     </tr>
     <tr>
       <td>CornerNet</td>
@@ -269,7 +269,7 @@
         Hourglass-104
       </td>
       <td><a href="https://arxiv.org/abs/1808.01244">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/cornernet.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/cornernet.md">詳細</a></td>
     </tr>
     <tr>
       <td>M2Det</td>
@@ -284,7 +284,7 @@
         ResNet101
       </td>
       <td><a href="https://arxiv.org/abs/1811.04533">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/m2det.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/m2det.md">詳細</a></td>
     </tr>
     <tr>
       <td>CenterNet</td>
@@ -301,7 +301,7 @@
         Hourglass-104
       </td>
       <td><a href="https://arxiv.org/abs/1904.07850">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/centernet.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/centernet.md">詳細</a></td>
     </tr>
     <tr>
       <td>CenterNet</td>
@@ -316,7 +316,7 @@
         Hourglass-104
       </td>
       <td><a href="https://arxiv.org/abs/1904.08189">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/centernet2.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/centernet2.md">詳細</a></td>
     </tr>
     <tr>
       <td>EfficientDet</td>
@@ -331,7 +331,7 @@
         EfficientNet
       </td>
       <td><a href="https://arxiv.org/abs/1911.09070">論文</a></td>
-      <td><a href="./cv_history_003_object_detection/efficientdet.md">詳細</a></td>
+      <td><a href="./cv_003_object_detection/efficientdet.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOv4</td>

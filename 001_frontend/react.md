@@ -214,6 +214,9 @@ export default defineConfig({
 - データフェッチのための React Hooks ライブラリ。
   - https://react-query.tanstack.com/guides/queries
 
+- react-queryをやるならまずここを読んだ方がいい
+  - https://react-query.tanstack.com/community/tkdodos-blog
+
 ### ゼロからModalを作る
 
 - https://reffect.co.jp/react/react-modal

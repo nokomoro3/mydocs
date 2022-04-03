@@ -56,3 +56,8 @@ IAMユーザとは
 
 - 【AWS IAM】セキュアなアクセス管理の方法を語る会
   - https://www.youtube.com/watch?v=pBvrmB-4t90
+
+## IAM評価論理
+
+- IAM の評価論理をやんわり押さえるセッション「やんわり押さえよう IAM の評価論理」で登壇しました
+  - https://dev.classmethod.jp/articles/devio-2021-iam-evaluation-logic/

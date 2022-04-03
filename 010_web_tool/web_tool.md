@@ -11,3 +11,7 @@
 ## ネット速度のテスト
 
 - https://fast.com/ja/
+
+## TeX生成
+
+- https://tex-image-link-generator.herokuapp.com/

@@ -81,3 +81,8 @@ services:
 
 - 参考
   - https://amaya382.hatenablog.jp/entry/2017/04/03/034002
+
+
+## WSL2がdocker prune済みの領域を返してくれない
+
+- https://7me.nobiki.com/2020/10/12/wsl2-docker-re-use-disk-space/
