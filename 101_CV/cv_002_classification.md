@@ -64,10 +64,15 @@
     </tr>
     <tr>
       <td>DenseNet</td>
-      <td>2016.08</td>
-      <td></td>
+      <td>2016/08/25</td>
+      <td>
+        <li>ResNetを進化させ、より効率的に深くまで情報を伝搬させるDense blockを構成。</li>
+        <li>Dense blockはそのレイヤまでのblock内すべての出力を入力として用いる。</li>
+        <li>また連結方法は加算ではなく、concatenateすることにより情報が消えることを防ぐ。</li>
+        <li>ResNetよりモデル規模を縮小し、性能も改善。</li>
+      </td>
       <td><a href="https://arxiv.org/pdf/1608.06993.pdf">論文</a></td>
-      <td></td>
+      <td><a href="./cv_002_classification/dense.md">詳細</a></td>
     </tr>
     <tr>
       <td>Xception</td>
