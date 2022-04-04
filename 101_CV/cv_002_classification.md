@@ -72,7 +72,7 @@
         <li>ResNetよりモデル規模を縮小し、性能も改善。</li>
       </td>
       <td><a href="https://arxiv.org/pdf/1608.06993.pdf">論文</a></td>
-      <td><a href="./cv_002_classification/dense.md">詳細</a></td>
+      <td><a href="./cv_002_classification/densenet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Xception</td>
