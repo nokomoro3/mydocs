@@ -66,8 +66,8 @@
       <td>DenseNet</td>
       <td>2016/08/25</td>
       <td>
-        <li>ResNetを進化させ、より効率的に深くまで情報を伝搬させるDense blockを構成。</li>
-        <li>Dense blockはそのレイヤまでのblock内すべての出力を入力として用いる。</li>
+        <li>ResNetを進化させ、より効率的に深くまで情報を伝搬させるdense blockを構成。</li>
+        <li>dense blockはそのレイヤまでのblock内すべての出力を入力として用いる。</li>
         <li>また連結方法は加算ではなく、concatenateすることにより情報が消えることを防ぐ。</li>
         <li>ResNetよりモデル規模を縮小し、性能も改善。</li>
       </td>
