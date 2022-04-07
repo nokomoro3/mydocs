@@ -24,42 +24,42 @@
       <td>AlexNet</td>
       <td>2012.09</td>
       <td></td>
-      <td><a href="https://dl.acm.org/doi/pdf/10.1145/3065386">論文</a></td>
+      <td><a href="https://dl.acm.org/doi/abs/10.1145/3065386">論文</a></td>
       <td><a href="./cv_002_classification/alexnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>VGGNet</td>
       <td>2014.09</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1409.1556.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1409.1556">論文</a></td>
       <td><a href="./cv_002_classification/vgg.md">詳細</a></td>
     </tr>
     <tr>
       <td>GoogLeNet(Inception v1)</td>
       <td>2014.09</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/14gg09.4842.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1409.4842">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>ResNet</td>
       <td>2015.12</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1512.03385.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1512.03385">論文</a></td>
       <td><a href="./cv_002_classification/resnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Inception-v4</td>
       <td>2016.02</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1602.07261.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1602.07261">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>SqueezeNet</td>
       <td>2016.02</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1602.07360.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1602.07360">論文</a></td>
       <td></td>
     </tr>
     <tr>
@@ -71,112 +71,124 @@
         <li>また連結方法は加算ではなく、concatenateすることにより情報が消えることを防ぐ。</li>
         <li>ResNetよりモデル規模を縮小し、性能も改善。</li>
       </td>
-      <td><a href="https://arxiv.org/pdf/1608.06993.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1608.06993">論文</a></td>
       <td><a href="./cv_002_classification/densenet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Xception</td>
       <td>2016.10</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1610.02357.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1610.02357">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>ResNeXt</td>
       <td>2016.11</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1611.05431v2.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1611.05431v2">論文</a></td>
       <td><a href="./cv_002_classification/resnext.md">詳細</a></td>
     </tr>
     <tr>
       <td>MobileNet</td>
       <td>2017.04</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1704.04861">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1704.04861">論文</a></td>
       <td><a href="./cv_002_classification/mobilenet.md">詳細</a></td>
     </tr>
     <tr>
       <td>ShuffleNet</td>
       <td>2017.07</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1707.01083.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1707.01083">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>SENet</td>
       <td>2017.09</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1709.01507.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1709.01507">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>MobileNetV2</td>
       <td>2018.01</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1801.04381.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1801.04381">論文</a></td>
       <td><a href="./cv_002_classification/mobilenet_v2.md">詳細</a></td>
     </tr>
     <tr>
       <td>Big-Little Network</td>
       <td>2018.07</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1807.03848.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1807.03848">論文</a></td>
       <td><a href="./cv_002_classification/big_little.md">詳細</a></td>
     </tr>
     <tr>
       <td>ShuffleNetV2</td>
       <td>2018.07</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1807.11164.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1807.11164">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>Mnasnet</td>
       <td>2018.07</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1807.11626.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1807.11626">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>Octave Convolution</td>
       <td>2019.04</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1904.05049.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1904.05049">論文</a></td>
       <td><a href="./cv_002_classification/octave.md">詳細</a></td>
     </tr>
     <tr>
       <td>MobileNetV3</td>
       <td>2019.05</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1905.02244.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1905.02244">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>EfficientNet</td>
       <td>2019.05</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1905.11946.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1905.11946">論文</a></td>
       <td><a href="./cv_002_classification/efficientnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>MixNet</td>
       <td>2019.07</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1907.09595.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1907.09595">論文</a></td>
       <td><a href="./cv_002_classification/mixnet.md">詳細</a></td>
     </tr>
     <tr>
       <td>Noisy Student</td>
-      <td>2019.11</td>
+      <td>2019/11/11</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/1911.04252.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/1911.04252">論文</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CSPNet</td>
+      <td>2019/11/27</td>
+      <td>
+        <li>DenseNetの更なる高速化。安価なGPUで動作することを念頭に改良。</li>
+        <li>ベースレイヤを2つに分割し、2つのパスで伝搬する情報を効率化している。</li>
+        <li>これは他のネットワークにも容易に適用可能で、計算量を10～20%削減し、さらに精度を向上。</li>
+      </td>
+      <td><a href="https://arxiv.org/abs/1911.11929">論文</a></td>
+      <td><a href="./cv_002_classification/cspnet.md">詳細</a></td>
       <td></td>
     </tr>
     <tr>
       <td>RegNet</td>
       <td>2020.03</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/2003.13678.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/2003.13678">論文</a></td>
       <td></td>
     </tr>
     <tr>
@@ -190,14 +202,14 @@
       <td>DeiT</td>
       <td>2020.12</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/2012.12877">論文</a></td>
+      <td><a href="https://arxiv.org/abs/2012.12877">論文</a></td>
       <td></td>
     </tr>
     <tr>
       <td>EfficientNetV2</td>
       <td>2021.04</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/2104.00298.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/2104.00298">論文</a></td>
       <td></td>
     </tr>
     <tr>
@@ -205,7 +217,7 @@
       <td>ConvNeXt</td>
       <td>2022.01</td>
       <td></td>
-      <td><a href="https://arxiv.org/pdf/2201.03545.pdf">論文</a></td>
+      <td><a href="https://arxiv.org/abs/2201.03545">論文</a></td>
       <td></td>
     </tr>
   </tbody>
