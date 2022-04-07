@@ -182,7 +182,6 @@
       </td>
       <td><a href="https://arxiv.org/abs/1911.11929">論文</a></td>
       <td><a href="./cv_002_classification/cspnet.md">詳細</a></td>
-      <td></td>
     </tr>
     <tr>
       <td>RegNet</td>
