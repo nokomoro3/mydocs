@@ -34,6 +34,10 @@
   - https://www.amazon.co.jp/dp/4873119758
   - https://github.com/oreilly-japan/deep-learning-from-scratch-4
 
+- DLを支える技術２(PFN岡野原さん)
+  - https://twitter.com/hillbig/status/1511653680151687170
+  - https://hillbig.github.io/deeplearning-techbooksplus/
+
 ## 数学
 
 - 入門 情報幾何―統計的モデルをひもとく微分幾何学― 
