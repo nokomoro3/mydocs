@@ -44,6 +44,10 @@
   - https://www.kyoritsu-pub.co.jp/bookdetail/9784320114456
   - なゆたさんお勧めの本
 
+- 回帰分析(新装版) (統計ライブラリー)
+  - https://www.amazon.co.jp/dp/4254122462/
+  - じょんさんお勧めの本
+
 ## ソフトウェア
 
 - Googleのソフトウェアエンジニアリング
