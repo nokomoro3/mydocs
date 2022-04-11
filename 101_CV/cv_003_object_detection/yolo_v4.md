@@ -1,4 +1,4 @@
-# CornerNet
+# YOLOv4
 
 - 題名: YOLOv4: Optimal Speed and Accuracy of Object Detection
 - 論文: [https://arxiv.org/abs/2004.1093](https://arxiv.org/abs/2004.1093)
