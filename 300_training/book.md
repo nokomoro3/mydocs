@@ -13,7 +13,7 @@
 
 ## データ可視化
 
-- データビジュアライゼーションの基礎(オライリー)
+- データビジュアライゼーションの基礎 (オライリー)
   - https://www.oreilly.co.jp/books/9784873119533/
   - コードがRなのは個人的にちょっと...
 
@@ -37,6 +37,9 @@
 - DLを支える技術２(PFN岡野原さん)
   - https://twitter.com/hillbig/status/1511653680151687170
   - https://hillbig.github.io/deeplearning-techbooksplus/
+
+- Pythonからはじめるアルゴリズムトレード (オライリー)
+  - https://www.oreilly.co.jp/books/9784873119793
 
 ## 数学
 
