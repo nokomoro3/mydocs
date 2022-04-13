@@ -29,7 +29,7 @@
     - 済：MiWRC: Multi-input weighted residual connections
 - detector detail
   - Bag of Freebies
-    - CIoU-loss
+    - 済：CIoU-loss
     - CmBN
     - 済：DropBlock regularization
     - 済：Mosaic data augmentation
