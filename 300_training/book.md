@@ -13,7 +13,7 @@
 
 ## データ可視化
 
-- データビジュアライゼーションの基礎(オライリー)
+- データビジュアライゼーションの基礎 (オライリー)
   - https://www.oreilly.co.jp/books/9784873119533/
   - コードがRなのは個人的にちょっと...
 
@@ -37,11 +37,22 @@
 - Transformerによる自然言語処理
   - https://www.amazon.co.jp/dp/4254122659/
 
+- DLを支える技術２(PFN岡野原さん)
+  - https://twitter.com/hillbig/status/1511653680151687170
+  - https://hillbig.github.io/deeplearning-techbooksplus/
+
+- Pythonからはじめるアルゴリズムトレード (オライリー)
+  - https://www.oreilly.co.jp/books/9784873119793
+
 ## 数学
 
 - 入門 情報幾何―統計的モデルをひもとく微分幾何学― 
   - https://www.kyoritsu-pub.co.jp/bookdetail/9784320114456
   - なゆたさんお勧めの本
+
+- 回帰分析(新装版) (統計ライブラリー)
+  - https://www.amazon.co.jp/dp/4254122462/
+  - じょんさんお勧めの本
 
 ## ソフトウェア
 
