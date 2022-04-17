@@ -34,6 +34,9 @@
   - https://www.amazon.co.jp/dp/4873119758
   - https://github.com/oreilly-japan/deep-learning-from-scratch-4
 
+- Transformerによる自然言語処理
+  - https://www.amazon.co.jp/dp/4254122659/
+
 ## 数学
 
 - 入門 情報幾何―統計的モデルをひもとく微分幾何学― 
@@ -48,3 +51,6 @@
 - 理論から学ぶデータベース実践入門
   - https://www.amazon.co.jp/dp/4774171972
   - slackでお勧めされていた
+
+- Docker実践ガイド 第2版 impress top gearシリーズ
+  - https://www.amazon.co.jp/gp/product/B07NDT526Q
