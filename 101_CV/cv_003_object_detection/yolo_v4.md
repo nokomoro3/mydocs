@@ -11,40 +11,47 @@
 
 ## 特徴
 
-### architecture
+### summary
 
-- summary
+- 以下のように近年や独自の工夫点を整理
+  - 推論速度を落とさずに精度が上がる変更をBag of Freebiesと呼ぶ。
+  - また推論速度に少し影響があるが精度が上がる変更をBag of Specialsと呼ぶ。
+
+- それを様々な実験を実施し、以下の構成要素とした。
+
+- 基本構造
   - backbone: CSPDarkNet53
   - neck: SPP and PAN
   - head: YOLOv3
-- backbone detail
-  - Bag of Freebies
-    - 済：CutMix
-    - 済：Mosaic data augmentation
-    - 済：DropBlock regularization
-    - 済：Class label smoothing
-  - Bag of Specials
-    - 済：Mish activation
-    - 済：CSP: Cross-stage partial connections
-    - 済：MiWRC: Multi-input weighted residual connections
-- detector detail
-  - Bag of Freebies
-    - 済：CIoU-loss
+- Backbone
+  - Freebies
+    - CutMix
+    - Mosaic data augmentation
+    - DropBlock regularization
+    - Class label smoothing
+  - Specials
+    - Mish activation
+    - CSP: Cross-stage partial connections
+    - MiWRC: Multi-input weighted residual connections
+- Detector
+  - Freebies
+    - CIoU-loss
     - CmBN
-    - 済：DropBlock regularization
-    - 済：Mosaic data augmentation
+    - DropBlock regularization
+    - Mosaic data augmentation
     - Self-Adversarial Training
     - Eliminate grid sensitivity
     - Using multiple anchors for a single ground truth
     - Cosine annealing scheduler
     - Optimal hyper parameters
     - Random training shapes
-  - Bag of Specials
-    - 済：Mish activation
-    - 済：SPP-block
-    - 済：SAM-block
-    - 済：PAN: path-aggregation block
+  - Specials
+    - Mish activation
+    - SPP-block
+    - SAM-block
+    - PAN: path-aggregation block
     - DIoU-NMS
+
 
 ### Darknet-53 (backbone original)
 
@@ -67,6 +74,16 @@
 
 - 以下を参考にすると、ResNetの部分での加算時に重みづけ和をしていると考えられる。
   - https://jonathan-hui.medium.com/yolov4-c9901eaa8e61
+
+### head部
+
+- YOLOv3と同じものを用いる。
+
+- 最終層のチャンネル数は、(B x (5+C))であり、COCOの場合、B=3、C=80であるため、255となる。
+
+- Bはanchor box数、Cはクラス数、5は4つの座標とオブジェクトconfidence(信頼度)となる。
+
+![](./img/yolo_v3_archtecture_head.png)
 
 ### CutMix
 
@@ -236,8 +253,146 @@
 - これをYOLOv4で用いるが、提案している論文はこちらである。
   - https://arxiv.org/pdf/1911.08287.pdf
 
+### CmBN: Cross mini-Batch Normalization
+
+- CBNの改良版。CBNかCross Iteration Batch Normalizationで、以下の論文。
+  - https://arxiv.org/pdf/2002.05712.pdf
+
+- そもそもBNとは、ミニバッチ内で計算された統計量により、各層のactivationを標準化する。
+
+![](./img/yolo_v4_bn_original.png)
+
+- ここでμ_tとσ_tはt番目のミニバッチで計算される平均と偏差である。
+
+- この標準化されたxに対して最終的には、1次線形変換を通すことで表現力を向上する。
+  - γとβは学習するパラメータである。
+
+![](./img/yolo_v4_bn_original_2.png)
+
+- そのため、バッチ内のサンプルが少ない場合うまく働かない場合がある。
+  - 物体検知など高解像な入力や複雑なモデルを用いる場合、batch_size=1,2となることがある。
+
+- その対策としてCBNでは、過去のバッチ(iteration)から安定的な平均・分散を求める。
+  - 詳細はよくわかってないが、テイラー多項式を使った近似式となっている。
+  - 複数の過去のiterationの情報を使って、現バッチの平均・偏差を求める。
+
+  ![](./img/yolo_v4_cbn.png)
+
+  - ロジックは、論文の A. Algorithm Outlineに記載されている疑似コードが分かりやすい。
+
+  ![](./img/yolo_v4_cbn_algo.png)
+
+- CmBNはこの修正版だが説明は図しかないため、実装を見るしかなさそう。
+
+```
+CmBNは、1つのバッチ内のミニバッチ間でのみ統計量を収集する。
+(This collects statistics only between mini-batches
+within a single batch.)
+```
+
+- 論文の後半ではこう書いてあるので、どっち？となっている。
+
+```
+クロスミニバッチ正規化を使用して、単一のミニバッチ内の統計量を収集する代わりに、
+バッチ全体の統計量を収集します。
+(using Cross mini-Batch Normalization for collecting statistics inside the entire batch, 
+instead of collecting statistics inside a single mini-batch)
+```
+
+### Self Adversarial Training
+
+- 姿勢推定の以下の論文の技術。
+  - https://arxiv.org/pdf/1707.02439.pdf
+
+- GeneratorとDiscriminatorで構成される一般的な敵対的学習。
+
+- Generator側が推定対象で、以下のロスで学習される。
+
+![](./img/yolo_v4_adversarial_training_loss_generator.png)
+
+- L_mseは、通常の物体検知用のロス関数である（元論文がMSEを使っている）。
+
+- L_advは、GeneratorとDiscriminatorの結果が同じになるよう学習するロスとなる。
+
+![](./img/yolo_v4_adversarial_training_loss_generator_adv.png)
+
+- Discriminatorは、Generatorの出力結果C^_j(元論文ではヒートマップ)と入力画像のconcatenateから、正解のC_jを出力するモデルである。
+
+- また、Discriminatorの学習ロスは以下で定式化されている。
+  - L_realは、ground truthの入力C_jと同じ出力をDiscriminatorが出すように学習する。
+  - L_fakeは、Generatorによる入力C^_jと誤差が大きくなるような出力をDiscriminatorが出すように学習する。
+
+![](./img/yolo_v4_adversarial_training_loss_discriminator.png)
+
+- これにより、GeneratorはDiscriminatorによる監視を受けながら学習することができる。
+
+- 物体検知の場合、このCを何に設定するのかは調べる必要がある。
+  - 元論文では姿勢推定のヒートマップなので。
+
+- また、参考文献がないので、YOLOv4の論文では独自やり方をしている可能性がある。
+
+- 論文を何回も読み返すと、分かってきたかも。
+- おそらく、
+  - 重みの代わりに入力画像を変更する。
+  - 具体的には入力画像をパラメータとみなして通常のパラメータのように更新する。
+  - そしてそれは誤差が大きくなるように更新する。
+  - そうして生成された見かけは変わらない新しい画像を、学習データとして物体検知を学習する。
+
+- これにより、Data Augmentationと同じ作用を得ることができる。
+
+### Eliminate grid sensitivity
+
+- YOLOv2で提案されていた手法を改良。
+
+- YOLOv2では、sigmoidにより回帰する場所をgridの相対座標で求めていた。
+
+![](./img/yolo_v2_bounding_box_regression_figure.png)
+
+- この場合、グリッドの真上が正解の場合、tx, tyを正負の大きな値に学習する必要がある。
+
+- そのため、sigmoidにscaling補正を実施する。
+  - sigmoid * scale - (scale - 1) / 2
+
+![](./img/yolo_v4_eliminate_grid_sensitivity.png)
+
+### Multiple anchors for a single ground truth
+
+- anchor boxのうち、ground truthとのIoUが閾値を超えるものが複数あった場合、双方とも正解データとして使う。
+
+### Cosine annealing scheduler
+
+- learning rateを周期的に変化させる手法。
+
+- pytorchなどにも実装されている。
+  - https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.CosineAnnealingLR.html
+
+
+### Optimal Hyper parameters (Genetic algorithms)
+
+- 学習の際、最初の10%の時間帯で最適なハイパーパラメータを選択するために遺伝的アルゴリズムを使用する。
+
+- 以下が詳しい。
+  - https://jonathan-hui.medium.com/yolov4-c9901eaa8e61
+  ```
+  Evolutionary Algorithmsは、教育的推測法である。適者生存の概念に従ったものである。例えば、ハイパーパラメータをランダムに100セット選択する。そして、それらを使って100個のモデルを学習する。その後、上位10個のモデルを選択する。選択された各モデルについて、そのオリジナルにしたがってわずかに変異させた10個のハイパーパラメータを作成する。そして、新しいハイパーパラメータでモデルを再トレーニングし、最も良いモデルを再度選択する。繰り返しているうちに、最適なハイパーパラメータのセットが見つかるはずです。あるいは、デフォルトのハイパーパラメータでスタートし、その後、変異を開始することもできます。論文からの引用です。
+  ```
+
+### Random training shapes (Dynamic mini-batch size)
+
+- Random training shapesを用いた小解像度学習時にミニバッチサイズを自動的に増加させる。
+
+- 解像度が小さい場合、メモリ上に乗せるデータを増やせるため。
+
+### DIoU-NMS
+
+- NMSをする際に、通常のIoUの代わりにDIoUを使用する。
+
 ## 実験結果
 
+- 実時間で動作するモデルで最も精度がよい。
+  - EfficientDetとは微々たる差にも見えるが
+
+![](./img/yolo_v4_experiment_coco.png)
 
 ## 参考
 
@@ -245,11 +400,13 @@
   - https://arxiv.org/abs/1905.04899
   - https://qiita.com/wakame1367/items/82316feb7268e56c6161
 
-- 神解説です
-  - https://blog.albert2005.co.jp/2020/01/10/advanced-technology-section-cornernet/
+- 概要は分かる。
+  - https://kikaben.com/yolov4/#chapter-2.4
+  - https://qiita.com/mshinoda88/items/c7e0967923e3ed47fee5#11-yolov4
+  - https://qiita.com/hnishi/items/e1b84ecd4025fe4e5ccf
 
-- soft-NMSについての解説
-  - https://qiita.com/mshinoda88/items/c7e0967923e3ed47fee5
+- 英語だけど最も詳しく解説がある。
+  - https://jonathan-hui.medium.com/yolov4-c9901eaa8e61
 
-- HourglassNetwork
-  - https://yusuke-ujitoko.hatenablog.com/entry/2017/07/22/000523
+- カスタムする場合は個々も参考になる。
+  - https://blog.roboflow.com/training-yolov4-on-a-custom-dataset/

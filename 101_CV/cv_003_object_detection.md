@@ -336,10 +336,17 @@
     <tr>
       <td>YOLOv4</td>
       <td>2020.04</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>近年のあらゆる工夫を盛り込んだ新たなYOLO。</li>
+        <li>GPU１個で学習可能で、GPUでリアルタイム推論可能なモデルを提案。</li>
+        <li>上記を実現するため、工夫点を体系的に整理している。</li>
+        <li>確かに精度は高いが、EfficientDetを大きく上回ってはいない印象。</li>
+      </td>
+      <td>
+        CSPDarkNet53
+      </td>
       <td><a href="https://arxiv.org/abs/2004.10934">論文</a></td>
-      <td></td>
+      <td><a href="./cv_003_object_detection/yolo_v4.md">詳細</a></td>
     </tr>
     <tr>
       <td>DETR</td>
