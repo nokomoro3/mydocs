@@ -351,10 +351,18 @@
     <tr>
       <td>DETR</td>
       <td>2020.05</td>
-      <td></td>
-      <td></td>
+      <td>
+        ResNet-50<br>
+        ResNet-101<br>
+      </td>
+      <td>
+        <li>Transformerをネックとして使用。</li>
+        <li>これによりanchor boxやNMSなどのハンドメイドな設計部分を排除。</li>
+        <li>またanchor lessに対応するために、固定数のbboxにhungarian algorithmで割り当てを実施するロス関数を提案。</li>
+        <li>比較対象はFaster R-CNNなので、まだまだこれからという印象。</li>
+      </td>
       <td><a href="https://arxiv.org/abs/2005.12872">論文</a></td>
-      <td></td>
+      <td><a href="./cv_003_object_detection/detr.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOv5</td>
