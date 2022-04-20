@@ -320,3 +320,60 @@
 
 - 資産形成
   - https://twitter.com/sarumon23/status/1506737620889526288
+
+- 「完全に理解した」を完全に理解できる。
+  - https://developers.freee.co.jp/entry/understand-of-perfect-understanding
+
+- Microsoft社製AutoMLツールFLAML
+  - https://qiita.com/ozora/items/66b9bfdd1cd2129331d7
+
+- CAP12：音声の抑揚を理解する小型で普遍的な音声特徴表現(1/3)
+  - https://webbigdata.jp/ai/post-12950
+
+- 軽量Dockerイメージに安易にAlpineを使うのはやめたほうがいいという話 - inductor's blog
+  - https://blog.inductor.me/entry/alpine-not-recommended 
+
+- vision transformerのモバイル版？
+  - https://www.marktechpost.com/2022/03/24/apple-ml-researchers-introduce-mobilevit-a-light-weight-and-general-purpose-vision-transformer-for-mobile-devices/
+
+- 成長して卒業するために守ってほしい１０のこと
+  - https://twitter.com/hisashi_is/status/1509750732173737985
+
+- https://towardsdatascience.com/feature-engineering-for-time-series-data-f0cb1c1265d3
+- https://www.marktechpost.com/2022/04/02/researchers-develop-parking-analytics-framework-using-deep-learning/
+
+- 新しいメンバーがジョインしたときのAWSトレーニング/ハンズオン - Qiita
+  - https://qiita.com/shu85t/items/00564e29ff8a87e1dbae
+
+- HiveやPrestoは分散型SQLクエリエンジン
+  - https://qiita.com/haramiso/items/122d4ea0e5660e0b4e41
+
+- 各パブリッククラウドのネットワークに関する違い
+  - https://www.alpha.co.jp/blog/202007_02
+
+- CDKはこの方の記事を抑える
+  - https://dev.classmethod.jp/articles/cdk-practice-26-version-2/
+
+- sweetviz
+  - EDAツールっぽい。
+  - https://twitter.com/resistance0108/status/1512608075399991297?s=12&t=n166ajGpVMUd2TVqE3J9jQ
+
+- マルチンゲールアプローチ入門
+  - https://twitter.com/yuki_kaggler/status/1513503895758155782?s=12&t=OL6_YOha7JReQZ1C1rVKug
+
+- gaCNN
+  - CNNのアーキテクチャを遺伝的アルゴリズム(GA) で最適化！
+  - https://ai-scholar.tech/articles/%E9%80%B2%E5%8C%96%E8%A8%88%E7%AE%97/gaCNN
+
+- BERTとベクトル検索を用いたYahoo!ショッピングの製品名寄せ作業の効率化検証
+  - https://techblog.yahoo.co.jp/entry/2022040630294096/
+
+- https://www.marktechpost.com/2022/03/31/stanford-researchers-have-developed-a-machine-learning-based-algorithm-to-detect-autism-in-brain-fingerprints/
+
+- データサイエンティスト新卒課題図書6冊を紹介します！ | 白金鉱業.FM
+  - https://shirokane-kougyou.fm/episode/33
+
+- SAP参考
+  - https://dev.classmethod.jp/articles/aws-all-certifications-and-how-to-study/
+  - https://dev.classmethod.jp/articles/aws-certified-3-associates-and-sap/
+  - https://note.com/nabeyakiu/n/n075373919c20
