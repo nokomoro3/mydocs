@@ -367,10 +367,16 @@
     <tr>
       <td>YOLOv5</td>
       <td>2020.06</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>論文が公開されていないためアーキテクチャの詳細は不明。v4との比較もない。</li>
+        <li>第三者検証によるとv5が良いという人もいればv4が良いという人もおりよくわからない。</li>
+        <li>ただしpytorchベースでv4より使いやすいこともあり普及している印象。</li>
+      </td>
+      <td>
+        ???
+      </td>
       <td>未公開</td>
-      <td></td>
+      <td><a href="./cv_003_object_detection/yolo_v5.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOF</td>
