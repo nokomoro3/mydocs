@@ -379,6 +379,16 @@
       <td><a href="./cv_003_object_detection/yolo_v5.md">詳細</a></td>
     </tr>
     <tr>
+      <td>PP-YOLO</td>
+      <td>2020.07</td>
+      <td>
+        <li></li>
+      </td>
+      <td>
+      </td>
+      <td><a href="https://arxiv.org/abs/2007.12099">論文</a></td>
+    </tr>
+    <tr>
       <td>YOLOF</td>
       <td>2021.03</td>
       <td>
@@ -395,6 +405,16 @@
       <td><a href="./cv_003_object_detection/yolo_f.md">詳細</a></td>
     </tr>
     <tr>
+      <td>PP-YOLOv2</td>
+      <td>2021/04/21</td>
+      <td>
+        <li></li>
+      </td>
+      <td>
+      </td>
+      <td><a href="https://arxiv.org/abs/2104.10419">論文</a></td>
+    </tr>
+    <tr>
       <td>YOLOX</td>
       <td>2021.07</td>
       <td></td>
@@ -409,6 +429,16 @@
       <td></td>
       <td><a href="https://arxiv.org/abs/2108.11250">論文</a></td>
       <td></td>
+    </tr>
+    <tr>
+      <td>PP-YOLOE</td>
+      <td>2022/03/30</td>
+      <td>
+        <li></li>
+      </td>
+      <td>
+      </td>
+      <td><a href="https://arxiv.org/abs/2203.16250">論文</a></td>
     </tr>
   </tbody>
 </table>
