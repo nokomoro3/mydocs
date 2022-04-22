@@ -381,10 +381,18 @@
     <tr>
       <td>YOLOF</td>
       <td>2021.03</td>
-      <td></td>
-      <td></td>
+      <td>
+        <li>FPNの本質的な成功はマルチスケールの特徴量ではなく分割統治法に起因している。</li>
+        <li>そのため、より最適化な手法として１レベルの特徴量マップのみを用いた手法を提案。</li>
+        <li>これを実現するために、Dilated EncoderとUniform Matchingという手法を提案</li>
+        <li>YOLOといいつつベースはRetinaNetとなっている部分が多い。v4とも比較している。</li>
+      </td>
+      <td>
+        ResNet-50<br>
+        ResNet-101<br>
+      </td>
       <td><a href="https://arxiv.org/abs/2103.09460">論文</a></td>
-      <td></td>
+      <td><a href="./cv_003_object_detection/yolo_f.md">詳細</a></td>
     </tr>
     <tr>
       <td>YOLOX</td>
