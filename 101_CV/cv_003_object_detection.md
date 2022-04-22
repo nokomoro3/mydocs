@@ -42,7 +42,7 @@
   <tbody>
     <tr>
       <td>HOG + SVM</td>
-      <td>2005</td>
+      <td>2005/06/20</td>
       <td>
         <li>CNN誕生前のモデル</li>
         <li>HOGはセル内のpixel変化をとらえた特徴量</li>
@@ -55,7 +55,7 @@
     </tr>
     <tr>
       <td>R-CNN</td>
-      <td>2013.11</td>
+      <td>2013/11/11</td>
       <td>
         <li>CNNを物体検知に適用した先駆け</li>
         <li>領域候補を古典的な手法(selective search)で領域候補を抽出</li>
@@ -71,7 +71,7 @@
     </tr>
     <tr>
       <td>SPP-net</td>
-      <td>2014.06</td>
+      <td>2014/06/18</td>
       <td>
         <li>R-CNNはリサイズが必要で画像が歪む</li>
         <li>また、領域候補(最大2000枚)すべてをCNNで処理する必要があって重い</li>
@@ -89,7 +89,7 @@
     </tr>
     <tr>
       <td>Fast R-CNN</td>
-      <td>2015.04</td>
+      <td>2015/04/30</td>
       <td>
         <li>Multi task lossによりクラス分類とbouding boxの位置推定を同時学習</li>
         <li>またSPP-netのSPPの代わりとしてRoI Poolingを使用して固定長に変換</li>
@@ -102,7 +102,7 @@
     </tr>
     <tr>
       <td>Faster R-CNN</td>
-      <td>2015.06</td>
+      <td>2015/06/04</td>
       <td>
         <li>領域候補計算用のRPN(Region proposal Network)を提案し全体をNNにした
         <li>これをEnd-to-Endモデルと呼ぶ)</li>
@@ -119,7 +119,7 @@
     </tr>
     <tr>
       <td>YOLO</td>
-      <td>2015.06</td>
+      <td>2015/06/08</td>
       <td>
         <li>領域推定とクラス分類を同時学習を実現した(You only look once)</li>
         <li>入力画像をグリッド分割(S x S)してそこにbounding boxがB個あると仮定</li>
@@ -135,7 +135,7 @@
     </tr>
     <tr>
       <td>SSD</td>
-      <td>2015.12</td>
+      <td>2015/12/08</td>
       <td>
         <li>YOLOと同じく領域推定とクラス分類を同時学習を実現した</li>
         <li>より多くの物体を様々なbounding boxで検出できるようになった</li>
@@ -150,7 +150,7 @@
     </tr>
     <tr>
       <td>R-FCN</td>
-      <td>2016.05</td>
+      <td>2016/05/20</td>
       <td>
         <li>Faster R-CNNをすべて畳み込み層にすることで高速化
         <li>RoI切り出し前にすべてposition sensitive mapに変換</li>
@@ -164,7 +164,7 @@
     </tr>
     <tr>
       <td>FPN</td>
-      <td>2016.12</td>
+      <td>2016/12/09</td>
       <td>
         <li>ピラミッド構造により解像度と特徴量抽出を両立したモデル</li>
         <li>Faster R-CNNと同様にRPN(region proposal)と識別が別の2stage構成</li>
@@ -179,7 +179,7 @@
     </tr>
     <tr>
       <td>YOLOv2(YOLO9000)</td>
-      <td>2016.12</td>
+      <td>2016/12/25</td>
       <td>
         <li>YOLOをベースに様々な改良を実施</li>
         <li>改良点は、高解像化、anchor boxを導入など</li>
@@ -191,7 +191,7 @@
     </tr>
     <tr>
       <td>RetinaNet</td>
-      <td>2017.08</td>
+      <td>2017/08/07</td>
       <td>
         <li>Focal lossを用いて1stageモデルの不均衡学習に対応</li>
         <li>ベースの構造は、FPNのピラミッド構造を用いている</li>
@@ -202,7 +202,7 @@
     </tr>
     <tr>
       <td>Mask R-CNN</td>
-      <td>2017.03</td>
+      <td>2017/03/20</td>
       <td>
         <li>instance segmentation用のheadを追加したマルチタスクなモデル</li>
         <li>RoI Poolingを補完を考慮したRoI Alignに変更</li>
@@ -218,7 +218,7 @@
     </tr>
     <tr>
       <td>RefineDet</td>
-      <td>2017.11</td>
+      <td>2017/11/18</td>
       <td>
         <li>SSDの改良版でARMとODMをTCBで接続した構成</li>
         <li>2stageモデルと同じような構成だが1回で学習可能</li>
@@ -233,7 +233,7 @@
     </tr>
     <tr>
       <td>PANet</td>
-      <td>2018.03</td>
+      <td>2018/03/05</td>
       <td>
         <li>FPNに対してさらにbuttom-up構造を追加し深い特徴量マップにも高解像情報を付与</li>
         <li>追加されたbuttom-up構造に対してRoI Alignを使用して固定長の特徴量に変換する</li>
@@ -245,7 +245,7 @@
     </tr>
     <tr>
       <td>YOLOv3</td>
-      <td>2018.04</td>
+      <td>2018/04/08</td>
       <td>
         <li>ResNetのskip-connectionなどを取り込んだbackbone(DarkNet-53)</li>
         <li>v2よりは高精度になったものの、速度は低下している</li>
@@ -335,7 +335,7 @@
     </tr>
     <tr>
       <td>YOLOv4</td>
-      <td>2020.04</td>
+      <td>2020/04/23</td>
       <td>
         <li>近年のあらゆる工夫を盛り込んだ新たなYOLO。</li>
         <li>GPU１個で学習可能で、GPUでリアルタイム推論可能なモデルを提案。</li>
@@ -350,7 +350,7 @@
     </tr>
     <tr>
       <td>DETR</td>
-      <td>2020.05</td>
+      <td>2020/05/26</td>
       <td>
         <li>Transformerをネックとして使用。</li>
         <li>これによりanchor boxやNMSなどのハンドメイドな設計部分を排除。</li>
@@ -366,7 +366,7 @@
     </tr>
     <tr>
       <td>YOLOv5</td>
-      <td>2020.06</td>
+      <td>2020/06/01</td>
       <td>
         <li>論文が公開されていないためアーキテクチャの詳細は不明。v4との比較もない。</li>
         <li>第三者検証によるとv5が良いという人もいればv4が良いという人もおりよくわからない。</li>
@@ -380,17 +380,18 @@
     </tr>
     <tr>
       <td>PP-YOLO</td>
-      <td>2020.07</td>
+      <td>2020/07/23</td>
       <td>
         <li></li>
       </td>
       <td>
       </td>
       <td><a href="https://arxiv.org/abs/2007.12099">論文</a></td>
+      <td></td>
     </tr>
     <tr>
       <td>YOLOF</td>
-      <td>2021.03</td>
+      <td>2021/03/17</td>
       <td>
         <li>FPNの本質的な成功はマルチスケールの特徴量ではなく分割統治法に起因している。</li>
         <li>そのため、より最適化な手法として１レベルの特徴量マップのみを用いた手法を提案。</li>
@@ -413,10 +414,11 @@
       <td>
       </td>
       <td><a href="https://arxiv.org/abs/2104.10419">論文</a></td>
+      <td></td>
     </tr>
     <tr>
       <td>YOLOX</td>
-      <td>2021.07</td>
+      <td>2021/07/18</td>
       <td></td>
       <td></td>
       <td><a href="https://arxiv.org/abs/2107.08430">論文</a></td>
@@ -424,7 +426,7 @@
     </tr>
     <tr>
       <td>YOLOP</td>
-      <td>2021.08</td>
+      <td>2021/08/25</td>
       <td></td>
       <td></td>
       <td><a href="https://arxiv.org/abs/2108.11250">論文</a></td>
@@ -439,6 +441,7 @@
       <td>
       </td>
       <td><a href="https://arxiv.org/abs/2203.16250">論文</a></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
