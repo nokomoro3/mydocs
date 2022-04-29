@@ -41,3 +41,6 @@
 
 - 後だしだが以下は分かりやすい。
   - https://kikaben.com/yolov1/
+
+- YOLOv1の良さげなnotebook
+  - https://www.renom.jp/ja/notebooks/tutorial/image_processing/yolo/notebook.html

@@ -100,6 +100,7 @@
   - https://qiita.com/sasgawy/items/61fb64d848df9f6b53d1
   - https://deepsquare.jp/2020/07/detr/
   - https://qiita.com/DeepTama/items/937e13f6beda79be17d8
+  - https://club.informatix.co.jp/?p=1265
 
 - Auxiliary lossについて
   - https://magattaca.hatenablog.com/entry/2021/09/19/003636#1-Auxiliary-loss

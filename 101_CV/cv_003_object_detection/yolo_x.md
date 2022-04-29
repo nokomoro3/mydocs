@@ -3,7 +3,7 @@
 - 題名: YOLOX: Exceeding YOLO Series in 2021
 - 論文: [https://arxiv.org/abs/2107.08430](https://arxiv.org/abs/2107.08430)
 - 公式実装
-  - [https://github.com/Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX.)
+  - [https://github.com/Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
 
 ## 概要
 
@@ -94,17 +94,19 @@
 
 - しかし、これらの他の点での予測を最適化することで、正例負例のアンバランスを緩和する可能性があります。
 
-- Fcosの論文において、Center samplingと呼ばれる中央の3x3の領域を正例として割り当てる。
+- FCOSなどの論文において、Center samplingと呼ばれる中央の3x3の領域を正例として割り当てる。
 
 ### SimOTA
 
 - 以下に基づいた方式
   - https://arxiv.org/abs/2103.14259
+  - 解説はこちら
+    - [OTA](./ota.md)
 
 - OTAの研究に基づき、高度なラベル割り当ての重要なポイントを整理した
   - 1). 損失・品質を考慮する
   - 2). Center Prior
-  - 3). 各グラウンドトゥルースに対するポジティブアンカー4 の動的数（Dynamic Top-k と略す）
+  - 3). dynamic top-k(各gtに対するポジティブアンカーの動的設定)
   - 4). グローバルビュー
  
 - OTAは上記4つのルールを全て満たしているため、ラベル付与戦略の候補として選択した。
@@ -131,185 +133,61 @@
 
 - SimOTAは学習時間を短縮するだけでなく、Sinkhorn-Knoppアルゴリズムにおけるsolverのhyperparameterを回避できる。
 
-### OTAとは
-
-- 以下の説明
-  - https://arxiv.org/abs/2103.14259
-
-- ラベルの割り当てを、最適輸送(Optimal Transport)問題としてとく。
-  - DETRの最適割当問題と似ているが少し異なる。
-  - ペア間のロスだけでなく、需要と供給のバランスが指標として存在する。
-
-- 最小化するのは以下である。
-  - c_ijはiとjの輸送コスト
-  - π_ijは割り当てられた流量
-  - d_jはjに必要な需要量
-  - s_iはiが提供可能な供給量
-  - iはsupplierの番号であり、jはdemanderの番号である。
-
-![](./img/yolo_x_ota_formula.png)
-
-- この問題は多項式時間で解くことが可能であるが、Sinkhorn-Knopp法で高速に説くことができる。
-
-- ラベル割り当てでは、1画像内のm個のgtをsupplier、n個のbboxをdemanderとする。
-- 各gtをk単位の正ラベルを持つとし、（つまり、s_i=k | i=1,2,...,m）
-- 各bboxを1単位のラベルを必要とする（すなわち d_j=1 | j=1,2,...,n）として見ることにする。
-- gt_iからbbox_jに1単位の正ラベルを輸送するコストc_ijは、それらのclsロスとregロスの加重和として定義する。
-
-![](./img/yolo_x_ota_cost.png)
-
-- ここでθはモデルのパラメータセットであり、P^cls_jは予測されるclassスコア、P^box_jはbbox回帰である。
-- L_clsはCE_lossであり、L_regはIoU-lossである。
-- L_regには、Focal-loss、GIoU、SmoothL1 Lossに置換が可能。
-- αはバランス用の係数である。
-
-- また最適輸送問題は通常、総供給量と総需要量が等しい必要がある。
-- そのため、bgラベルを供給するsupplierも用意し、その供給量 n - m k として定義する。
-- また輸送コストは正ラベルとは別に以下のように定義する。
-
-![](./img/yolo_x_ota_cost_bg.png)
-
-- L_clsはCE_lossとなる。
-
-- 問題設定が完了したため、 off-the-shelf Sinkhorn-Knopp Iterationで最適輸送問題を解く。
-
-- 最適化処理にはGPUで高速化可能な行列計算があるため、層トレーニング時間の増加は20%以下に収まり、推論時には全くコストは掛からない。
-
-### Center Prior
-
-- 各FPNから各gtと中心距離が近い(r x r)個のanchorを選択する。
-- 選択に含まれないanchorには追加の定数コストを課す。
-
-### Dynamic k Estimation
-
 ### End-to-End
 
 - NMSを以下にのっとって取り除く。
   - https://arxiv.org/abs/2101.11782
+  - 解説
+    - [PSS](./pss.md)
 
 - これにより、End-to-Endモデルが実現できるが、性能と推論速度がわずかに低下する。
 
 - そのため、最終的なモデルには関与しないオプションモジュールとされている。
 
+### other backbones
+
+- DarkNet53の他にも、異なるサイズのバックボーンでYOLOXをテストした。
+- YOLOXは対応するすべてのバックボーンに対して一貫した改善を達成しました。
+- Modified CSPNet in YOLOv5
+  - 公正な比較を行うために、Modified CSPNet、SiLU活性化、PANヘッドを含むYOLOv5の正確なバックボーンを採用。
+  - また、YOLOX-S、YOLOX-M、YOLOX-L、YOLOX-Xの各モデルを、そのスケーリングルールに従って生成した。
+  - YOLOv5と比較すると、YOLOXは我々のモデルは一貫して改善されています。
+
+  ![](./img/yolo_x_vs_yolo_v5.png)
+
+- Tiny and Nano detectors
+  - YOLOv4-Tinyと比較するために、我々のモデルをさらに小型化し、YOLOX-Tinyとしています。
+  - モバイル機器では、depthwise-convを採用してYOLOX-Nanoモデルを構築。
+  - YOLOX-Nanoモデルは、0.91Mのパラメータと1.08GのFLOPで構成されています。
+  - YOLOXは他のモデルよりもさらに小さなモデルサイズで良好な性能を発揮します。
+
+  ![](./img/yolo_x_vs_tiny_models.png)
+
+- Model size and data augmentation
+  - 適切なaugmentationはモデルのサイズによって異なることがわかった。
+  - YOLOX-LではMixUpを適用することでAPを0.9%改善することができます。
+  - 一方、YOLOX-Nanoのような小さなモデルではaugmentationを弱めた方が良いことがわかります。
+  - 具体的には、YOLOX-S、YOLOX-Tiny、YOLOX-Nanoといった小型モデルの学習時には、MixUpによる補強を外し、モザイクを弱める（スケール範囲を［0.1, 2.0］ から ［0.5, 1.5］ ）という修正を行います。
+  - このような修正により、YOLOX-NanoのAPは24.0%から25.3%に改善されました。
+  - 大規模なモデルの場合、より強力な増強がより有効であることもわかりました。
+  - 実際、我々のMixUpの実装は、[38]のオリジナルバージョンよりも一部重いです。
+  - Copypaste [6]に触発されて、我々はそれらを混合する前に、ランダムにサンプリングされたスケールファクタによって両方の画像をジッタリングしました。
+  - MixupとCopypasteをYOLOX-Lで比較したところ、MixupはCopypasteと比較して、スケールジッタリングが有効であることがわかりました。
+  - Copypasteはインスタンスマスクのアノテーションが必要ですが、MixUpでは必要ありません。
+  - しかし、Tab.5に示すように、この2つの方法は、競争力のある性能を達成しています。
+  - これは、インスタンスマスクアノテーションがない場合、MixUp with scale jitteringがCopypasteの代替となることを示しています。
+
 ## 実験結果
 
-- RetinaNetとの比較
-  - RetinaNetはYOLOFと設定を合わせるため、GIoU, GN(Group Normalization), objectnessを導入したものを(+)記号として記載する。
-  - YOLOFは、RetinaNetと同等性能で高い速度を達成している。
-
-![](./img/yolo_f_experiment_vs_retinanet.png)
-
-- DETRとの比較
-  - DETRは大きい物体に強く、YOLOFは小さい物体に強い。
-  - 推論速度はYOLOFが少し速く、学習時の収束は圧倒的にYOLOFが少ない。
-
-![](./img/yolo_f_experiment_vs_detr.png)
-
-- YOLOv4との比較
-  - v4は様々なノウハウを組み合わせて調整されているため、ベースラインを目的としたYOLOFと厳密に比較が難しい。
-  - ただし比較のため、ある程度カスタマイズしたYOLOF-DC5を作成した。
-  - YOLOF-DC5は、13%高速に推論でき、総合性能もわずかに向上している。
-  - 小さい物体はv4より劣り(-2.7 mAP)、大きい物体は良い結果となった(+7.1 mAP)。
-
-![](./img/yolo_f_experiment_vs_yolo_v4.png)
-
-## Ablation Experiments
-
-### ResBlocksの数
-
-- 4個を選択。増やす程よいがバランスをとった。
-
-![](./img/yolo_f_ablation_resblocks.png)
-
-### dilations setting
-
-- 2,4,6,8を採用。
-
-![](./img/yolo_f_ablation_dilations.png)
-
-### shortcutの有無
-
-- shortcutがない場合、性能が低下する。
-
-![](./img/yolo_f_ablation_shortcut.png)
-
-### Uniform Matching
-
-- k=4で性能は頭打ちとなっている。
-
-![](./img/yolo_f_ablation_uniform_matching_topk.png)
-
-### other matchings
-
-- ATSSは単一スケール特徴量を使う場合は、topk=15が最適であった。
-- しかしそのATSSよりもUniform Matchingが優れている。
-- またHungarian MatchingはUniform Matchingのtopk=1と同程度である。
-
-![](./img/yolo_f_ablation_other_matchings.png)
-
-### Number of Anchors
-
-- RetinaNetでは、それぞれ322～5122の面積を持つ複数のレベル特徴（P3～P7）からアンカーが生成
-- 各レベル特徴において以下のアンカーを敷き詰める。
-  - サイズ｛2^0 , 2^(1/3) , 2^(2/3)｝
-  - アスペクト比｛0.5, 1, 2｝
-- 一方、YOLOFでは、アンカーを配置するのは1レベルの特徴量のみ。
-- そこで、全ての物体のスケールをカバーするために以下とする。
-  - 1つの特徴量マップに面積{322 , 642 , 1282 , 2562 , 5122}、サイズ{1}、縦横比{1}のアンカーを追加
-  - 各位置に5個のアンカーを配置
-- さらに、YOLOFにおいて、アンカーを多くした場合の影響を調査する。
-  - RetinaNetにならって、以下を追加し、各位置に45個のアンカーを生成
-    - 異なるサイズ（{2 0 , 2 1/3 , 2 2/3}）
-    - 多くのアスペクト比（{0.5, 1, 2}）のした。
-- 全ての結果を以下に示す。
-  - アスペクト比を増やしてもYOLOFの性能は変わらない
-  - サイズを増やすと性能が低下する
-
-![](./img/yolo_f_ablation_anchor_box.png)
-
-- したがって、YOLOFのアンカーはデフォルトで最小5個を追加することにした。
-
-### YOLOF-DC5について
-
-- YOLOFの性能を上げるために、C5特徴量よりも高分解能の特徴量マップ上で物体を検出する。
-- DETRに従い、バックボーンの最終段にストライドを持たず、ダイレーションを持たせたバックボーンを構成。
-- バックボーンの出力特徴量をDC5とし、ダウンサンプル率を16とする。
-- 以下は、ResNet-50とResNet-101をバックボーンとしたCOCO val splitに対するYOLOF-DC5の結果である。
-- YOLOF-DC5はオリジナルのYOLOFよりも高い性能を達成している。
-- 一方、特徴の解像度がC5よりも大きいため、動作速度が低下していることがわかる。
-- この結果を得るために、以下の変更をしている。
-  - まず小さいアンカーを追加して1箇所あたり6アンカーとする
-    - {16, 32, 64, 128, 256, 512}
-  - 次にtopkを4から8に増やして正アンカーに対する無視閾値を0.15から0.1に変更する。
-  - その他のパラメータは従来と同じである。
-
-![](./img/yolo_f_ablation_yolof_dc5.png)
-
-### エラーの分析
-
-- 近年提案されたTIDEによる評価。
-- TIDEはエラーを以下のように分類する。
-  - Cls：分類エラー
-  - Loc：定位エラー
-  - Both：ClsとLocの両方エラー
-  - Dupe：重複予測エラー
-  - Bkg：背景エラー
-  - Miss：欠損エラー
-- 円グラフは各エラーの相対的な寄与度を、棒グラフはその絶対的な寄与度を示している。
-- FPとFNはそれぞれfalse positiveとfalse negativeを意味する。
-
-![](./img/yolo_f_ablation_error_analysis.png)
-
-- 結果に対する分析
-  - DETRはYOLOFよりもLoc Errorが大きく、これは回帰メカニズムに関係していると考えられる。
-  - DETRはオブジェクトをアンカーフリーで回帰し、画像内のグローバルな位置を予測するため、定位が難しい。
-  - 一方、YOLOFはあらかじめ定義されたアンカーに依存するため、DETRよりも高い欠損エラーがある。
-  - YOLOFのアンカーはまばらであり、推論段階での柔軟性が十分でない。
-  - 直感的には、ground truthの近くにあらかじめ定義されたanchorが存在しない状況がある。
-  - したがって、YOLOFにアンカーフリー機構を導入することで、この問題を軽減できる可能性があり、今後の課題である。
-
+![](./img/yolo_x_experiment_table.png)
 
 ## 参考
 
-- 全編を読んだ後に気づいたけど、こちらに結構まとまっている。
-  - https://www.slideshare.net/ren4yu/you-only-look-onelevel-feature/ren4yu/you-only-look-onelevel-feature
+- 実装から見るYOLOX
+  - https://qiita.com/koshian2/items/af032cb102f48e789e66
+
+- YOLOXつかってみた
+  - https://mountain-gorilla.co.jp/%E3%80%90%E7%89%A9%E4%BD%93%E6%A4%9C%E7%9F%A5%E3%80%91%E6%9C%80%E6%96%B0%E7%89%88%E3%81%AEyolox%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F%EF%BC%81/
+
+- labelme+YOLOXで自作データセットの学習！
+  - https://zenn.dev/opamp/articles/d3878b189ea256
