@@ -34,18 +34,39 @@
 
 ## レポジトリ(フレームワーク)
 
-- [detectron2](https://github.com/facebookresearch/detectron2)
-  - FAIRによるレポジトリ
+- まとめ
+  - https://aru47.hatenablog.com/entry/2022/01/01/123929
+
 - [mmdetection](https://github.com/open-mmlab/mmdetection)
   - OpenMMLabによるレポジトリ
 - [PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection)
   - Baidu社によるPaddlePaddleというフレームワークを用いたレポジトリ
+- [detectron2](https://github.com/facebookresearch/detectron2)
+  - FAIRによるレポジトリ
 
 ## 主要なモデル一覧
 
+<table>
+  <thead><tr><th>名前</th><th>発表年月日</th><th>サマリ</th><th>カテゴリ</th><th>backbone</th><th>リンク</th></tr></thead>
+  <tbody>
+    <tr><td>HOG+SVM</td><td>2005/06/20</td>
+    <td>
+      ・CNN誕生前のモデルで良く参照された論文<br>
+      ・HOGはpixel変化を捉える特徴量<br>
+      ・HOG特徴量を用いてSVMで多クラス分類する<br>
+      ・NMSはこの時から使われている
+    </td>
+    <td>None</td><td>None</td>
+    <td>
+      <a href="./cv_003_object_detection/hog_svm.md">解説</a><br>
+      <a href="http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf">論文</a>
+    </td>
+  </tbody>
+</table>
+
 |名前|発表年月日|サマリ|カテゴリ|ベースCNN|解説|元論文|実装|
 |:---|:---|:---|:---|:---|:---|:---|:---|
-|HOG+SVM|2005/06/20|・CNN誕生前のモデルで良く参照された論文<br>・HOGはpixel変化を捉える特徴量<br>・HOG特徴量を用いてSVMで多クラス分類する<br>・NMSはこの時から使われている|None|None|[解説](./cv_003_object_detection/hog_svm.md)|[論文](http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf)|None|
+|HOG+SVM|2005/06/20|・CNN誕生前のモデルで良く参照された論文<br>・HOGはpixel変化を捉える特徴量<br>・HOG特徴量を用いてSVMで多クラス分類する<br>・NMSはこの時から使われている|None|None|[解説]()|[論文]()|None|
 |R-CNN|2013/11/11|・CNN適用の先駆け論文<br>・selective searchという古典的手法で領域候補を抽出<br>・候補領域をリサイズしてCNNに入力して特徴量ベクトルを得る<br>・その後段で1-class SVMとbounding boxのregressionを実施|2stage|AlexNet<br>VGG16|[解説](./cv_003_object_detection/r_cnn.md)|[論文](https://arxiv.org/abs/1311.2524)|[公式(MATLAB)](https://github.com/rbgirshick/rcnn)<br>[paperswithcode](https://paperswithcode.com/paper/rich-feature-hierarchies-for-accurate-object)|
 |SPP-net|2014/06/18|・領域候補の切り出しを特徴量マップに対して実施し効率化<br>・これにより最大2000毎程度ある領域候補のCNN処理が1回で実現可能<br>・切り出した特徴量マップはSPPで固定長の特徴量に変換して後段で処理<br>|2stage|ZFNet<br>AlexNet<br>OverFeat|[解説](./cv_003_object_detection/spp_net.md)|[論文](https://arxiv.org/abs/1406.4729)|[paperswithcode](https://paperswithcode.com/paper/spatial-pyramid-pooling-in-deep-convolutional)|
 |Fast R-CNN|2015/04/30|・Multi-task lossによりclassificationとbounding box推定を同時学習<br>・固定長の特徴量変換としてSPPの代わりにRoI Poolingを使用<br>・RoI Poolingは両機をグリッド分割し各グリッドに対してpooling処理を実施|2stage|VGG16|[解説](cv_003_object_detection/fast_r_cnn.md)|[論文](https://arxiv.org/abs/1504.08083)|[公式(Caffe2)](https://github.com/rbgirshick/fast-rcnn)<br>[paperswithcode](https://paperswithcode.com/paper/fast-r-cnn)|
