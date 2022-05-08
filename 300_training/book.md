@@ -65,3 +65,6 @@
 
 - Docker実践ガイド 第2版 impress top gearシリーズ
   - https://www.amazon.co.jp/gp/product/B07NDT526Q
+
+- 良いコード/悪いコードで学ぶ設計入門
+  - https://www.amazon.co.jp/dp/4297127830
