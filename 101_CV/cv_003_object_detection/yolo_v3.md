@@ -90,3 +90,6 @@
 
 - 日本語であればこちら。著者の苦情についても書いてある。
   - https://kikaben.com/yolov3/#post-title
+
+- YOLOv3を作ってみた
+  - https://zenn.dev/opamp/articles/5198d6bf369b8e
