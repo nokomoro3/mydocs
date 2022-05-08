@@ -1,5 +1,16 @@
 # Docker on WSL2
 
+## セットアップ
+
+- NVIDIA公式の手順に沿えば、GPU実行も可能となっている
+  - https://docs.nvidia.com/cuda/wsl-user-guide/index.html
+
+- 参考リンクだが、公式手順だけでもOK
+  - https://zenn.dev/kenn/articles/ac128ed2775370#nvidia-drivers-for-wsl%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB
+
+
+__<span style="color: red; ">※ここから先は古い情報※</span>__
+
 ## WSL2(Ubuntu 20.04 LTS)でDockerを動かす。
 
 - 注意点

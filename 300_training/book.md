@@ -47,6 +47,9 @@
 - 機械学習デザインパターン――データ準備、モデル構築、MLOpsの実践上の問題と解決
   - https://www.oreilly.co.jp/books/9784873119564/
 
+- Kaggle Grandmasterに学ぶ 機械学習 実践アプローチ
+  - https://www.amazon.co.jp/dp/4839974985
+
 ## 数学
 
 - 入門 情報幾何―統計的モデルをひもとく微分幾何学― 
