@@ -110,10 +110,7 @@
     - [MLOps               ](./100_ML/ml_ops.md)
 
 - 101_CV
-  - [概要      ](./101_CV/cv_001_summary.md)
-  - [クラス分類](./101_CV/cv_002_classification.md)
-  - [物体検知  ](./101_CV/cv_003_object_detection.md)
-  - [その他    ](./101_CV/cv_500_other_technique.md)
+  - [ほとんどこちらにお引越し](https://github.com/cm-nakamura-shogo/git-book-ml-wiki)
   - [メモ      ](./101/../101_CV/cv_999_scrapbox.md)
 
 - 102_NLP
