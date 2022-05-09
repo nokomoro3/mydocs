@@ -393,7 +393,7 @@
       <td>
         未調査
       </td>
-      <td>未調査</td><td>未調査</td><td>未調査</td>
+      <td>未調査</td><td>未調査</td>
       <td>
         <a href="https://arxiv.org/abs/2007.12099">論文</a><br>
         <a href="https://paperswithcode.com/paper/pp-yolo-an-effective-and-efficient">paperswithcode</a>
@@ -432,7 +432,7 @@
       <td>
         未調査
       </td>
-      <td>未調査</td><td>未調査</td><td>未調査</td>
+      <td>未調査</td><td>未調査</td>
       <td>
         <a href="https://arxiv.org/abs/2103.14030">論文</a><br>
         <a href="https://paperswithcode.com/paper/swin-transformer-hierarchical-vision">paperswithcode</a>
@@ -458,7 +458,7 @@
       <td>
         未調査
       </td>
-      <td>未調査</td><td>未調査</td><td>未調査</td>
+      <td>未調査</td><td>未調査</td>
       <td>
         <a href="https://arxiv.org/abs/2104.10419">論文</a><br>
         <a href="https://paperswithcode.com/paper/pp-yolov2-a-practical-object-detector">paperswithcode</a>
@@ -485,7 +485,7 @@
       <td>
         未調査
       </td>
-      <td>未調査</td><td>未調査</td><td>未調査</td>
+      <td>未調査</td><td>未調査</td>
       <td>
         <a href="https://arxiv.org/abs/2108.11250">論文</a><br>
         <a href="https://paperswithcode.com/paper/yolop-you-only-look-once-for-panoptic-driving">paperswithcode</a>
@@ -496,7 +496,7 @@
       <td>
         未調査
       </td>
-      <td>未調査</td><td>未調査</td><td>未調査</td>
+      <td>未調査</td><td>未調査</td>
       <td>
         <a href="https://arxiv.org/abs/2111.00902">論文</a><br>
         <a href="https://paperswithcode.com/paper/pp-picodet-a-better-real-time-object-detector">paperswithcode</a>
@@ -507,7 +507,7 @@
       <td>
         未調査
       </td>
-      <td>未調査</td><td>未調査</td><td>未調査</td>
+      <td>未調査</td><td>未調査</td>
       <td>
         <a href="https://arxiv.org/abs/2203.16250">論文</a><br>
         <a href="https://paperswithcode.com/paper/pp-yoloe-an-evolved-version-of-yolo">paperswithcode</a>
@@ -518,7 +518,7 @@
       <td>
         未調査
       </td>
-      <td>未調査</td><td>未調査</td><td>未調査</td>
+      <td>未調査</td><td>未調査</td>
       <td>
         <a href="https://arxiv.org/abs/2203.16527">論文</a><br>
         <a href="https://paperswithcode.com/paper/exploring-plain-vision-transformer-backbones">paperswithcode</a>
