@@ -20,6 +20,7 @@
   - [logging   ](./002_python/logging.md)
   - [NumPy     ](./002_python/numpy.md)
   - [pandas    ](./002_python/pandas.md)
+  - [pathlib   ](./002_python/pathlib.md)
   - [poetry    ](./002_python/poetry.md)
   - [Pydantic  ](./002_python/pydantic.md)
   - [pyenv     ](./002_python/pyenv.md)
@@ -29,6 +30,7 @@
   - [seaborn   ](./002_python/seaborn.md)
   - [sqlalchemy](./002_python/sqlalchemy.md)
   - [syntax    ](./002_python/syntax.md)
+  - [tqdm      ](./002_python/tqdm.md)
   
 - 003_linux
   - [curl                 ](./003_linux/curl.md)

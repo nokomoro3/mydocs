@@ -90,6 +90,18 @@ print(one_month_ago)
 
 ```
 
+## 整数値を時刻表記に変換
+
+
+```python
+import datetime
+
+td = datetime.timedelta(weeks=1, days=1, hours=1, minutes=1,
+                        seconds=1, milliseconds=1, microseconds=1)
+```
+
+## 参考リンク
+
 - ISO8601への変換
   - https://note.nkmk.me/python-datetime-isoformat-fromisoformat/
 

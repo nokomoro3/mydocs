@@ -35,8 +35,6 @@
 
 [](./cv_history_003_object_detection.md)
 
-
-
 ## Segmentation
 
 - 歴史が記載された図
@@ -46,18 +44,23 @@
   - U-Net構造といわれる階層的なskip-connectionにより高解像データを失わない工夫をしたモデル。
 - 【W.I.P.】Dilated Convolution @2015.11 (https://arxiv.org/pdf/1511.07122.pdf)
   - 間引きConvを重ねることでより広い領域からの情報を得ることを工夫したモデル。
-- 【W.I.P.】SSD @2015.12 (https://arxiv.org/pdf/1512.02325.pdf)
 - 【W.I.P.】Stacked Hourglass Networks @2016.03 (https://arxiv.org/pdf/1603.06937.pdf)
-- 【W.I.P.】FPN: Feature Pyramid Networks @2016.12 (https://arxiv.org/pdf/1612.03144.pdf)
-- 【W.I.P.】M2Det @2018.11 (https://arxiv.org/pdf/1811.04533.pdf)
 - 【W.I.P.】Deep High-Resolution Representation Learning for Human Pose Estimation @2019.02 (https://arxiv.org/pdf/1902.09212.pdf)
 - 【W.I.P.】High-Resolution Representations for Labeling Pixels and Regions @2019.04 (https://arxiv.org/pdf/1904.04514.pdf)
-- 【W.I.P.】YOLO
 - 【W.I.P.】DeepLab
 - 【W.I.P.】FCN
 - 【W.I.P.】Lraspp
 
+- STEGO
+  - ラベル無しでSemantic Segmentationを学習できる手法。
+  - https://www.marktechpost.com/2022/04/22/mit-team-introduces-stego-an-algorithm-that-can-jointly-detect-and-segment-things-down-to-the-last-pixel-without-any-human/
+
 ## Instance segmentation
+
+## データについて
+
+- 画像の機械学習が劣化する理由
+  - https://qiita.com/nonbiri15/items/2bd2320d8268321c331d
 
 ## 参考
 

@@ -82,7 +82,72 @@ services:
 - 参考
   - https://amaya382.hatenablog.jp/entry/2017/04/03/034002
 
+## composeでnvidia-dockerを使う
+
+- composeのversionが2の場合
+
+```yml
+version: '2.4'
+services:
+  sample:
+    image: nvidia/cuda:11.2.1-base
+    command: nvidia-smi
+    runtime: nvidia
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: utility,compute,video
+```
+
+- composeのversionが3の場合
+  - deploy配下が必要な部分
+
+```yml
+version: '3.8'
+services:
+  sample:
+    image: nvidia/cuda:11.2.1-base
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+           - driver: nvidia
+             capabilities: [utility, compute, video]
+```
+
+- 以下を参考
+  - https://qiita.com/routerman/items/c5f9d7b6d03e44de6be2
 
 ## WSL2がdocker prune済みの領域を返してくれない
 
-- https://7me.nobiki.com/2020/10/12/wsl2-docker-re-use-disk-space/
+```ps
+// WSLを止める
+> wsl --shutdown
+
+// diskpartを起動する（diskpartのウィンドウが開きます）
+> diskpart
+
+// 対象のvhdxファイルを指定（PATHは各自確認して下さい）
+DISKPART> select vdisk file="C:\Users\[ユーザ名]\AppData\Local\Docker\wsl\data\ext4.vhdx"
+DISKPART> attach vdisk readonly
+
+// 最適化する
+DISKPART> compact vdisk
+
+// 終了
+DISKPART> detach vdisk
+DISKPART> exit
+```
+
+- 参考
+  - https://7me.nobiki.com/2020/10/12/wsl2-docker-re-use-disk-space/
+
+## GPGエラー
+
+- apt updateでGPG エラーが出たら
+  - https://qiita.com/HS310164/items/15ebb375726ff4db4eb2
+
+## ML向けdockerの工夫点
+
+- 機械学習なdockerfileを書くときに気をつけとくと良いこと
+  - https://nykergoto.hatenablog.jp/entry/2020/07/25/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AAdockerfile%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%A8%E3%81%8D%E3%81%AB%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%A8%E3%81%8F%E3%81%A8%E8%89%AF%E3%81%84%E3%81%93
