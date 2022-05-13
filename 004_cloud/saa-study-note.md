@@ -777,12 +777,20 @@
 - スケーリング時のメトリクス
   - CPU使用率を使う。メモリ使用率を使ったトリガーはデフォルトで設定できない。
 
-### AWS Server Migration Service
+### AWS Application Migration Service (AWS MGN)
 
 - オンプレの仮想マシンをAWSに移行するツール
   - VMware vSphere
   - Microsoft Hyper-V/SCVMM
   - Azure 仮想マシン
+
+- 旧サービスは、AWS Server Migration Service(SMS)だが、2023年3月31までで使えなくなる。
+
+### AWS License Manager
+
+- ベンダーが提供するライセンス管理を行うサービス。
+- 契約条件に基づくルールを作成することで、ライセンス違反を防ぐことが可能。
+- 違反する場合は、インスタンスの起動を停止したり、管理者に侵害を通知できる。
 
 ---
 ## Security
@@ -804,7 +812,7 @@
 ### AWS WAF
 
 - HTTPリクエストレベルでの制限・許可などを行う。
-  - 特定のリクエスト以外を許可（攻撃を社団）
+  - 特定のリクエスト以外を許可（攻撃を遮断）
   - 特定のリクエストのみを許可（アクセス制限：日本国内のみ）
 
 - Referer制限
