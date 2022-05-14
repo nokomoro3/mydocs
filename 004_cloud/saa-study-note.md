@@ -381,6 +381,23 @@
   - S3とDynamoDBのみ、ゲートウェイ型
   - それ以外のリソースはプライベートリンク型
 
+- Bastionホストとは
+  - EC2などで構成する踏み台サーバーのこと。
+  - publicサブネットに配置し、privateサブネット内のリソースアクセスをこのBastionホスト経由のみに限定する。
+  - Bastionとは要塞という意味。
+
+### IPv6への対応
+
+- IPv6 CIDRブロックをVPC, subnetに関連付ける。
+- IPv6トラフィック用のルートテーブル更新
+  - public subnetは、subnetからInternet Gateway(IGC)にIPv6トラフィックをルーティングする。
+  - private subnetは、subnetからEgress-only Internet Gateway(EIGW)にIPv6トラフィックをルーティングする。
+- SGをIPv6を含めるように更新する。
+- ACLで制限されている場合、ACLのルールもIPv6に対応するように更新する。
+- インスタンスタイプをIPv6対応のものに変更する。
+- IPv6アドレスをインスタンスに割り当てる。
+- インスタンスの設定がIPv6に対応していない場合、設定を変更する。
+
 ### ACL
 
 - アウトバンド・インバウンドの設定
