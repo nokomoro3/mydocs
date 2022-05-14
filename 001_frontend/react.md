@@ -126,19 +126,21 @@ $ yarn preview
 
 - vite.config.tsのresolve.aliasを設定する。
 - pathがない場合は、`yarn add @types/node -D`で追加する。
+
 ```vite.config.ts
 import * as path from "path"
 
 export default defineConfig({
   resolve: {
     alias: {
-      "src": resolve(__dirname, "src"),
+      "src": path.resolve(__dirname, "src"),
     },
   },
 })
 ```
 
 - 次にtsconfig.jsonのcompilerOptions.baseUrlを設定する。
+
 ```tsconfig.json
 {
   "compilerOptions": {
