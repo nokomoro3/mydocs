@@ -180,12 +180,39 @@
 - Snowball edge Storage Optimized
   - 100TBのHDD容量だが、利用可能な部分は80TB程度。
 
+- 要する時間
+  - 諸々で数週間は必要。
+
 ### 高機能なストレージのIOPS比較
 
 - EBSのプロビジョンドIOPSは、最大64,000IOPSのベースラインまで。
 - EFSは、500,000超のIOPSまで。
 - Amazon FSx for Windowsは、数百万IOPSまで対応。
 - Amazon FSx for Lustreは、スーパーコンピューター用。
+
+### AWS Storage Gateway
+
+- Amazon S3 File Gateway
+  - NFSおよびSMBによりS3オブジェクトとしてファイルを保存できる。
+
+- Amazon FSx File Gateway
+  - SMBプロトコルを使用し、Amazon FSxにファイルを保存できる。
+
+- Tape Gateway
+  - iSCSIベースの仮想テープライブラリに保存ができる。
+
+- Volume Gateway
+  - iSCSIを使用したブロックストレージを提供する。
+  - キャッシュ型と保存型の2種類がある。
+  - 保管型ボリューム
+    - プライマリをローカル、AWSに非同期にバックアップ可能。
+    - データは、EBSスナップショットとしてS3にバックアップされる。
+  - キャッシュ型ボリューム
+    - プライマリをS3として使用し、アクセスするデータをローカルに保持する。
+
+  - 接続を攻撃から保護するために、以下が必要。
+    - CHAP（Challenge Handshake Authentication Protocol）を構成。
+    - iSCSIとイニシエーター接続を認証する
 
 ---
 ## streaming
@@ -227,6 +254,22 @@
 
 - 整合性モデルの変更可能
   - 結果整合性と強い整合性を設定で変更することができる。
+
+- LSI(local secondary Index)
+  - 追加でソートキーを増やすイメージ
+  - 1テーブルに５つ作成可能でテーブル作成時に作成
+  - 検索を詳細にしたい場合などに使用。
+
+- GSI(global secondary Index)
+  - テーブル全体をスキャンして全体で何かを算出したい場合に使用する。
+  - データに対して別のハッシュキーを設定できる。
+  - 1テーブルに５つ作成可能、テーブル作成後に作成
+
+- グローバルテーブル
+  - リージョン間でのレプリケートが可能となる。
+  - レプリカ間の変更の伝搬は、DynamoDB Streamsを使用して行われる。
+  - 参考
+    - https://aws.amazon.com/jp/blogs/news/how-to-use-amazon-dynamodb-global-tables-to-power-multiregion-architectures/
 
 ### RDS
 
@@ -311,10 +354,14 @@
 ### ElastiCache
 
 - 高速データ処理が可能なNoSQL型のデータベース
+- 単純に高速化したいなどの場合は、シンプルなMemcachedを選択する。
+- レプリケーションや自動フェイルオーバー、データの永続性という面ではredisを選択する。
 
 ### AWS Database Migration Service
 
 - オンプレにあるデータベースを短期間で安全にAWSへ移行できるサービス。
+
+- DMSコンソールを利用して、移行対象のテーブル、以降方式をタスクとしてJSONファイルにより設定できる。
 
 ---
 ## Data Processing
@@ -331,6 +378,14 @@
 - クラスターとしてEC2インスタンスの集合を扱う
 
 - EMRFSを使用してS3内のデータに直接アクセスすることが可能。
+
+- ノードは３つ種類がある。
+  - コアノード
+  - マスターノード
+  - タスクノード
+
+- 低コスト化
+  - コアノードとマスターノードをRIとし、タスクノードをスポットとする。
 
 ### AWS Data Pipeline
 
@@ -381,6 +436,42 @@
   - S3とDynamoDBのみ、ゲートウェイ型
   - それ以外のリソースはプライベートリンク型
 
+- Bastionホストとは
+  - EC2などで構成する踏み台サーバーのこと。
+  - publicサブネットに配置し、privateサブネット内のリソースアクセスをこのBastionホスト経由のみに限定する。
+  - Bastionとは要塞という意味。
+
+- セカンダリCIDR
+  - IPアドレスが枯渇する場合、最大４つのセカンダリCIDARをVPCに追加できる。
+
+### DirectConnect
+
+- 準備には数日が必要。
+
+- 冗長化としてIPsec対応のハードウェアVPNを使用することができる。
+
+### DirectConnect Gateway
+
+- マルチリージョンのVPCに接続する際には、DirectConnect Gatewayが必要となる。
+
+### Transit Gateway 
+
+- 多数のVPCを管理することができる。
+- またFirewallやIPSに接続することでセキュリティを管理することができる。
+- AWS Transit Gateway network managerで、設定の変更が可能。(IPSの設定はここではできない)
+
+### IPv6への対応
+
+- IPv6 CIDRブロックをVPC, subnetに関連付ける。
+- IPv6トラフィック用のルートテーブル更新
+  - public subnetは、subnetからInternet Gateway(IGC)にIPv6トラフィックをルーティングする。
+  - private subnetは、subnetからEgress-only Internet Gateway(EIGW)にIPv6トラフィックをルーティングする。
+- SGをIPv6を含めるように更新する。
+- ACLで制限されている場合、ACLのルールもIPv6に対応するように更新する。
+- インスタンスタイプをIPv6対応のものに変更する。
+- IPv6アドレスをインスタンスに割り当てる。
+- インスタンスの設定がIPv6に対応していない場合、設定を変更する。
+
 ### ACL
 
 - アウトバンド・インバウンドの設定
@@ -417,6 +508,9 @@
 - フェイルオーバールーティングを使用する場合、アクティブ・パッシブ構成となる。
   - アクティブ・アクティブにしたい場合はその他のルーティングで、ファイルオーバーを実現する。
 
+- DDos攻撃対策
+  - シャッフルシャーディングと anycast ルーティングにより、攻撃を受けていてもユーザーがアクセス可能な状態を維持することができる。
+
 ### CloudFront
 
 - コンテンツを高速配信するためのCDNサービス。
@@ -432,7 +526,7 @@
 - 地理的ブロッキングで、特定地域のユーザーのアクセスを回避可能。
 
 - S3へのアクセス制限(IP制限等)するをすることが可能。
-  - CloudFrontのOAIを使い、特定のdistributionのみをS3のBucket Policyで許可
+  - CloudFrontのOrigin Access Identify(OAI)を使い、特定のdistributionのみをS3のBucket Policyで許可
     - OAIは特別なユーザーであり、そのユーザーに限定してBucket Policyを設定
   - CloudFrontにWAF ACLを設定し、特定のIPアドレスのみを許可
 
@@ -449,9 +543,25 @@
   - プライマリオリジンが使用できない場合、セカンダリに切り替わる。
     - プライマリでHTTPレスポンスが特定のコードを返す場合なども設定可能。
 
+- Lamda@Edge
+  - Node.jsによるLambda関数をユーザーに近いCloudFrontで実行することができる。
+
+- HTTPS化
+  - 以下のいずれかでHTTPS対応を実施できる。
+  - Viewer Protocol PolicyでHTTPS Onlyを設定
+  - Viewer Protocol PolicyでRedirect HTTP to HTTPSを設定
+  - Viewer Protocol PolicyでSSL/TLS証明書を利用できる設定
+
 ### オンプレIP移行
 
 - ROA(Route Origin Autorization)を利用し、特定のIPアドレスを移行することができる。
+
+- 地域インターネットレジストリ(RIR: Regional Internet Registry)に登録。
+- RDAP: Registry Data Access Protocolを利用して事故署名付きの X509 証明書を発行する。
+
+- 参考
+  - https://fluid-27.hatenablog.com/entry/2021/07/16/204216
+  - https://www.nic.ad.jp/ja/basics/terms/roa.html
 
 ### IPフローティング
 
@@ -512,6 +622,21 @@
   - 救数のAWSアカウントやリージョンにリソースを展開できる。
   - クロスアカウントやクロスリージョンのシナリオを解決可能。
 
+- DeletionPolicy
+  - 停止後にデータを保持したい場合、DeletionPolicyを有効にする必要がある。
+  - DeletionPolicyには以下の種類がある。
+    - Snapshot
+      - スナップショットを作成したうえで、リソースを削除する。
+      - このポリシーはスナップショットが作成できるリソース(EC2やRDS)にのみ追加することができます。
+
+    - Retain
+      - リソースやコンテンツを削除せず保持します。
+      - この削除ポリシーは、あらゆるリソースタイプに追加することができます。
+
+    - Delete (Default)
+      - スタックの削除時にリソースと (該当する場合) そのすべてのコンテンツを削除します。
+      - この削除ポリシーは、あらゆるリソースタイプに追加することができます。
+
 ### CloudWatch
 
 - CloudWatch Logs
@@ -525,6 +650,9 @@
 
 - CloudWatch エージェント
   - EC2インスタンスやオンプレミスサーバーから、メトリクスやログを収集する機能。
+
+- CloudWatch Logs Insights
+  - ログを解析・可視化するフルマネージドサービス。
 
 ### Amazon API Gateway
 
@@ -561,6 +689,9 @@
     - S3バケットポリシーやIAMロールの信頼ポリシーなど、リソース固有のポリシーが設定可能な場合に使用
     - 他には、SNSのTopicポリシーやVPCエンドポイントポリシーなどが該当
 
+- リソースベースのポリシーがあるサービス一覧
+  - https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html
+
 - 本番・開発の分離
   - 開発者には開発者用アカウントを付与する。
   - インスタンス等にタグを設定し、操作許可を限定する設定も有用。
@@ -571,8 +702,19 @@
   - IAMは、OpenID Connect または SAML 2.0と互換性のあるIdPをサポートしている。
   - OpenIDの場合、ウェブIDフェデレーションを利用する。
 
+- 外部のIdPを使う場合
+  - マネコンおよびCLIを使って、IdPのエンティティを作成して、SAMLメタデータドキュメントなどをuploadする。
+  - その後、IAMロールを作成し、信頼ポリシーでProviderを、信頼関係を確立するPrincipalとして設定する。
+  - ロールに必要な権限を設定する。
+  - オンプレミス環境のユーザー、グループをIAMロールにマッピングするアサーションを定義する。
+
 - aliasされたログインURL
   - `https://development-group.signin.aws.amazon.com/consle/`
+
+- Web IdP
+  - Amazon, Facebook, GoogleなどのOIDC互換のIdPを使う場合、Web IdPと呼ぶ。
+  - モバイル認証で、Cognitoの代わりに使用されることがある。
+  - 認証には、AssumeRoleWithWebIdentity APIを使用する。
 
 ### AWS Organizations
 
@@ -584,6 +726,10 @@
 
 - SCPが設定がされたOU(Organization Unit)のアカウントは以下が行える。
   - ポリシー内で許可したアクションを、IAMポリシーで権限付与が実行できる。
+
+- AWS Resource Access Manager (AWS RAM)
+  - アカウント間でリソース共有を行うためにはこちらを使用する。
+
 
 ### AD関連
 
@@ -597,6 +743,7 @@
 - AWS Managed Microsoft AD
   - フル機能のMicrosoft Active DirectoryをAWSで使用できる。
   - SAMLなどのフェデレーションしたり、オンプレとのADの連携も可能。
+  - 既存のADワークロードをAWSに移行する場合は、こちらを利用する。
 
 ---
 ## Computing
@@ -669,15 +816,19 @@
   - 拡張ネットワーキングをサポートするインスタンスタイプを選択
 
 - プレイスメントグループ
-  - クラスタープレイスメントグループ
-    - パフォーマンス向上が目的。単一AZ内でグループ化し、複数のVPC Peeringにまたがることも可能。
-    - グループ内のインスタンスは、TCP/IPトラフィックのスループット上限が高くなり、インスタンス間通信の速度が向上する。
-  - パーティションプレイスメントグループ
-    - 耐障害性が目的。
-    - 複数パーティションに分けられ、パーティション毎にラックがあり、パーティション同士はラックを共有しない。
-  - スプレッドプレイスメントグループ
-    - 更なる耐障害性が目的。
-    - パーティションあたり1インスタンス構成となり、異なるラックにそれぞれのインスタンスを配置できるグループ。
+  - プレイスメントグループは設定後に、起動するという手順となる。
+  - 異なるインスタンスタイプをグループにすることはできない。
+  - インスタンスを追加する場合は、一旦プレイスメントグループを停止する必要がある。
+  - 種類
+    - クラスタープレイスメントグループ
+      - パフォーマンス向上が目的。単一AZ内でグループ化し、複数のVPC Peeringにまたがることも可能。
+      - グループ内のインスタンスは、TCP/IPトラフィックのスループット上限が高くなり、インスタンス間通信の速度が向上する。
+    - パーティションプレイスメントグループ
+      - 耐障害性が目的。
+      - 複数パーティションに分けられ、パーティション毎にラックがあり、パーティション同士はラックを共有しない。
+    - スプレッドプレイスメントグループ
+      - 更なる耐障害性が目的。
+      - パーティションあたり1インスタンス構成となり、異なるラックにそれぞれのインスタンスを配置できるグループ。
 
 - VM Import/Export
   - オンプレ環境の仮想マシンをAWSにインポートする機能
@@ -697,6 +848,8 @@
     - 停止中のインスタンスにアタッチする。
   - ホットアタッチ
     - runnning中のインスタンスにアタッチする。
+
+- 複数アタッチすることで、それぞれをインターネット用、バックエンドとの通信用などに使い分けることも可能。
 
 ### ELB
 
@@ -731,6 +884,18 @@
   - Lambdaファンクション間で共通の処理をLambda Layerとして定義して参照できる。
   - 最大５つまでLaymbda Layerとすることが可能。
 
+- ネットワーク
+  - Lambdaはデフォルトではインターネット接続やAWSサービスにアクセスできる安全なVPCで関数を実行します。
+  - 一方、ユーザーが指定したVPCで実行する場合は、VPCからアクセス権を付与される必要があります。
+  - またこのVPCがプライベートサブネットである場合、NAT経由での返信処理が設定されていなければ、レスポンスを受け取れません。
+  - 同様に、Lambdaのセキュリティグループのアウトバウンドトラフィックを設定する必要があります。
+
+- リソースポリシーによる実行許可
+  - Lambdaはリソースベースポリシーがあるため、実行の許可をこのポリシーに設定する必要がある。
+  - 設定には、add-permission AWS Lambdaコマンドを使用する。
+  - 参考
+    - https://dev.classmethod.jp/articles/lambda-resourcebase-policy/
+
 ### Amazon ECS
 
 - 権限付与
@@ -747,6 +912,9 @@
 
 - トラフィック制御
   - ELBと連携して実施することができる。
+
+- Capacity Provider Reservation
+  - Auto Scalingグループを構成するために、Capacity Provider Reservationを使用する。
 
 ### Amazon EKS
 
@@ -784,7 +952,15 @@
   - Microsoft Hyper-V/SCVMM
   - Azure 仮想マシン
 
+- AWS Replication Agent 
+  - 移行元となるソースサーバーにインストールするエージェント
+  - レプリケーション設定の表示・定義ができる。
 - 旧サービスは、AWS Server Migration Service(SMS)だが、2023年3月31までで使えなくなる。
+
+## VM Import/Export
+
+- 仮想マシンをEC2にいこうするためのサービス
+- 似た名前として AWS Import/Exportというものがあるが、ストレージ転送のサービスであり、現在は利用されないので注意する。
 
 ### AWS License Manager
 
@@ -831,10 +1007,30 @@
 
 - SSL証明書を集中管理するためのサービス。
 - ELBなどと組み合わせてよく出題される。
+- CloudFrontに設定することも可能。
 
 ### AWS Shield
 
 - DDoS攻撃を緩和するサービス。
+
+- Standardでは、リアルタイム通知や可視化機能が提供されない。その場合はAdvancedとする必要がある。
+
+### AWS Secrets Manager
+
+- セキュアな資格情報を保持するために使用するサービス。
+
+### AWS Config
+
+- リソースの変更管理が可能
+
+- リソースの設定変更の継続的なモニタリングが可能でコンプライアンス評価が可能。
+
+- AWS Organizationsにおける複数アカウントについてもコンプライアンス管理が可能。
+
+- サードパーティのリソース管理なども含まれる。
+
+- 参考
+  - https://www.yume-tec.co.jp/column/series/aws%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%82%92%E6%8E%A1%E7%94%A8%E3%81%97%E3%81%9F%E3%81%84%E4%BA%BA%E4%BA%8B%E6%8B%85%E5%BD%93%E5%90%91%E3%81%91%E3%81%AEaws%E5%85%A5%E9%96%80/4621
 
 ---
 ## Messages
@@ -851,6 +1047,9 @@
   - キューは明示的に削除しない限り、残り続ける。
   - また可視性タイムアウトが設定されている場合は、有効期限が過ぎれば別のインスタンスでキューが処理される。
   - 失敗し続けた場合は、デッドキューに移動する設定を行うことができる。
+
+- Auto Scaling
+  - キューの深さに応じてEC2などのリソースをスケールアウトすることが可能。
 
 ### Amazon SNS
 
