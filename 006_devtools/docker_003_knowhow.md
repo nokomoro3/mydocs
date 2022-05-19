@@ -151,3 +151,41 @@ DISKPART> exit
 
 - 機械学習なdockerfileを書くときに気をつけとくと良いこと
   - https://nykergoto.hatenablog.jp/entry/2020/07/25/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AAdockerfile%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%A8%E3%81%8D%E3%81%AB%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%A8%E3%81%8F%E3%81%A8%E8%89%AF%E3%81%84%E3%81%93
+
+
+## 複数サービスの実行
+
+- 一つのスクリプトにまとめてそれを実行するのが推奨の方法。
+  - - https://docs.docker.jp/v19.03/config/container/multi-service_container.html
+
+- daemonで動かすために、通常のsystemctlコマンドはコンテナ内で普通使えない。
+  - 一応使う方法はあるが、今度は通常通りには使えない。
+    - https://qiita.com/flour/items/977abe462955e4285d0b
+
+
+## 一般ユーザーをコンテナ内に作成する
+
+```
+RUN apt-get install -y sudo
+RUN useradd -m ubuntu
+RUN echo 'ubuntu:ubuntu' | chpasswd
+RUN usermod -aG sudo ubuntu
+```
+
+- 参考
+  - https://qiita.com/nishina555/items/52aef60cfb82fb794b18
+
+
+## SSH接続できるコンテナ環境の作成
+
+- https://qiita.com/takat0-h0rikosh1/items/ae6d951a4b25d260894c
+
+
+## コンテナ内から別コンテナに通信する
+
+- 公式
+  - https://docs.docker.jp/compose/networking.html#compose-links
+
+- `コンテナサービス名:コンテナ側のポート`でアクセスできる。
+
+- ホスト側のポートだと思ってたので要注意。

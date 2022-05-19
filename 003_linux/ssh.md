@@ -92,6 +92,47 @@ objWShell.run "ssh <任意の名前> -N -f", vbHide
 objWShell.run "ssh <任意の名前> -N -f", vbHide
 ```
 
+## RemoteForward
+
+- local以外でも転送できるようだ。コンテナ間ではうまく転送できなかった。
+  - https://qiita.com/shuma/items/6b9d0127840f08398126
+  - https://linuxize.com/post/how-to-setup-ssh-tunneling/#remote-port-forwarding
+
+## 共通鍵認証の設定
+
+- キーペアを作成する。
+
+- ログイン予定のユーザの`~/.ssh/authorized_keys`に、共通鍵`.pub`の内容を追加書き込みする。
+- 同時に権限等を修正する。
+
+```
+scp ./hoge_rsa.pub user@host:~/.ssh/
+cd ~
+chmod 700 .ssh
+cd .ssh
+cat hoge_rsa.pub >> authorized_keys
+chmod 600 authorized_keys
+rm -fv hoge_rsa.pub
+```
+
+- `/etc/ssh/sshd_config`の以下を有効化する
+
+```
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile     .ssh/authorized_keys
+```
+
+- 同時にパスワード認証を無効化したりrootログインを無効化するユースケースが多い。
+
+```
+PermitRootLogin no
+PasswordAuthentication no
+```
+
+- 参考
+  - https://qiita.com/gotohiro55/items/36a22516de2b381b3c6e
+
 ## 参考
 
 - SSHによるポートフォワーディング
